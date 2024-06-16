@@ -1,12 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://blbtwj3c7folu"]
+[gd_scene load_steps=6 format=3 uid="uid://blbtwj3c7folu"]
 
 [ext_resource type="TileSet" uid="uid://2vkflo6ftr3y" path="res://assets/tiles/tileset_roguelike.tres" id="1_70p2h"]
-[ext_resource type="Script" path="res://scenes/levels/test_level.gd" id="1_o83w0"]
 [ext_resource type="PackedScene" uid="uid://dv4t4oejw5u08" path="res://scenes/characters/player/player_capybara.tscn" id="4_kipbp"]
 [ext_resource type="PackedScene" uid="uid://lmb0s38ldmgi" path="res://scenes/dialogue/dialogue_trigger.tscn" id="4_oik48"]
 
+[sub_resource type="GDScript" id="GDScript_yq25g"]
+script/source = "extends Node2D
+
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0uwnt"]
+radius = 30.0
+
 [node name="TestLevel" type="Node2D"]
-script = ExtResource("1_o83w0")
+script = SubResource("GDScript_yq25g")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_70p2h")
@@ -25,6 +32,10 @@ position = Vector2(-64, -104)
 dialogue_id = "demo_1"
 dialogue_teller_name = "Unknown teller"
 dialogue_portrait = "unknown"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueTrigger"]
+position = Vector2(32, 72)
+shape = SubResource("CircleShape2D_0uwnt")
 
 [node name="PlayerCapybara" parent="." instance=ExtResource("4_kipbp")]
 position = Vector2(48, -88)

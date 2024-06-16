@@ -185,4 +185,4 @@ shape = SubResource("RectangleShape2D_vlxeg")
 position = Vector2(8, 0)
 sprite_frames = SubResource("SpriteFrames_pa01c")
 animation = &"down"
-frame_progress = 0.791672
+frame_progress = 0.273539
