@@ -52,7 +52,7 @@ static func play_dialogue_from_sequence() -> void:
 		dialogue_box.set_teller_portrait(dialogue_teller_portrait_sequence.pop_front())
 
 static func play_demo_dialogue() -> void:
-	play_dialogue_sequence(["demo_long_1"])
+	play_dialogue_sequence([])
 
 static func on_dialogue_box_action_pressed() -> void:
 	if dialogue_box.slow_timer.is_stopped():

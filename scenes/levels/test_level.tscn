@@ -38,4 +38,5 @@ position = Vector2(32, 72)
 shape = SubResource("CircleShape2D_0uwnt")
 
 [node name="PlayerCapybara" parent="." instance=ExtResource("4_kipbp")]
+z_index = 0
 position = Vector2(48, -88)
