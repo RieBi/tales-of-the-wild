@@ -1,9 +1,10 @@
 extends CharacterBody2D
-
+class_name PlayerBase
 
 @export var speed: int
 
-
+func _ready() -> void:
+	DialogueHelper.set_player(self)
 
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
