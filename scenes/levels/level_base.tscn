@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://5n44p45tlmtr"]
+
+[ext_resource type="TileSet" uid="uid://2vkflo6ftr3y" path="res://assets/tiles/tileset_roguelike.tres" id="1_nogqc"]
+[ext_resource type="TileSet" uid="uid://duwhvxqrdym8l" path="res://assets/tiles/tileset_riebi.tres" id="2_14tvw"]
+
+[node name="LevelBase" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_nogqc")
+format = 2
+layer_0/name = "solid"
+layer_1/name = "front"
+layer_1/z_index = -1
+layer_1/tile_data = PackedInt32Array()
+layer_2/name = "back"
+layer_2/z_index = -2
+layer_2/tile_data = PackedInt32Array()
+
+[node name="TileMapRiebi" type="TileMap" parent="."]
+tile_set = ExtResource("2_14tvw")
+format = 2
+layer_0/name = "solid"
+layer_1/name = "front"
+layer_1/z_index = -1
+layer_1/tile_data = PackedInt32Array()
+layer_2/name = "back"
+layer_2/z_index = -1
+layer_2/tile_data = PackedInt32Array()
