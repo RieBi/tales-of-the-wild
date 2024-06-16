@@ -28,8 +28,9 @@ anchor_bottom = 0.95
 theme_override_font_sizes/normal_font_size = 30
 theme_override_font_sizes/bold_font_size = 30
 bbcode_enabled = true
-text = "[center]Hello, this text[b]qqq[/b]"
+text = "Lorem ipsum sample text"
 scroll_active = false
+scroll_following = true
 
 [node name="SlowTextTimer" type="Timer" parent="Panel/RichTextLabel"]
 wait_time = 0.05
@@ -43,5 +44,25 @@ anchor_bottom = 1.0
 offset_right = 4.0
 offset_bottom = 3.05176e-05
 color = Color(0.396078, 0.396078, 0.396078, 1)
+
+[node name="NameLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.81
+anchor_top = 0.05
+anchor_right = 0.99
+anchor_bottom = 0.2
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.81
+anchor_top = 0.22
+anchor_right = 0.99
+anchor_bottom = 0.95
+
+[node name="TextureRect" type="TextureRect" parent="Panel/CenterContainer"]
+layout_mode = 2
+stretch_mode = 2
 
 [connection signal="timeout" from="Panel/RichTextLabel/SlowTextTimer" to="." method="_on_slow_text_timer_timeout"]

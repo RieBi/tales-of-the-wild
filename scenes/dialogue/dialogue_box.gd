@@ -28,6 +28,12 @@ func show_all_text() -> void:
 	slow_timer.stop()
 	text_label.visible_ratio = 1
 
+func set_teller_name(teller_name: String) -> void:
+	$Panel/NameLabel.text = teller_name
+
+func set_teller_portrait(teller_portrait: CompressedTexture2D) -> void:
+	$Panel/CenterContainer/TextureRect.texture = teller_portrait
+
 func _on_slow_text_timer_timeout() -> void:
 	text_label.visible_characters += slow_size
 	if text_label.visible_characters >= text_label.text.length():

@@ -26,3 +26,5 @@ position = Vector2(64, -104)
 [node name="DialogueTrigger" parent="." instance=ExtResource("4_oik48")]
 position = Vector2(-64, -104)
 dialogue_id = "demo_1"
+dialogue_teller_name = "Unknown teller"
+dialogue_portrait = "unknown"
