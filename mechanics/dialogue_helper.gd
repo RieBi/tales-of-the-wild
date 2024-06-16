@@ -2,34 +2,47 @@ extends Node
 class_name DialogueHelper
 
 static var dialogue_box: DialogueBox
+static var player: PlayerBase
 
 static var dialogue_playing: bool = false
 static var dialogue_sequence: Array[String] = []
 
 static func is_dialogue_playing(): return dialogue_playing
 
-static func set_player(player: PlayerBase) -> void:
+static func set_player(_player: PlayerBase) -> void:
+	player = _player
 	dialogue_box = player.get_node("UI/DialogueBox")
-	dialogue_box.slow_ended.connect(play_dialogue_from_sequence)
+	dialogue_box.action_pressed.connect(on_dialogue_box_action_pressed)
 	play_demo_dialogue()
 	
 static func play_dialogue(dialogue_id: String) -> void:
 	play_dialogue_sequence([dialogue_id])
 
 static func play_dialogue_sequence(dialogue_ids: Array[String]):
+	player.restrict_movement()
+	dialogue_box.show()
 	dialogue_sequence.clear()
 	for i in dialogue_ids:
-		dialogue_sequence.append(dialogues_data[i])
+		if dialogues_data.has(i):
+			dialogue_sequence.append(dialogues_data[i])
 	play_dialogue_from_sequence()
 
 static func play_dialogue_from_sequence() -> void:
 	if dialogue_sequence.size() == 0:
+		dialogue_box.hide()
+		player.unrestrict_movement()
 		return
 	dialogue_box.clear_text()
 	dialogue_box.set_text_slow(dialogue_sequence.pop_front())
 
 static func play_demo_dialogue() -> void:
-	play_dialogue_sequence(["demo_1", "demo_2"])
+	play_dialogue_sequence(["demo_1", "demo_2", "demo_long_1"])
+
+static func on_dialogue_box_action_pressed() -> void:
+	if dialogue_box.slow_timer.is_stopped():
+		play_dialogue_from_sequence()
+	else:
+		dialogue_box.show_all_text()
 
 static var dialogues_data = {
 	"demo_1": "Lorem ipsum dolor tahnum",

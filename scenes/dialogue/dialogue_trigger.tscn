@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://lmb0s38ldmgi"]
+
+[ext_resource type="Script" path="res://scenes/dialogue/dialogue_trigger.gd" id="1_ga216"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ukafw"]
+
+[node name="DialogueTrigger" type="Area2D"]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("1_ga216")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ukafw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
