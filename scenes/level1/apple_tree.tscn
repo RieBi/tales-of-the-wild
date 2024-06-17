@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8xgxkmhajgmx"]
+
+[ext_resource type="Texture2D" uid="uid://tkn67w8hebp4" path="res://assets/sprites/level1/apple_tree.png" id="1_vyj15"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b78mg"]
+radius = 7.0
+
+[node name="AppleTree" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vyj15")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_b78mg")

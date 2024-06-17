@@ -17,6 +17,9 @@ static var states = {
 	"demo_1": 0,
 	"demo_2": 0,
 	"demo_3": 0,
+	
+	# 0 - not interacted, 1 - interacted, 2 - ate an apple, 3 - refused to eat
+	"evil_snake": 0,
 }
 
 static var start_states = states.duplicate()

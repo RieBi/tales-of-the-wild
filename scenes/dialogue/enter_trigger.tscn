@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfw8idcll53rp"]
+
+[ext_resource type="Script" path="res://scenes/dialogue/enter_trigger.gd" id="1_x2cio"]
+
+[node name="EnterTrigger" type="Area2D"]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("1_x2cio")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

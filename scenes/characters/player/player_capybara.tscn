@@ -107,7 +107,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"down",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -147,7 +147,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"up",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -185,4 +185,3 @@ shape = SubResource("RectangleShape2D_vlxeg")
 position = Vector2(8, 0)
 sprite_frames = SubResource("SpriteFrames_pa01c")
 animation = &"down"
-frame_progress = 0.273539

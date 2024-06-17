@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://bckrls6rgekjh"]
+
+[ext_resource type="Texture2D" uid="uid://bu3gl17uubrnh" path="res://assets/sprites/level1/evil_snake.png" id="1_5rhfv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62qav"]
+atlas = ExtResource("1_5rhfv")
+region = Rect2(0, 32, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_js5d5"]
+atlas = ExtResource("1_5rhfv")
+region = Rect2(64, 32, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1x4i"]
+atlas = ExtResource("1_5rhfv")
+region = Rect2(128, 32, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnnk0"]
+atlas = ExtResource("1_5rhfv")
+region = Rect2(192, 32, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ttiw"]
+atlas = ExtResource("1_5rhfv")
+region = Rect2(256, 32, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmyr0"]
+atlas = ExtResource("1_5rhfv")
+region = Rect2(320, 32, 64, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lng01"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62qav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_js5d5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1x4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnnk0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ttiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmyr0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3kth3"]
+height = 62.0
+
+[node name="EvilSnake" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lng01")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_3kth3")

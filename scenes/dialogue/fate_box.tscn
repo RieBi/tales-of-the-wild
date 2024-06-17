@@ -1,0 +1,132 @@
+[gd_scene load_steps=8 format=3 uid="uid://ce3qah75lthnq"]
+
+[ext_resource type="Script" path="res://scenes/dialogue/fate_box.gd" id="1_qrovs"]
+[ext_resource type="Texture2D" uid="uid://wmysck7fsvw3" path="res://assets/sprites/ui/fate_line.png" id="1_vocfn"]
+[ext_resource type="Texture2D" uid="uid://df1um81v5mit2" path="res://assets/sprites/ui/fate_left.png" id="2_38mme"]
+[ext_resource type="Texture2D" uid="uid://cr0vv81tjs85l" path="res://assets/sprites/ui/fate_right.png" id="2_pdwb2"]
+[ext_resource type="Texture2D" uid="uid://bseobphmijna6" path="res://assets/sprites/icons/look_a.png" id="4_ng8ys"]
+[ext_resource type="Texture2D" uid="uid://b7rldpjn00uoy" path="res://assets/sprites/icons/look_b.png" id="5_dplhk"]
+[ext_resource type="Texture2D" uid="uid://bkoad3tk4o2ct" path="res://assets/sprites/level1/red_apple.tres" id="7_yx3sh"]
+
+[node name="FateBox" type="CanvasLayer" node_paths=PackedStringArray("fate_left", "fate_right", "left_label", "right_label", "center_texture")]
+script = ExtResource("1_qrovs")
+fate_left = NodePath("Left")
+fate_right = NodePath("Right")
+left_label = NodePath("FateLeftLabel")
+right_label = NodePath("FateRightLabel")
+center_texture = NodePath("CenterImage")
+
+[node name="BlackBackground" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 1)
+
+[node name="ChooseFateLabel" type="Label" parent="BlackBackground"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_right = 0.7
+anchor_bottom = 0.1
+theme_override_font_sizes/font_size = 50
+text = "CHOOSE FATE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TopLine" type="ColorRect" parent="."]
+offset_top = 120.0
+offset_right = 1280.0
+offset_bottom = 128.0
+
+[node name="Left" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FateLeft" type="TextureRect" parent="Left"]
+layout_mode = 0
+offset_top = 128.0
+offset_right = 760.0
+offset_bottom = 720.0
+texture = ExtResource("2_38mme")
+
+[node name="Eye" type="TextureRect" parent="Left"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 192.0
+offset_right = 192.0
+offset_bottom = 256.0
+texture = ExtResource("4_ng8ys")
+
+[node name="Right" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FateRight" type="TextureRect" parent="Right"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 128.0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_pdwb2")
+
+[node name="Eye" type="TextureRect" parent="Right"]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 576.0
+offset_right = 640.0
+offset_bottom = 640.0
+texture = ExtResource("5_dplhk")
+
+[node name="FateLine" type="TextureRect" parent="."]
+offset_left = 472.0
+offset_top = 128.0
+offset_right = 772.0
+offset_bottom = 720.0
+texture = ExtResource("1_vocfn")
+
+[node name="FateLeftLabel" type="Label" parent="."]
+offset_left = 192.0
+offset_top = 184.0
+offset_right = 350.0
+offset_bottom = 253.0
+theme_override_font_sizes/font_size = 50
+text = "Fate 1"
+uppercase = true
+
+[node name="FateRightLabel" type="Label" parent="."]
+offset_left = 648.0
+offset_top = 576.0
+offset_right = 806.0
+offset_bottom = 645.0
+theme_override_font_sizes/font_size = 50
+text = "Fate 2"
+uppercase = true
+
+[node name="FateLeftArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FateLeftArea"]
+polygon = PackedVector2Array(0, 128, 760, 128, 472, 720, 0, 720)
+
+[node name="FateRightArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FateRightArea"]
+polygon = PackedVector2Array(480, 720, 1280, 720, 1280, 128, 768, 128)
+
+[node name="CenterImage" type="TextureRect" parent="."]
+offset_left = 552.0
+offset_top = 328.0
+offset_right = 568.0
+offset_bottom = 344.0
+scale = Vector2(10, 10)
+texture = ExtResource("7_yx3sh")
+
+[connection signal="mouse_entered" from="FateLeftArea" to="." method="_on_fate_left_area_mouse_entered"]
+[connection signal="mouse_entered" from="FateRightArea" to="." method="_on_fate_right_area_mouse_entered"]
