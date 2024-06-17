@@ -9,6 +9,8 @@ static var dialogue_sequence: Array[String] = []
 static var dialogue_teller_name_sequence: Array[String] = []
 static var dialogue_teller_portrait_sequence: Array[Texture2D] = []
 
+static var func_after_dialogue_finished: Callable
+
 static func is_dialogue_playing(): return dialogue_playing
 
 static func set_player(_player: PlayerBase) -> void:
@@ -20,16 +22,20 @@ static func set_player(_player: PlayerBase) -> void:
 static func play_dialogue(
 dialogue_id: String, 
 dialogue_name: String = "", 
-dialogue_portrait: String = "") -> void:
-	play_dialogue_sequence([dialogue_id], [dialogue_name], [dialogue_portrait])
+dialogue_portrait: String = "",
+func_after_finish: Callable = dummy) -> void:
+	play_dialogue_sequence([dialogue_id], [dialogue_name], [dialogue_portrait], func_after_finish)
 
 static func play_dialogue_sequence(
 dialogue_ids: Array[String], 
 dialogue_names: Array[String] = [], 
-dialogue_portraits: Array[String] = []):
+dialogue_portraits: Array[String] = [],
+func_after_finish: Callable = dummy) -> void:
+	dialogue_playing = true
 	player.restrict_movement()
 	dialogue_box.show()
 	dialogue_sequence.clear()
+	func_after_dialogue_finished = func_after_finish
 	for i in dialogue_ids:
 		if dialogues_data.has(i):
 			dialogue_sequence.append(dialogues_data[i])
@@ -43,6 +49,9 @@ static func play_dialogue_from_sequence() -> void:
 	if dialogue_sequence.size() == 0:
 		dialogue_box.hide()
 		player.unrestrict_movement()
+		func_after_dialogue_finished.call()
+		func_after_dialogue_finished = dummy
+		dialogue_playing = false
 		return
 	dialogue_box.clear_text()
 	dialogue_box.set_text_slow(dialogue_sequence.pop_front())
@@ -50,6 +59,9 @@ static func play_dialogue_from_sequence() -> void:
 		dialogue_box.set_teller_name(dialogue_teller_name_sequence.pop_front())
 	if dialogue_teller_portrait_sequence.size() > 0:
 		dialogue_box.set_teller_portrait(dialogue_teller_portrait_sequence.pop_front())
+
+static func set_state_upon_finish(key: String, value: Variant) -> void:
+	func_after_dialogue_finished = func(): StateHelper.sets(key, value)
 
 static func play_demo_dialogue() -> void:
 	play_dialogue_sequence([])
@@ -60,12 +72,18 @@ static func on_dialogue_box_action_pressed() -> void:
 	else:
 		dialogue_box.show_all_text()
 
+static func dummy() -> void:
+	pass
+
 static var dialogues_data = {
 	"demo_1": "Lorem ipsum dolor tahnum",
 	"demo_2": "Hello opsum dolor offum tascum",
 	"demo_long_1": "I'd say it depends; depends on whether you want an animation, whether you want collision shapes to change, etc.
 You might end up using more than 1 technique to fully animate the entity
 Matheff — Today at 1:52 PM",
+	"demo_10": "Dialogue number 1 with text",
+	"demo_11": "Dialogue number 2 with text",
+	"demo_12": "Dialogue number 3 with text ",
 }
 
 static var portraits_data = {

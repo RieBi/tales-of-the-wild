@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqnouu67vfh3j"
-path="res://.godot/imported/message_dots_square.png-42f323ec41afb9e3b326c62fa12b5d6f.ctex"
+uid="uid://vbadjyut1anl"
+path="res://.godot/imported/message_dots_square4.png-ef3d46f28901b3e3b8cc2d7606ff88b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/icons/message_dots_square.png"
-dest_files=["res://.godot/imported/message_dots_square.png-42f323ec41afb9e3b326c62fa12b5d6f.ctex"]
+source_file="res://assets/sprites/icons/message_dots_square4.png"
+dest_files=["res://.godot/imported/message_dots_square4.png-ef3d46f28901b3e3b8cc2d7606ff88b3.ctex"]
 
 [params]
 

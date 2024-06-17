@@ -1,10 +1,6 @@
 extends PlayerBase
 @export var animated_sprite: AnimatedSprite2D
 
-func _ready() -> void:
-	super()
-	print("HELLO")
-
 func _physics_process(delta: float) -> void:
 	super(delta)
 	if velocity.x > 0:

@@ -9,7 +9,7 @@ signal action_pressed
 var slow_size = 1
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("action"):
+	if visible and Input.is_action_just_pressed("action"):
 		action_pressed.emit()
 
 func set_text(text: String):

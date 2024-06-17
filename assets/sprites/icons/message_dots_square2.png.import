@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dil464nes1jo7"
-path="res://.godot/imported/message_dots_square.svg-58c917cbdf1f51e57f55e94e4cf23c05.ctex"
+uid="uid://bb1w8yqa8njf5"
+path="res://.godot/imported/message_dots_square2.png-77b564dcc04ba75fe623a8b9c883053e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/icons/message_dots_square.svg"
-dest_files=["res://.godot/imported/message_dots_square.svg-58c917cbdf1f51e57f55e94e4cf23c05.ctex"]
+source_file="res://assets/sprites/icons/message_dots_square2.png"
+dest_files=["res://.godot/imported/message_dots_square2.png-77b564dcc04ba75fe623a8b9c883053e.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
