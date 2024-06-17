@@ -30,6 +30,7 @@ position_smoothing_enabled = true
 [node name="UI" type="Node" parent="."]
 
 [node name="DialogueBox" parent="UI" instance=ExtResource("2_blsti")]
+visible = false
 
 [node name="FateBox" parent="UI" instance=ExtResource("3_x4a34")]
 visible = false

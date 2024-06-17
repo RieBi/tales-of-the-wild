@@ -19,6 +19,20 @@ layer_3/name = "top"
 layer_3/z_index = 5
 layer_3/tile_data = PackedInt32Array()
 
+[node name="TileMap" type="TileMap" parent="TileMap"]
+tile_set = ExtResource("1_nogqc")
+format = 2
+layer_0/name = "solid"
+layer_1/name = "front"
+layer_1/z_index = -10
+layer_1/tile_data = PackedInt32Array()
+layer_2/name = "back"
+layer_2/z_index = -20
+layer_2/tile_data = PackedInt32Array()
+layer_3/name = "top"
+layer_3/z_index = 5
+layer_3/tile_data = PackedInt32Array()
+
 [node name="TileMapRiebi" type="TileMap" parent="."]
 tile_set = ExtResource("2_14tvw")
 format = 2
