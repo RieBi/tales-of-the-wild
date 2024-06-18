@@ -29,7 +29,6 @@ theme_override_font_sizes/normal_font_size = 30
 theme_override_font_sizes/bold_font_size = 30
 bbcode_enabled = true
 text = "Lorem ipsum sample text"
-scroll_active = false
 scroll_following = true
 
 [node name="SlowTextTimer" type="Timer" parent="Panel/RichTextLabel"]
