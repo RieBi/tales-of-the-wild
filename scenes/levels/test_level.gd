@@ -16,4 +16,4 @@ func _on_demo_dialogues_body_entered(source: Area2D) -> void:
 
 func _on_enter_trigger_player_entered(source: Area2D) -> void:
 	var body1: MovableCharacterBase = $Body1
-	body1.path = $Path2D/PathFollow2D
+	body1.set_path($Path2D/PathFollow2D)

@@ -1,0 +1,35 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://jtau3m57ihbp"]
+
+[ext_resource type="Texture2D" uid="uid://dtm4ylqrk1mle" path="res://assets/sprites/icons/message_dots_square1.png" id="1_bgf3i"]
+[ext_resource type="Texture2D" uid="uid://bb1w8yqa8njf5" path="res://assets/sprites/icons/message_dots_square2.png" id="2_ofax3"]
+[ext_resource type="Texture2D" uid="uid://t67dgy36y8vk" path="res://assets/sprites/icons/message_dots_square3.png" id="3_qkfxy"]
+[ext_resource type="Texture2D" uid="uid://vbadjyut1anl" path="res://assets/sprites/icons/message_dots_square4.png" id="4_hpdkq"]
+[ext_resource type="Texture2D" uid="uid://cy3afmtxpin5x" path="res://assets/sprites/icons/mark_exclamation.png" id="5_t5i3u"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bgf3i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ofax3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qkfxy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hpdkq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_t5i3u")
+}],
+"loop": true,
+"name": &"exclamation",
+"speed": 5.0
+}]

@@ -171,6 +171,7 @@ animations = [{
 }]
 
 [node name="PlayerCapybara" node_paths=PackedStringArray("animated_sprite") instance=ExtResource("1_wmca1")]
+collision_mask = 49
 script = ExtResource("2_lqewj")
 animated_sprite = NodePath("AnimatedSprite2D")
 

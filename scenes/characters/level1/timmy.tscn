@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://dv0x668w7wvl3"]
+
+[ext_resource type="PackedScene" uid="uid://dvv8ejxyviw24" path="res://scenes/characters/movable_character_base.tscn" id="1_i7ui8"]
+[ext_resource type="Texture2D" uid="uid://gm18hiv33l2s" path="res://assets/sprites/characters/characters.png" id="2_oscd0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n33c4"]
+atlas = ExtResource("2_oscd0")
+region = Rect2(0, 32, 16, 16)
+
+[node name="Timmy" instance=ExtResource("1_i7ui8")]
+scale = Vector2(0.7, 0.7)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="3"]
+texture = SubResource("AtlasTexture_n33c4")

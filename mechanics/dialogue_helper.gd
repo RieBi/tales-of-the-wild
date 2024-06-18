@@ -9,10 +9,12 @@ static var dialogue_playing: bool = false
 static var dialogue_sequence: Array[String] = []
 static var dialogue_teller_name_sequence: Array[String] = []
 static var dialogue_teller_portrait_sequence: Array[Texture2D] = []
-
 static var action_unabliness_timer: Timer
 
 static var finish_funcs: Array[Callable] = []
+static var icon_show_characters: Array[MovableCharacterBase] = []
+static var icon_show_character_ongoing: MovableCharacterBase
+static var keep_movement_restricted: bool = false
 
 static func is_dialogue_playing(): return dialogue_playing
 
@@ -49,14 +51,19 @@ dialogue_portraits: Array[String] = []) -> void:
 	play_dialogue_from_sequence()
 
 static func play_dialogue_from_sequence() -> void:
+	if icon_show_character_ongoing:
+		icon_show_character_ongoing.hide_message_bubble()
+		icon_show_character_ongoing = null
 	if dialogue_sequence.size() == 0:
 		dialogue_box.hide()
-		player.unrestrict_movement()
+		if not keep_movement_restricted:
+			player.unrestrict_movement()
 		for f in finish_funcs:
 			f.call()
 		finish_funcs = []
 		dialogue_playing = false
 		action_unabliness_timer.start()
+		dialogue_box.dialogue_finished.emit()
 		return
 	dialogue_box.clear_text()
 	dialogue_box.set_text_slow(dialogue_sequence.pop_front())
@@ -64,6 +71,9 @@ static func play_dialogue_from_sequence() -> void:
 		dialogue_box.set_teller_name(dialogue_teller_name_sequence.pop_front())
 	if dialogue_teller_portrait_sequence.size() > 0:
 		dialogue_box.set_teller_portrait(dialogue_teller_portrait_sequence.pop_front())
+	if icon_show_characters.size() > 0:
+		icon_show_character_ongoing = icon_show_characters.pop_front()
+		icon_show_character_ongoing.show_message_bubble()
 
 static func set_state_upon_finish(key: String, value: Variant) -> void:
 	add_finish_func(func(): StateHelper.sets(key, value))
@@ -85,9 +95,22 @@ static func add_finish_func(finish_func: Callable):
 
 static func set_up_fate(left_text: String, right_text: String, texture: Texture2D,
 left_outcome_func: Callable, right_outcome_func: Callable):
+	start_cutscene_set_up()
+	fate_box.fate_chosen.connect(stop_cutscene_set_up, CONNECT_ONE_SHOT)
 	fate_box.left_chosen.connect(left_outcome_func, CONNECT_ONE_SHOT)
 	fate_box.right_chosen.connect(right_outcome_func, CONNECT_ONE_SHOT)
 	fate_box.play_fate(left_text, right_text, texture)
+
+static func start_cutscene_set_up() -> void:
+	QuestHelper.hide_quests()
+	keep_movement_restricted = true
+	player.restrict_movement()
+
+static func stop_cutscene_set_up() -> void:
+	QuestHelper.show_quests()
+	keep_movement_restricted = false
+	player.unrestrict_movement()
+	player.get_node("Camera2D").offset = Vector2.ZERO
 
 static var dialogues_data = {
 	"demo_1": "Lorem ipsum dolor tahnum",
@@ -98,6 +121,8 @@ Matheff — Today at 1:52 PM",
 	"demo_10": "Dialogue number 1 with text",
 	"demo_11": "Dialogue number 2 with text",
 	"demo_12": "Dialogue number 3 with text ",
+	
+	"general_sigh": "*Sighs*",
 	
 	"story_1": "Arising from a deep slumber, the Sacred Capybara, of whom many legends have been told, opens their eyes.",
 	"story_2": "You find yourself stranded in an unknown land. Every time you wake up, you find yourself in a different place.
@@ -128,7 +153,16 @@ Matheff — Today at 1:52 PM",
 	If anyone is reading this, please tell my wife, Julia, who lives in the nearby village, that I love her much.",
 	
 	"getting_dark_1": "It is starting to get dark already.",
-	"getting_dark_2": "But haven't you just woken up?"
+	"getting_dark_2": "But haven't you just woken up?",
+	
+	"village_intro_1_1": "Timmy, go back hom! It's night already.",
+	"village_intro_2_1": "Mom! I still want to play, it's fine! Please!",
+	"village_intro_1_2": "Go back home, or Sacred Capybara will come for you and eat you alive!",
+	"village_intro_2_2": "OK, mom.",
+	"village_intro_2_3": ";(",
+	
+	"village_angered_mom_1": "Hey, where did you come from? I didn't know that clowns live in the west mountains.
+	Oh. Wherever you got your costume from, at least the kids will go to their homes quicker.",
 }
 
 static var portraits_data = {

@@ -1,17 +1,39 @@
 extends CharacterBody2D
 class_name MovableCharacterBase
 
+signal path_finished
+
 @export var speed: int = 100
-var path: PathFollow2D
-var is_moving: bool = true
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var message_bubble: AnimatedSprite2D = $AnimatedSprite2D
+@export var path: PathFollow2D
+@export var is_moving: bool = true
 
 func _physics_process(delta: float) -> void:
 	if path and is_moving:
 		path.progress += speed * delta
 		global_position = path.global_position
 		if (path.progress_ratio == 1):
-			is_moving = false
+			stop_moving()
+			path_finished.emit()
 
-func set_path(path_to_set: PathFollow2D, start_moving: bool = true):
+func set_path(path_to_set: PathFollow2D, _start_moving: bool = true):
 	path = path_to_set
-	is_moving = start_moving
+	if is_moving:
+		start_moving()
+
+func start_moving() -> void:
+	is_moving = true;
+	animation_player.play("shake")
+
+func stop_moving() -> void:
+	is_moving = false
+	animation_player.stop()
+
+func show_message_bubble() -> void:
+	message_bubble.show()
+	message_bubble.play("default")
+
+func hide_message_bubble() -> void:
+	message_bubble.stop()
+	message_bubble.hide()

@@ -99,9 +99,9 @@ uppercase = true
 
 [node name="FateRightLabel" type="Label" parent="."]
 offset_left = 648.0
-offset_top = 576.0
+offset_top = 568.0
 offset_right = 806.0
-offset_bottom = 645.0
+offset_bottom = 637.0
 theme_override_font_sizes/font_size = 50
 text = "Fate 2"
 uppercase = true

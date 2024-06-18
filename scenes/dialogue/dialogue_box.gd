@@ -6,6 +6,7 @@ class_name DialogueBox
 
 const CENTER_KEYWORD := "[center]"
 signal action_pressed
+signal dialogue_finished
 var slow_size = 1
 
 func _process(_delta: float) -> void:
@@ -36,5 +37,5 @@ func set_teller_portrait(teller_portrait: CompressedTexture2D) -> void:
 
 func _on_slow_text_timer_timeout() -> void:
 	text_label.visible_characters += slow_size
-	if text_label.visible_characters >= text_label.text.length():
+	if text_label.visible_ratio == 1:
 		slow_timer.stop()

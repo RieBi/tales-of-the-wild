@@ -30,6 +30,12 @@ static func poll_quests() -> void:
 			func_to_call.call()
 			quest_box.set_quest_items(quest, quest_texts, quest_colors)
 
+static func hide_quests() -> void:
+	quest_box.hide()
+
+static func show_quests() -> void:
+	quest_box.show()
+
 static var quest_funcs = {
 	"Demo Quest": poller_demo_quest
 }
