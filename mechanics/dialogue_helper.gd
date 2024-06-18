@@ -22,6 +22,7 @@ static func set_player(_player: PlayerBase) -> void:
 	dialogue_box.action_pressed.connect(on_dialogue_box_action_pressed)
 	fate_box = player.get_node("UI/FateBox")
 	action_unabliness_timer = player.get_node("ActionUnablinessTimer")
+	QuestHelper.set_player(_player)
 	play_demo_dialogue()
 	
 static func play_dialogue(

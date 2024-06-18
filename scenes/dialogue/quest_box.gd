@@ -1,4 +1,5 @@
 extends CanvasLayer
+class_name QuestBox
 
 @onready var tree: Tree = $Tree
 var root: TreeItem
