@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://5iaw2tucntq"]
+[gd_scene load_steps=6 format=3 uid="uid://5iaw2tucntq"]
 
 [ext_resource type="Script" path="res://scenes/characters/player/player_base.gd" id="1_w282u"]
 [ext_resource type="PackedScene" uid="uid://brbx38h4qrakm" path="res://scenes/dialogue/dialogue_box.tscn" id="2_blsti"]
 [ext_resource type="PackedScene" uid="uid://ce3qah75lthnq" path="res://scenes/dialogue/fate_box.tscn" id="3_x4a34"]
+[ext_resource type="PackedScene" uid="uid://dpui3467pffp5" path="res://scenes/dialogue/quest_box.tscn" id="4_y3bsr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ooma7"]
 size = Vector2(16, 16)
@@ -34,6 +35,8 @@ visible = false
 
 [node name="FateBox" parent="UI" instance=ExtResource("3_x4a34")]
 visible = false
+
+[node name="QuestBox" parent="UI" instance=ExtResource("4_y3bsr")]
 
 [node name="ActionUnablinessTimer" type="Timer" parent="."]
 wait_time = 0.5

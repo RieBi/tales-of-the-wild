@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpui3467pffp5"]
+
+[ext_resource type="Script" path="res://scenes/dialogue/quest_box.gd" id="1_omipt"]
+[ext_resource type="Theme" uid="uid://2nw2ba50osyh" path="res://assets/themes/new_theme.tres" id="2_sg8nf"]
+
+[node name="QuestBox" type="CanvasLayer"]
+script = ExtResource("1_omipt")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 24.0
+offset_bottom = 32.0
+
+[node name="Tree" type="Tree" parent="."]
+offset_right = 496.0
+offset_bottom = 200.0
+focus_mode = 0
+theme = ExtResource("2_sg8nf")
+allow_search = false
+scroll_horizontal_enabled = false

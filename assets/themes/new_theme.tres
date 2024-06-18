@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://2nw2ba50osyh"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://2nw2ba50osyh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpn8q"]
 bg_color = Color(0.339095, 0.339095, 0.339095, 1)
@@ -8,5 +8,18 @@ border_width_right = 3
 border_width_bottom = 3
 border_color = Color(0.394353, 0.394353, 0.394353, 1)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s3qrk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kt5y3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_03fuq"]
+
 [resource]
 Panel/styles/panel = SubResource("StyleBoxFlat_tpn8q")
+Tree/colors/children_hl_line_color = Color(0.270588, 0.270588, 0.270588, 0)
+Tree/colors/parent_hl_line_color = Color(0.270588, 0.270588, 0.270588, 0)
+Tree/colors/relationship_line_color = Color(0.270588, 0.270588, 0.270588, 0)
+Tree/constants/draw_guides = 0
+Tree/styles/panel = SubResource("StyleBoxEmpty_s3qrk")
+Tree/styles/selected = SubResource("StyleBoxEmpty_kt5y3")
+Tree/styles/selected_focus = SubResource("StyleBoxEmpty_03fuq")
