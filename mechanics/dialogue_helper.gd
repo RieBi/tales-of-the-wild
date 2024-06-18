@@ -126,6 +126,9 @@ Matheff — Today at 1:52 PM",
 	The barrier is in place, and there's no other way out. Our elder, Samar, has gone to make an inscribing. He said that he must do that while he is still alive.
 	I don't understand what he's gonna write on the wall and why he does that, but I didn't stop him.
 	If anyone is reading this, please tell my wife, Julia, who lives in the nearby village, that I love her much.",
+	
+	"getting_dark_1": "It is starting to get dark already.",
+	"getting_dark_2": "But haven't you just woken up?"
 }
 
 static var portraits_data = {

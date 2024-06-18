@@ -1,7 +1,7 @@
 extends Area2D
 class_name ActionTrigger
 
-signal action_done(source: Area2D)
+signal action_done(source: ActionTrigger)
 
 @export var sprite: AnimatedSprite2D
 @export var animation_to_play: String = "default"

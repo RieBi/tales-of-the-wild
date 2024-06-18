@@ -54,3 +54,11 @@ func _on_inscribing_trigger_action_done(source: Area2D) -> void:
 
 func _on_cave_trigger_action_done(source: Area2D) -> void:
 	DialogueHelper.play_dialogue_sequence(["evil_snake_cave_1", "evil_snake_cave_2"])
+
+
+func _on_getting_dark_trigger_player_entered(source: Area2D) -> void:
+	var night_color = Color(0.508, 0.508, 0.508)
+	var tween = create_tween()
+	tween.tween_property(self, "modulate", night_color, 15)
+	DialogueHelper.play_dialogue_sequence(["getting_dark_1", "getting_dark_2"])
+	source.queue_free()
