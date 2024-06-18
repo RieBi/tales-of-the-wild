@@ -44,6 +44,9 @@ layer_0/tile_data = PackedInt32Array(-65536, 65536, 2, -65535, 65536, 2, -65534,
 
 [node name="PlayerCapybara" parent="." index="2" instance=ExtResource("2_5m281")]
 position = Vector2(464, -592)
+collision_mask = 1
+motion_mode = 0
+wall_min_slide_angle = 0.261799
 
 [node name="Alcove" type="Node2D" parent="." index="3"]
 position = Vector2(512, -544)
@@ -131,6 +134,8 @@ offset_top = -24.0
 offset_right = 486.0
 offset_bottom = -1.0
 text = "SPACE to interact"
+
+[node name="Village" type="Node2D" parent="." index="5"]
 
 [connection signal="action_done" from="Alcove/EvilSnake/EvilSnakeTrigger" to="." method="_on_evil_snake_trigger_action_done"]
 [connection signal="action_done" from="Alcove/AppleTree/AppleTreeTrigger" to="." method="_on_apple_tree_trigger_action_done"]

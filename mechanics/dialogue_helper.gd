@@ -52,7 +52,6 @@ static func play_dialogue_from_sequence() -> void:
 	if dialogue_sequence.size() == 0:
 		dialogue_box.hide()
 		player.unrestrict_movement()
-		print(finish_funcs)
 		for f in finish_funcs:
 			f.call()
 		finish_funcs = []
@@ -82,7 +81,6 @@ static func dummy() -> void:
 	pass
 
 static func add_finish_func(finish_func: Callable):
-	print("FUNC ADDED")
 	finish_funcs.append(finish_func)
 
 static func set_up_fate(left_text: String, right_text: String, texture: Texture2D,

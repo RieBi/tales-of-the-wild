@@ -11,5 +11,9 @@ func _on_demo_dialogues_body_entered(source: Area2D) -> void:
 		1:
 			DialogueHelper.play_dialogue("demo_11")
 			DialogueHelper.set_state_upon_finish("demo_1", 2)
-		_:
 			source.queue_free()
+
+
+func _on_enter_trigger_player_entered(source: Area2D) -> void:
+	var body1: MovableCharacterBase = $Body1
+	body1.path = $Path2D/PathFollow2D

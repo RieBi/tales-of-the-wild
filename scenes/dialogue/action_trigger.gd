@@ -1,4 +1,5 @@
 extends Area2D
+class_name ActionTrigger
 
 signal action_done(source: Area2D)
 
