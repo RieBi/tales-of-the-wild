@@ -90,3 +90,9 @@ func _on_angered_mom_trigger_action_done(source: ActionTrigger) -> void:
 	DialogueHelper.play_dialogue_sequence(["village_angered_mom_1", "general_sigh"], ["Angered mom", "Angered mom"])
 	await DialogueHelper.dialogue_box.dialogue_finished
 	$Village/AngeredMom/AngeredMomTrigger.hide()
+
+
+func _on_timmy_house_overhear_trigger_action_done(source: ActionTrigger) -> void:
+	source.queue_free()
+	DialogueHelper.play_dialogue_sequence(["timmy_house_overhear_1", "timmy_house_overhear_2", "timmy_house_overhear_3"],
+	["", "Timmy's dad", "Timmy's dad"])

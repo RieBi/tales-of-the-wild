@@ -163,6 +163,16 @@ Matheff — Today at 1:52 PM",
 	
 	"village_angered_mom_1": "Hey, where did you come from? I didn't know that clowns live in the west mountains.
 	Oh. Wherever you got your costume from, at least the kids will go to their homes quicker.",
+	
+	"timmy_house_overhear_1": "You overhear voices coming from a window.",
+	"timmy_house_overhear_2": "So, kids, here's the story for a night:
+	In a distant kingdom, over the ocean, far away, lives Sacred Capybara. The Capybara's ways are but unknown, and yet there are people who struck upon it.
+	Once a man was hunting in a forest, and from a thin air the Capybara appeared. And in a spare second, animals started appearing out of nowhere.
+	The Capybara's eyes were giving fulgent light, so intense, that the man almost blinded himself when he looked at the Capybara.
+	The man fell onto his knees and started begging for forgiveness. Then, the Capybara started growing bigger and bigger.
+	After a minute, it was as big as a mountain. Then, it disappeared.",
+	"timmy_house_overhear_3": "Sacred Capybara favors those who worship it, and maliciously kills all heretics that stand in its way.
+	Now, kids, sleep.",
 }
 
 static var portraits_data = {
