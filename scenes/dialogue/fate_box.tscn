@@ -122,9 +122,9 @@ polygon = PackedVector2Array(480, 720, 1280, 720, 1280, 128, 768, 128)
 
 [node name="CenterImage" type="TextureRect" parent="."]
 offset_left = 552.0
-offset_top = 328.0
+offset_top = 288.0
 offset_right = 568.0
-offset_bottom = 344.0
+offset_bottom = 304.0
 scale = Vector2(10, 10)
 texture = ExtResource("7_yx3sh")
 

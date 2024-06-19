@@ -143,12 +143,21 @@ func _on_temple_puzzle_solved() -> void:
 
 
 func _on_pig_1_trigger_action_done(source: ActionTrigger) -> void:
-	DialogueHelper.play_dialogue_sequence(["pig_1_1", "pig_1_2"], ["Pig", "Pig"])
-	source.hide()
+	match StateHelper.gets("lucas_temple"):
+		5:
+			DialogueHelper.play_dialogue("pig_1_truth", "Pig")
+			source.hide()
+		_:
+			DialogueHelper.play_dialogue_sequence(["pig_1_1", "pig_1_2"], ["Pig", "Pig"])
+			source.hide()
 	
 func _on_pig_2_trigger_action_done(source: ActionTrigger) -> void:
-	DialogueHelper.play_dialogue_sequence(["pig_2_1", "pig_2_2"], ["Weird pig", "Weird pig"])
-	source.hide()
+	match StateHelper.gets("lucas_temple"):
+		5:
+			DialogueHelper.play_dialogue("pig_2_truth", "Weird pig")
+		_:
+			DialogueHelper.play_dialogue_sequence(["pig_2_1", "pig_2_2"], ["Weird pig", "Weird pig"])
+			source.hide()
 
 func _on_pig_3_trigger_action_done(source: ActionTrigger) -> void:
 	DialogueHelper.play_dialogue_sequence(["pig_3_1", "pig_3_2"], ["Sleeping pig", "Sleeping pig"])
@@ -156,8 +165,13 @@ func _on_pig_3_trigger_action_done(source: ActionTrigger) -> void:
 
 
 func _on_pig_4_trigger_action_done(source: ActionTrigger) -> void:
-	DialogueHelper.play_dialogue_sequence(["pig_4_1", "pig_4_2"], ["Pig", "Pig"])
-	source.hide()
+	match StateHelper.gets("lucas_temple"):
+		5:
+			DialogueHelper.play_dialogue("pig_4_truth", "Pig")
+			source.hide()
+		_:
+			DialogueHelper.play_dialogue_sequence(["pig_4_1", "pig_4_2"], ["Pig", "Pig"])
+			source.hide()
 
 
 func _on_pig_5_trigger_action_done(source: ActionTrigger) -> void:
@@ -166,13 +180,21 @@ func _on_pig_5_trigger_action_done(source: ActionTrigger) -> void:
 			DialogueHelper.play_dialogue_sequence(["pig_5_1", "pig_5_2"], ["Blueberry pig", "Blueberry pig"])
 			source.hide()
 		3:
-			DialogueHelper.play_dialogue("pig_5_3", "Guard pig")
+			DialogueHelper.play_dialogue("pig_5_3", "Blueberry pig")
+			source.hide()
+		5:
+			DialogueHelper.play_dialogue("pig_5_truth", "Pignistry pig")
 			source.hide()
 
 
 func _on_pig_6_trigger_action_done(source: ActionTrigger) -> void:
-	DialogueHelper.play_dialogue_sequence(["pig_6_1", "pig_6_2"], ["Pig", "Pig"])
-	source.hide()
+	match StateHelper.gets("lucas_temple"):
+		5:
+			DialogueHelper.play_dialogue("pig_6_truth", "Pig")
+			source.hide()
+		_:
+			DialogueHelper.play_dialogue_sequence(["pig_6_1", "pig_6_2"], ["Pig", "Pig"])
+			source.hide()
 
 
 func _on_pig_7_trigger_action_done(source: ActionTrigger) -> void:
@@ -188,13 +210,40 @@ func _on_pig_8_trigger_action_done(source: ActionTrigger) -> void:
 			source.hide()
 			StateHelper.sets("lucas_temple", 3)
 			$TemplePig/Pigs/Pig5/Pig5Trigger.show()
-		3:
+		3, 5:
 			DialogueHelper.play_dialogue("pig_8_3", "Master")
 		4:
-			pass #TODO
+			var fate_box_texture = DialogueHelper.fate_box.center_texture 
+			fate_box_texture.scale = Vector2(20, 20)
+			fate_box_texture.position = Vector2(464, 184)
+			DialogueHelper.set_up_fate("Tell truth", "Tell lies", preload("res://scenes/characters/level1/pig_big_texture.tres"),
+			pigs_kill_big_pig, pigs_return_to_people)
+			source.hide()
 
 
 func _on_pig_big_trigger_action_done(source: ActionTrigger) -> void:
+	source.queue_free()
 	DialogueHelper.play_dialogue_sequence(["pig_big_1", "pig_big_2"], ["Big pig", "Big pig"])
 	StateHelper.sets("lucas_temple", 4)
-	source.queue_free()
+	$TempleBig/Pigs/Pig8/Pig8Trigger.show()
+
+func pigs_kill_big_pig() -> void:
+	StateHelper.sets("lucas_temple", 5)
+	var tilemap: TileMap = $TileMap
+	var meat_coords = [Vector2(192, -146), Vector2(194, -146), Vector2(192, -144), Vector2(194, -144)]
+	for coord in meat_coords:
+		tilemap.set_cell(3, coord, 3, Vector2(1, 0))
+	$TemplePig/Pigs/PigBig.queue_free()
+	$TemplePig/Pigs/Pig1/Pig1Trigger.show()
+	$TemplePig/Pigs/Pig1.position = $TemplePig/Pig1NewPos.position
+	$TemplePig/Pigs/Pig2/Pig2Trigger.show()
+	$TemplePig/Pigs/Pig4/Pig4Trigger.show()
+	$TemplePig/Pigs/Pig5/Pig5Trigger.show()
+	$TemplePig/Pigs/Pig6/Pig6Trigger.show()
+	
+	DialogueHelper.play_dialogue("pig_8_truth", "Master")
+	StateHelper.sets("red_key", 1)
+	
+
+func pigs_return_to_people() -> void:
+	pass
