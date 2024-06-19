@@ -96,3 +96,14 @@ func _on_timmy_house_overhear_trigger_action_done(source: ActionTrigger) -> void
 	source.queue_free()
 	DialogueHelper.play_dialogue_sequence(["timmy_house_overhear_1", "timmy_house_overhear_2", "timmy_house_overhear_3"],
 	["", "Timmy's dad", "Timmy's dad"])
+
+
+func _on_lucas_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue_sequence(
+		["lucas_1", "lucas_2"], ["Lucas", "Lucas"]
+	)
+	await DialogueHelper.dialogue_box.dialogue_finished
+	QuestHelper.add_quest("Capybara Jones")
+	source.hide()
+	var lucas: MovableCharacterBase = $Village/Lucas
+	lucas.start_moving()

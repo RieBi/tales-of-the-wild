@@ -20,6 +20,9 @@ static var states = {
 	
 	# 0 - not interacted, 1 - interacted, 2 - ate an apple, 3 - refused to eat
 	"evil_snake": 0,
+	
+	# 0 - didn't see, 1 - made it to the entrance, 2 - solved the puzzle
+	"lucas_temple": 0,
 }
 
 static var start_states = states.duplicate()

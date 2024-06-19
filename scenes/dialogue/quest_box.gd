@@ -12,6 +12,7 @@ func _ready() -> void:
 func add_quest(quest_name: String) -> TreeItem:
 	var new_quest = tree.create_item(root)
 	new_quest.set_text(0, quest_name)
+	new_quest.set_custom_color(0, Color.CORNFLOWER_BLUE)
 	quests[quest_name] = new_quest
 	return new_quest
 

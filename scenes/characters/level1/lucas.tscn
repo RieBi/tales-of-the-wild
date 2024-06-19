@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlkadgr4ned5s"]
+
+[ext_resource type="PackedScene" uid="uid://dvv8ejxyviw24" path="res://scenes/characters/movable_character_base.tscn" id="1_5fgeq"]
+[ext_resource type="Texture2D" uid="uid://gm18hiv33l2s" path="res://assets/sprites/characters/characters.png" id="2_3rjeq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_feyvf"]
+atlas = ExtResource("2_3rjeq")
+region = Rect2(32, 32, 16, 16)
+
+[node name="Lucas" instance=ExtResource("1_5fgeq")]
+scale = Vector2(0.7, 0.7)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="4"]
+texture = SubResource("AtlasTexture_feyvf")

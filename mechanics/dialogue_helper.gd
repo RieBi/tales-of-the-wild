@@ -173,6 +173,13 @@ Matheff — Today at 1:52 PM",
 	After a minute, it was as big as a mountain. Then, it disappeared.",
 	"timmy_house_overhear_3": "Sacred Capybara favors those who worship it, and maliciously kills all heretics that stand in its way.
 	Now, kids, sleep.",
+	
+	"lucas_1": "Wow! Is it really you? The Sacred Capybara? I remember every story about you that I've heard! But not of them are true, right?
+	Have you ever met the Holy Ferret? Did you really fight the Black Mermaid? Nervermind. I'm so glad to meet you!",
+	"lucas_2": "My parents always say that I shouldn't stay outside so late. I hope they won't find me here.
+	I love to go and explore the forest to the north of here. Recently, I found a weird structure, it looks almost like a temple.
+	I've tried to go further, but I couldn't find a way to do it. It seems like there's some sort of a puzzle.
+	Come on, help me with it :D"
 }
 
 static var portraits_data = {
