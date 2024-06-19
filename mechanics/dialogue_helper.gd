@@ -188,7 +188,7 @@ Matheff — Today at 1:52 PM",
 	Since then we were living a plusgood life here. It just that recently we've got a problem. But that's not a big trouble!",
 	"pig_1_2": "Long live the master!",
 	"pig_2_1": "Who is you? Go talk with master pig. He needs you help. I enjoy doubleplusgood life here. I is very sane here. No trouble me. I hungerful.
-	You go help. Who is you? Go talk with m...",
+	You go help. Who is you? Go talk with master pig. He needs you help. I enjoy doubleplusgood life here...",
 	"pig_2_2": "The pig seems to be repeating the same words over and over again.",
 	"pig_3_1": "The pig appears to be sleeping. You hear indistinct mumbles coming from its mouth:",
 	"pig_3_2": "Down with mastr! Dwn with mstr! Down wth mster!",

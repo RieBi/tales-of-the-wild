@@ -23,8 +23,8 @@ static var states = {
 	"evil_snake": 0,
 	
 	# 0 - didn't see, 1 - made it to the entrance, 2 - solved the puzzle
-	# 3 - 
-	"lucas_temple": 0,
+	# 3 - talked with master, 4 - talked with big pig, 5 - told truth, 6 - told lies
+	"lucas_temple": 2,
 }
 
 static var start_states = states.duplicate()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://d3dumh14dw0qr"]
+[gd_scene load_steps=46 format=3 uid="uid://d3dumh14dw0qr"]
 
 [ext_resource type="PackedScene" uid="uid://5n44p45tlmtr" path="res://scenes/levels/level_base.tscn" id="1_6rlb0"]
 [ext_resource type="PackedScene" uid="uid://dv4t4oejw5u08" path="res://scenes/characters/player/player_capybara.tscn" id="2_5m281"]
@@ -14,6 +14,14 @@
 [ext_resource type="PackedScene" uid="uid://rc33d1n5xkxs" path="res://scenes/level1/temple_indicator.tscn" id="12_b4k4g"]
 [ext_resource type="PackedScene" uid="uid://dteia0y5s5oov" path="res://scenes/level1/temple_toggle.tscn" id="13_mgyvj"]
 [ext_resource type="PackedScene" uid="uid://cfvkm0atuodm3" path="res://scenes/characters/level1/pig_1.tscn" id="14_ik1dl"]
+[ext_resource type="PackedScene" uid="uid://cusvcss212hfq" path="res://scenes/characters/level1/pig_2.tscn" id="15_p8b28"]
+[ext_resource type="PackedScene" uid="uid://ssxry4u4igj2" path="res://scenes/characters/level1/pig_3.tscn" id="16_w8wjt"]
+[ext_resource type="PackedScene" uid="uid://cdvb8nonx7tkt" path="res://scenes/characters/level1/pig_4.tscn" id="17_5w5so"]
+[ext_resource type="PackedScene" uid="uid://lej1jh3oxdhw" path="res://scenes/characters/level1/pig_5.tscn" id="18_jgide"]
+[ext_resource type="PackedScene" uid="uid://xb1plte8udc1" path="res://scenes/characters/level1/pig_6.tscn" id="19_lydtw"]
+[ext_resource type="PackedScene" uid="uid://bf08fpdengk53" path="res://scenes/characters/level1/pig_7.tscn" id="20_e4rxr"]
+[ext_resource type="PackedScene" uid="uid://dno8fmh7m4qmb" path="res://scenes/characters/level1/pig_8.tscn" id="21_xhvcr"]
+[ext_resource type="PackedScene" uid="uid://8u4tvan7mlst" path="res://scenes/characters/level1/pig_big.tscn" id="22_reg8x"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jw3v8"]
 radius = 24.0
@@ -74,6 +82,24 @@ radius = 44.91
 size = Vector2(112, 24)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6765g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hfl5k"]
+radius = 25.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mqwq6"]
+radius = 25.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bjea0"]
+radius = 25.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ocnbo"]
+radius = 25.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fwvxa"]
+radius = 25.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ykeva"]
+radius = 25.0
 
 [node name="LevelCapybara1" instance=ExtResource("1_6rlb0")]
 script = ExtResource("2_6bxsx")
@@ -372,8 +398,98 @@ shape = SubResource("CircleShape2D_6765g")
 [node name="TemplePig" type="Node2D" parent="." index="9"]
 position = Vector2(1864, -928)
 
-[node name="Pig1" parent="TemplePig" index="0" instance=ExtResource("14_ik1dl")]
+[node name="Pigs" type="Node2D" parent="TemplePig" index="0"]
+
+[node name="Pig1" parent="TemplePig/Pigs" index="0" instance=ExtResource("14_ik1dl")]
 position = Vector2(-32, 24)
+
+[node name="Pig1Trigger" parent="TemplePig/Pigs/Pig1" index="5" instance=ExtResource("6_ll5md")]
+position = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TemplePig/Pigs/Pig1/Pig1Trigger" index="1"]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_hfl5k")
+
+[node name="Pig2" parent="TemplePig/Pigs" index="1" instance=ExtResource("15_p8b28")]
+position = Vector2(136, -152)
+
+[node name="Pig2Trigger" parent="TemplePig/Pigs/Pig2" index="5" instance=ExtResource("6_ll5md")]
+position = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TemplePig/Pigs/Pig2/Pig2Trigger" index="1"]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_mqwq6")
+
+[node name="Pig3" parent="TemplePig/Pigs" index="2" instance=ExtResource("16_w8wjt")]
+position = Vector2(312, -152)
+
+[node name="Pig3Trigger" parent="TemplePig/Pigs/Pig3" index="5" instance=ExtResource("6_ll5md")]
+position = Vector2(0, -16)
+animation_to_play = "exclamation"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TemplePig/Pigs/Pig3/Pig3Trigger" index="1"]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_bjea0")
+
+[node name="Pig4" parent="TemplePig/Pigs" index="3" instance=ExtResource("17_5w5so")]
+position = Vector2(-456, -496)
+
+[node name="Pig4Trigger" parent="TemplePig/Pigs/Pig4" index="5" instance=ExtResource("6_ll5md")]
+position = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TemplePig/Pigs/Pig4/Pig4Trigger" index="1"]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_ocnbo")
+
+[node name="Pig5" parent="TemplePig/Pigs" index="4" instance=ExtResource("18_jgide")]
+position = Vector2(160, -472)
+
+[node name="Pig5Trigger" parent="TemplePig/Pigs/Pig5" index="5" instance=ExtResource("6_ll5md")]
+position = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TemplePig/Pigs/Pig5/Pig5Trigger" index="1"]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_fwvxa")
+
+[node name="Pig6" parent="TemplePig/Pigs" index="5" instance=ExtResource("19_lydtw")]
+position = Vector2(-112, -280)
+
+[node name="Pig6Trigger" parent="TemplePig/Pigs/Pig6" index="5" instance=ExtResource("6_ll5md")]
+position = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TemplePig/Pigs/Pig6/Pig6Trigger" index="1"]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_fwvxa")
+
+[node name="Pig7" parent="TemplePig/Pigs" index="6" instance=ExtResource("20_e4rxr")]
+position = Vector2(-264, -624)
+
+[node name="Pig7Trigger" parent="TemplePig/Pigs/Pig7" index="5" instance=ExtResource("6_ll5md")]
+position = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TemplePig/Pigs/Pig7/Pig7Trigger" index="1"]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_fwvxa")
+
+[node name="Pig8" parent="TemplePig/Pigs" index="7" instance=ExtResource("21_xhvcr")]
+position = Vector2(-224, -752)
+
+[node name="Pig8Trigger" parent="TemplePig/Pigs/Pig8" index="5" instance=ExtResource("6_ll5md")]
+position = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TemplePig/Pigs/Pig8/Pig8Trigger" index="1"]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_fwvxa")
+
+[node name="PigBig" parent="TemplePig/Pigs" index="8" instance=ExtResource("22_reg8x")]
+position = Vector2(1240, -1392)
+
+[node name="PigBigTrigger" parent="TemplePig/Pigs/PigBig" index="5" instance=ExtResource("6_ll5md")]
+position = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TemplePig/Pigs/PigBig/PigBigTrigger" index="1"]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_ykeva")
 
 [connection signal="action_done" from="Alcove/EvilSnake/EvilSnakeTrigger" to="." method="_on_evil_snake_trigger_action_done"]
 [connection signal="action_done" from="Alcove/AppleTree/AppleTreeTrigger" to="." method="_on_apple_tree_trigger_action_done"]
@@ -395,3 +511,12 @@ position = Vector2(-32, 24)
 [connection signal="action_done" from="Temple/TogglesTriggers/ToggleTrigger4" to="Temple" method="_on_toggle_trigger_4_action_done"]
 [connection signal="action_done" from="Temple/TogglesTriggers/ToggleTrigger5" to="Temple" method="_on_toggle_trigger_5_action_done"]
 [connection signal="action_done" from="Temple/TogglesTriggers/ToggleTrigger6" to="Temple" method="_on_toggle_trigger_6_action_done"]
+[connection signal="action_done" from="TemplePig/Pigs/Pig1/Pig1Trigger" to="." method="_on_pig_1_trigger_action_done"]
+[connection signal="action_done" from="TemplePig/Pigs/Pig2/Pig2Trigger" to="." method="_on_pig_2_trigger_action_done"]
+[connection signal="action_done" from="TemplePig/Pigs/Pig3/Pig3Trigger" to="." method="_on_pig_3_trigger_action_done"]
+[connection signal="action_done" from="TemplePig/Pigs/Pig4/Pig4Trigger" to="." method="_on_pig_4_trigger_action_done"]
+[connection signal="action_done" from="TemplePig/Pigs/Pig5/Pig5Trigger" to="." method="_on_pig_5_trigger_action_done"]
+[connection signal="action_done" from="TemplePig/Pigs/Pig6/Pig6Trigger" to="." method="_on_pig_6_trigger_action_done"]
+[connection signal="action_done" from="TemplePig/Pigs/Pig7/Pig7Trigger" to="." method="_on_pig_7_trigger_action_done"]
+[connection signal="action_done" from="TemplePig/Pigs/Pig8/Pig8Trigger" to="." method="_on_pig_8_trigger_action_done"]
+[connection signal="action_done" from="TemplePig/Pigs/PigBig/PigBigTrigger" to="." method="_on_pig_big_trigger_action_done"]

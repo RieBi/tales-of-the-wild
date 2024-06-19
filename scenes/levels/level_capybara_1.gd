@@ -140,3 +140,61 @@ func _on_temple_puzzle_solved() -> void:
 	DialogueHelper.stop_cutscene_set_up()
 	await lucas.path_finished
 	lucas.queue_free()
+
+
+func _on_pig_1_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue_sequence(["pig_1_1", "pig_1_2"], ["Pig", "Pig"])
+	source.hide()
+	
+func _on_pig_2_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue_sequence(["pig_2_1", "pig_2_2"], ["Weird pig", "Weird pig"])
+	source.hide()
+
+func _on_pig_3_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue_sequence(["pig_3_1", "pig_3_2"], ["Sleeping pig", "Sleeping pig"])
+	source.hide()
+
+
+func _on_pig_4_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue_sequence(["pig_4_1", "pig_4_2"], ["Pig", "Pig"])
+	source.hide()
+
+
+func _on_pig_5_trigger_action_done(source: ActionTrigger) -> void:
+	match StateHelper.gets("lucas_temple"):
+		2:
+			DialogueHelper.play_dialogue_sequence(["pig_5_1", "pig_5_2"], ["Blueberry pig", "Blueberry pig"])
+			source.hide()
+		3:
+			DialogueHelper.play_dialogue("pig_5_3", "Guard pig")
+			source.hide()
+
+
+func _on_pig_6_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue_sequence(["pig_6_1", "pig_6_2"], ["Pig", "Pig"])
+	source.hide()
+
+
+func _on_pig_7_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue_sequence(["pig_7_1", "pig_7_2"], ["Guard pig", "Guard pig"])
+	source.hide()
+
+
+func _on_pig_8_trigger_action_done(source: ActionTrigger) -> void:
+	print(StateHelper.gets("lucas_temple"))
+	match StateHelper.gets("lucas_temple"):
+		2:
+			DialogueHelper.play_dialogue_sequence(["pig_8_1", "pig_8_2", "pig_8_3"], ["Master", "Master", "Master"])
+			source.hide()
+			StateHelper.sets("lucas_temple", 3)
+			$TemplePig/Pigs/Pig5/Pig5Trigger.show()
+		3:
+			DialogueHelper.play_dialogue("pig_8_3", "Master")
+		4:
+			pass #TODO
+
+
+func _on_pig_big_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue_sequence(["pig_big_1", "pig_big_2"], ["Big pig", "Big pig"])
+	StateHelper.sets("lucas_temple", 4)
+	source.queue_free()
