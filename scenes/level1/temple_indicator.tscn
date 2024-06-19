@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://rc33d1n5xkxs"]
+
+[ext_resource type="Texture2D" uid="uid://boph3rn7y3jkk" path="res://assets/sprites/level1/temple_indicator2.png" id="1_nvvli"]
+
+[node name="TempleIndicator" type="Sprite2D"]
+position = Vector2(8, 8)
+texture = ExtResource("1_nvvli")

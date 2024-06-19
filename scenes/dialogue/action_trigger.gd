@@ -3,7 +3,7 @@ class_name ActionTrigger
 
 signal action_done(source: ActionTrigger)
 
-@export var sprite: AnimatedSprite2D
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @export var animation_to_play: String = "default"
 @export var visible_only_in_zone: bool = false
 @export var is_inactive: bool = false

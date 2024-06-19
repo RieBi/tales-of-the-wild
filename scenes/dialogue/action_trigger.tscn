@@ -3,11 +3,10 @@
 [ext_resource type="Script" path="res://scenes/dialogue/action_trigger.gd" id="1_3lei5"]
 [ext_resource type="SpriteFrames" uid="uid://jtau3m57ihbp" path="res://scenes/dialogue/dialogue_bubble_sprite_frames.tres" id="2_srgg0"]
 
-[node name="ActionTrigger" type="Area2D" node_paths=PackedStringArray("sprite")]
+[node name="ActionTrigger" type="Area2D"]
 collision_layer = 0
 collision_mask = 16
 script = ExtResource("1_3lei5")
-sprite = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 20

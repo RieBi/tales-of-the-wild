@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dteia0y5s5oov"]
+
+[ext_resource type="Texture2D" uid="uid://dwn4g58hq0eow" path="res://assets/sprites/level1/temple_toggle1.png" id="1_4vht1"]
+
+[node name="TempleToggle" type="Sprite2D"]
+position = Vector2(8, 8)
+texture = ExtResource("1_4vht1")
