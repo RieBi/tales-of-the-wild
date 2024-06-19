@@ -183,6 +183,41 @@ Matheff — Today at 1:52 PM",
 	"lucas_3": "Look at the tunnels, there's something in them. Maybe that will help to solve it?",
 	"lucas_4": "Wow! You managed to open the door. Unfortunately, it's almost night now. I have to go home.",
 	"lucas_5": "See you tomorrow, Capybara!",
+	
+	"pig_1_1": "Greetings, unpig! We haven't seen unanimalists here since we expelled humans from here.
+	Since then we were living a plusgood life here. It just that recently we've got a problem. But that's not a big trouble!",
+	"pig_1_2": "Long live the master!",
+	"pig_2_1": "Who is you? Go talk with master pig. He needs you help. I enjoy doubleplusgood life here. I is very sane here. No trouble me. I hungerful.
+	You go help. Who is you? Go talk with m...",
+	"pig_2_2": "The pig seems to be repeating the same words over and over again.",
+	"pig_3_1": "The pig appears to be sleeping. You hear indistinct mumbles coming from its mouth:",
+	"pig_3_2": "Down with mastr! Dwn with mstr! Down wth mster!",
+	"pig_4_1": "I was trying to come up with the new version of pigspeak all day long, but the hunger makes it unpossible to do.
+	I guess we will have to stick with the old version for now.",
+	"pig_4_2": "By the way, do you think unold should be the opposite of old, or unyoung be the opposite of young? Ah, nevermind, I'll figure that out once we get food.",
+	"pig_5_1": "Ahoy, unpig! I'm guarding the door. Since our fellow comrade pig disappeared in the crypt, we close the door.
+	We are plusafraid to go there. We hear plusbad screams during undays coming from the crypt. I'll open it if master says so.",
+	"pig_5_2": "Please, go talk to master! I miss blueberries so much! I haven't eaten one for days now. My stomach hurts.
+	Noone else wanted to eat them, so I was doing it all day long.",
+	"pig_5_3": "Finally! I've opened the door. Go and kill what lurks there, whatever it might cost you!",
+	"pig_6_1": "How's you doing, comrade unpig? Did you know that we've grown 718 bananas today, which is 20 times more than we did untomorrow,
+	and twice as much as was planned? We live goodlier and goodlier every day. I'm so happy to serve the master.",
+	"pig_6_2": "I may not be fed, but it's just because all other pig comrades need bananas more than me.
+	I am willing to be hungry so that others can live doubleplusgood life. Long live the master!",
+	"pig_7_1": "I guard the master. I have always guarded the master. He has always been the master.
+	Since the old guard pig refs unperson, I have always guarded the master. Forever. I will do so.
+	I am the only one who ever guarded the master. It's hard to guard when you unfed. I have never been hungry.
+	I have always been fed. I am not hungry. Never been so.",
+	"pig_7_2": "Long live the master!",
+	"pig_8_1": "What are you? A rug? You is big for a rug. Anyway, I am the master, and you obey me. You have always obeyed me.
+	The only thing you have done in your life is obeyed me. Now, go into the crypt and eradicate all evil. You may as well tell the guard to open the door.",
+	"pig_8_2": "You. Have. Always. Obeyed. Me. And will do so. Forever.",
+	"pig_8_3": "Long live me!",
+	"pig_big_1": "Who are you? How did you get here? It's so good just to lie here and eat all the food. Just me. No master.
+	No other pigs. Noone can stop me from eating. It was such a good idea to start screaming after they sent me to get more food.
+	Those pigs are as stupid as a lumber log. They think that something dangerous haunts these crypts. They've all gone mad with the master.",
+	"pig_big_2": "So it's the master who sent you here? You know what? Go and tell him that you found my dead body and all the food disappeared.
+	Say that there's blood everywhere around here and god knows what can be lurking here. That way, I can enjoy eating all the food forever ;)"
 }
 
 static var portraits_data = {

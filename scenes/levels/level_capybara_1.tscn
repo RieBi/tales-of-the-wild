@@ -368,6 +368,9 @@ visible_only_in_zone = true
 position = Vector2(0, 24)
 shape = SubResource("CircleShape2D_6765g")
 
+[node name="TemplePig" type="Node2D" parent="." index="9"]
+position = Vector2(1864, -928)
+
 [connection signal="action_done" from="Alcove/EvilSnake/EvilSnakeTrigger" to="." method="_on_evil_snake_trigger_action_done"]
 [connection signal="action_done" from="Alcove/AppleTree/AppleTreeTrigger" to="." method="_on_apple_tree_trigger_action_done"]
 [connection signal="action_done" from="Alcove/SnakeLeftTrigger" to="." method="_on_snake_left_trigger_action_done"]
