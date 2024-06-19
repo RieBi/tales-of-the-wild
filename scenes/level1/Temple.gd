@@ -1,5 +1,7 @@
 extends Node2D
 
+signal puzzle_solved
+
 @onready var indicators: Array[Node] = $Indicators.get_children()
 @onready var toggles: Array[Node] = $Toggles.get_children()
 var indicator_state: Array[int] = [0, 0, 0, 0, 0, 0]
@@ -52,7 +54,8 @@ func activate_toggle(index: int) -> void:
 		complete_puzzle()
 
 func complete_puzzle() -> void:
-	print("puzzle completed")
+	puzzle_solved.emit()
+	remove_child($TogglesTriggers)
 
 func _on_toggle_trigger_1_action_done(_source: ActionTrigger) -> void:
 	activate_toggle(0)

@@ -119,3 +119,9 @@ func _on_lucas_trigger_action_done(source: ActionTrigger) -> void:
 func _on_temple_entrance_trigger_player_entered(source: Area2D) -> void:
 	source.queue_free()
 	StateHelper.sets("lucas_temple", 1)
+
+
+func _on_temple_puzzle_solved() -> void:
+	StateHelper.sets("lucas_temple", 2)
+	var tilemap: TileMap = $TileMap
+	tilemap.set_cell(0, Vector2(116, -40))
