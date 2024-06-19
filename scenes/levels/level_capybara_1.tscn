@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://d3dumh14dw0qr"]
+[gd_scene load_steps=32 format=3 uid="uid://d3dumh14dw0qr"]
 
 [ext_resource type="PackedScene" uid="uid://5n44p45tlmtr" path="res://scenes/levels/level_base.tscn" id="1_6rlb0"]
 [ext_resource type="PackedScene" uid="uid://dv4t4oejw5u08" path="res://scenes/characters/player/player_capybara.tscn" id="2_5m281"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://scenes/level1/Temple.gd" id="11_wy2ix"]
 [ext_resource type="PackedScene" uid="uid://rc33d1n5xkxs" path="res://scenes/level1/temple_indicator.tscn" id="12_b4k4g"]
 [ext_resource type="PackedScene" uid="uid://dteia0y5s5oov" path="res://scenes/level1/temple_toggle.tscn" id="13_mgyvj"]
+[ext_resource type="PackedScene" uid="uid://cfvkm0atuodm3" path="res://scenes/characters/level1/pig_1.tscn" id="14_ik1dl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jw3v8"]
 radius = 24.0
@@ -370,6 +371,9 @@ shape = SubResource("CircleShape2D_6765g")
 
 [node name="TemplePig" type="Node2D" parent="." index="9"]
 position = Vector2(1864, -928)
+
+[node name="Pig1" parent="TemplePig" index="0" instance=ExtResource("14_ik1dl")]
+position = Vector2(-32, 24)
 
 [connection signal="action_done" from="Alcove/EvilSnake/EvilSnakeTrigger" to="." method="_on_evil_snake_trigger_action_done"]
 [connection signal="action_done" from="Alcove/AppleTree/AppleTreeTrigger" to="." method="_on_apple_tree_trigger_action_done"]

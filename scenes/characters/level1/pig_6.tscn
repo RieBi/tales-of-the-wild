@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://xb1plte8udc1"]
+
+[ext_resource type="PackedScene" uid="uid://dvv8ejxyviw24" path="res://scenes/characters/movable_character_base.tscn" id="1_3wbdu"]
+[ext_resource type="Texture2D" uid="uid://347cfyqlwew1" path="res://assets/sprites/level1/pig.png" id="2_tokes"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8t1r"]
+atlas = ExtResource("2_tokes")
+region = Rect2(16, 16, 16, 16)
+
+[node name="Pig6" instance=ExtResource("1_3wbdu")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="4"]
+position = Vector2(0, -2.5)
+scale = Vector2(1.2, 1.2)
+texture = SubResource("AtlasTexture_l8t1r")
