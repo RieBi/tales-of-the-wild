@@ -242,7 +242,11 @@ func pigs_kill_big_pig() -> void:
 	$TemplePig/Pigs/Pig6/Pig6Trigger.show()
 	
 	DialogueHelper.play_dialogue("pig_8_truth", "Master")
+	await DialogueHelper.dialogue_box.dialogue_finished
+	DialogueHelper.set_up_acquisition("Red key", preload("res://assets/sprites/level1/keys/red_key.png"))
+	await DialogueHelper.acqusition_box.item_taken
 	StateHelper.sets("red_key", 1)
+	DialogueHelper.play_dialogue("pig_8_3", "Master")
 	
 
 func pigs_return_to_people() -> void:

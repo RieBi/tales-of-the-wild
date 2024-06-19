@@ -3,6 +3,7 @@ class_name DialogueHelper
 
 static var dialogue_box: DialogueBox
 static var fate_box: FateBox
+static var acqusition_box: AcquisitionBox
 static var player: PlayerBase
 
 static var dialogue_playing: bool = false
@@ -23,6 +24,7 @@ static func set_player(_player: PlayerBase) -> void:
 	dialogue_box = player.get_node("UI/DialogueBox")
 	dialogue_box.action_pressed.connect(on_dialogue_box_action_pressed)
 	fate_box = player.get_node("UI/FateBox")
+	acqusition_box = player.get_node("UI/AcquisitionBox")
 	action_unabliness_timer = player.get_node("ActionUnablinessTimer")
 	QuestHelper.set_player(_player)
 	play_demo_dialogue()
@@ -101,6 +103,11 @@ left_outcome_func: Callable, right_outcome_func: Callable):
 	fate_box.right_chosen.connect(right_outcome_func, CONNECT_ONE_SHOT)
 	fate_box.play_fate(left_text, right_text, texture)
 
+static func set_up_acquisition(item_text: String, item_texture: Texture2D) -> void:
+	start_cutscene_set_up()
+	acqusition_box.item_taken.connect(stop_cutscene_set_up, CONNECT_ONE_SHOT)
+	acqusition_box.play_item(item_text, item_texture)
+
 static func start_cutscene_set_up() -> void:
 	QuestHelper.hide_quests()
 	keep_movement_restricted = true
@@ -111,6 +118,7 @@ static func stop_cutscene_set_up() -> void:
 	keep_movement_restricted = false
 	player.unrestrict_movement()
 	player.get_node("Camera2D").offset = Vector2.ZERO
+	action_unabliness_timer.start()
 
 static var dialogues_data = {
 	"demo_1": "Lorem ipsum dolor tahnum",
