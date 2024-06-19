@@ -62,6 +62,9 @@ static func poller_capybara_jones() -> void:
 		texts.append("Solve the puzzle")
 	if temple_state > 1:
 		texts[1] = STR_COMPLETED + texts[1]
+		texts.append("Explore the inner temple")
+	if temple_state > 2:
+		texts[2] = STR_COMPLETED + texts[2]
 	
 	quest_texts = texts
 	quest_colors = create_text_colors(texts)

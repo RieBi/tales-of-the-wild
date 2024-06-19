@@ -123,5 +123,20 @@ func _on_temple_entrance_trigger_player_entered(source: Area2D) -> void:
 
 func _on_temple_puzzle_solved() -> void:
 	StateHelper.sets("lucas_temple", 2)
+	QuestHelper.poll_quests()
 	var tilemap: TileMap = $TileMap
 	tilemap.set_cell(0, Vector2(116, -40))
+	$Village/Lucas/LucasTrigger.hide()
+	
+	var lucas = $Village/Lucas
+	var lucasPath2 = $Village/LucasPath2/PathFollow2D
+	DialogueHelper.start_cutscene_set_up()
+	DialogueHelper.play_dialogue_sequence(["lucas_4", "lucas_5"], ["Lucas", "Lucas"])
+	lucas.show_message_bubble()
+	await DialogueHelper.dialogue_box.dialogue_finished
+	lucas.hide_message_bubble()
+	lucas.speed *= 2
+	lucas.set_path(lucasPath2)
+	DialogueHelper.stop_cutscene_set_up()
+	await lucas.path_finished
+	lucas.queue_free()

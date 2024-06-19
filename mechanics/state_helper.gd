@@ -23,6 +23,7 @@ static var states = {
 	"evil_snake": 0,
 	
 	# 0 - didn't see, 1 - made it to the entrance, 2 - solved the puzzle
+	# 3 - 
 	"lucas_temple": 0,
 }
 

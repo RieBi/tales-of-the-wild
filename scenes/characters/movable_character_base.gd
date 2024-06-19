@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 
 func set_path(path_to_set: PathFollow2D, _start_moving: bool = true):
 	path = path_to_set
-	if is_moving:
+	if _start_moving:
 		start_moving()
 
 func start_moving() -> void:

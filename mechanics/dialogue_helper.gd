@@ -180,7 +180,9 @@ Matheff — Today at 1:52 PM",
 	I love to go and explore the forest to the north of here. Recently, I found a weird structure, it looks almost like a temple.
 	I've tried to go further, but I couldn't find a way to do it. It seems like there's some sort of a puzzle.
 	Come on, help me with it :D",
-	"lucas_3": "Look at the tunnels, there's something in them. Maybe that will help to solve it?"
+	"lucas_3": "Look at the tunnels, there's something in them. Maybe that will help to solve it?",
+	"lucas_4": "Wow! You managed to open the door. Unfortunately, it's almost night now. I have to go home.",
+	"lucas_5": "See you tomorrow, Capybara!",
 }
 
 static var portraits_data = {
