@@ -11,6 +11,7 @@ static func gets(key: String) -> Variant:
 
 static func sets(key: String, value: Variant) -> void:
 	states[key] = value
+	QuestHelper.poll_quests()
 
 static var states = {
 	# Used for debugging

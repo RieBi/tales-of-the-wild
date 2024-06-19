@@ -99,11 +99,23 @@ func _on_timmy_house_overhear_trigger_action_done(source: ActionTrigger) -> void
 
 
 func _on_lucas_trigger_action_done(source: ActionTrigger) -> void:
-	DialogueHelper.play_dialogue_sequence(
-		["lucas_1", "lucas_2"], ["Lucas", "Lucas"]
-	)
-	await DialogueHelper.dialogue_box.dialogue_finished
-	QuestHelper.add_quest("Capybara Jones")
-	source.hide()
 	var lucas: MovableCharacterBase = $Village/Lucas
-	lucas.start_moving()
+	match StateHelper.gets("lucas_temple"):
+		0:
+			DialogueHelper.play_dialogue_sequence(
+				["lucas_1", "lucas_2"], ["Lucas", "Lucas"]
+			)
+			await DialogueHelper.dialogue_box.dialogue_finished
+			QuestHelper.add_quest("Capybara Jones")
+			source.hide()
+			lucas.start_moving()
+			await lucas.path_finished
+			source.show()
+		1:
+			DialogueHelper.play_dialogue("lucas_3", "Lucas")
+			source.hide()
+
+
+func _on_temple_entrance_trigger_player_entered(source: Area2D) -> void:
+	source.queue_free()
+	StateHelper.sets("lucas_temple", 1)

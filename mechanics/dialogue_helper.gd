@@ -179,7 +179,8 @@ Matheff — Today at 1:52 PM",
 	"lucas_2": "My parents always say that I shouldn't stay outside so late. I hope they won't find me here.
 	I love to go and explore the forest to the north of here. Recently, I found a weird structure, it looks almost like a temple.
 	I've tried to go further, but I couldn't find a way to do it. It seems like there's some sort of a puzzle.
-	Come on, help me with it :D"
+	Come on, help me with it :D",
+	"lucas_3": "Look at the tunnels, there's something in them. Maybe that will help to solve it?"
 }
 
 static var portraits_data = {

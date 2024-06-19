@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://d3dumh14dw0qr"]
+[gd_scene load_steps=26 format=3 uid="uid://d3dumh14dw0qr"]
 
 [ext_resource type="PackedScene" uid="uid://5n44p45tlmtr" path="res://scenes/levels/level_base.tscn" id="1_6rlb0"]
 [ext_resource type="PackedScene" uid="uid://dv4t4oejw5u08" path="res://scenes/characters/player/player_capybara.tscn" id="2_5m281"]
@@ -59,6 +59,9 @@ radius = 68.18
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qsjg5"]
 radius = 44.91
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04gso"]
+size = Vector2(112, 24)
 
 [node name="LevelCapybara1" instance=ExtResource("1_6rlb0")]
 script = ExtResource("2_6bxsx")
@@ -169,13 +172,11 @@ position = Vector2(1832, 192)
 
 [node name="Timmy" parent="Village" index="0" node_paths=PackedStringArray("path") instance=ExtResource("8_xc7hr")]
 position = Vector2(-176, 24)
-collision_layer = 32
 path = NodePath("../TimmyPath/PathFollow2D")
 is_moving = false
 
 [node name="AngeredMom" parent="Village" index="1" instance=ExtResource("9_iisao")]
 position = Vector2(-112, -56)
-collision_layer = 32
 
 [node name="AngeredMomTrigger" parent="Village/AngeredMom" index="5" instance=ExtResource("6_ll5md")]
 visible = false
@@ -240,6 +241,16 @@ shape = SubResource("CircleShape2D_qsjg5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="7"]
 
+[node name="Temple" type="Node2D" parent="." index="8"]
+position = Vector2(1872, -575)
+
+[node name="TempleEntranceTrigger" parent="Temple" index="0" instance=ExtResource("5_mqa8t")]
+position = Vector2(-8, 119)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Temple/TempleEntranceTrigger" index="0"]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_04gso")
+
 [connection signal="action_done" from="Alcove/EvilSnake/EvilSnakeTrigger" to="." method="_on_evil_snake_trigger_action_done"]
 [connection signal="action_done" from="Alcove/AppleTree/AppleTreeTrigger" to="." method="_on_apple_tree_trigger_action_done"]
 [connection signal="action_done" from="Alcove/SnakeLeftTrigger" to="." method="_on_snake_left_trigger_action_done"]
@@ -252,3 +263,4 @@ shape = SubResource("CircleShape2D_qsjg5")
 [connection signal="action_done" from="Village/Lucas/LucasTrigger" to="." method="_on_lucas_trigger_action_done"]
 [connection signal="player_entered" from="PassageBeforeVillage/GettingDarkTrigger" to="." method="_on_getting_dark_trigger_player_entered"]
 [connection signal="player_entered" from="PassageBeforeVillage/FirstCutsceneTrigger" to="." method="_on_first_cutscene_trigger_player_entered"]
+[connection signal="player_entered" from="Temple/TempleEntranceTrigger" to="." method="_on_temple_entrance_trigger_player_entered"]
