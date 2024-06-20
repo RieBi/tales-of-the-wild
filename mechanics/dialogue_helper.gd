@@ -191,6 +191,7 @@ Matheff — Today at 1:52 PM",
 	"lucas_3": "Look at the tunnels, there's something in them. Maybe that will help to solve it?",
 	"lucas_4": "Wow! You managed to open the door. Unfortunately, it's almost night now. I have to go home.",
 	"lucas_5": "See you tomorrow, Capybara!",
+	"lucas_stuck": "I see you are getting trouble solving this. So am I. I think, the two bottom ones should be turned to the right to solve it.",
 	
 	"pig_1_1": "Greetings, unpig! We haven't seen unanimalists here since we expelled humans from here.
 	Since then we were living a plusgood life here. It just that recently we've got a problem. But that's not a big trouble!",

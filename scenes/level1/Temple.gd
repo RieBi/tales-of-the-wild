@@ -6,6 +6,7 @@ signal puzzle_solved
 @onready var toggles: Array[Node] = $Toggles.get_children()
 var indicator_state: Array[int] = [0, 0, 0, 0, 0, 0]
 var toggle_state: Array[int] = [0, 0, 0, 0, 0, 0]
+var action_count: int = 0
 
 func _ready() -> void:
 	set_indicator_sprites()
@@ -50,6 +51,11 @@ func activate_toggle(index: int) -> void:
 			indicator_state[0] += 1
 			indicator_state[5] += 1
 	set_indicator_sprites()
+	
+	action_count += 1
+	if action_count == 20:
+		help_needed()
+	
 	if indicator_state.all(func(f): return f % 2 == 1):
 		complete_puzzle()
 
@@ -74,3 +80,11 @@ func _on_toggle_trigger_5_action_done(_source: ActionTrigger) -> void:
 
 func _on_toggle_trigger_6_action_done(_source: ActionTrigger) -> void:
 	activate_toggle(5)
+
+func help_needed() -> void:
+	var lucas_trigger: ActionTrigger = $"../Village/Lucas/LucasTrigger"
+	var old_vis = lucas_trigger.visible
+	lucas_trigger.visible = true
+	DialogueHelper.play_dialogue("lucas_stuck", "Lucas")
+	await DialogueHelper.dialogue_box.dialogue_finished
+	lucas_trigger.visible = old_vis
