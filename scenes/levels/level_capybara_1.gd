@@ -391,3 +391,12 @@ func _on_dragon_fight_trigger_action_done(source: ActionTrigger) -> void:
 
 func _on_monkey_king_trigger_action_done(source: ActionTrigger) -> void:
 	DialogueHelper.play_dialogue("pig_crypt_inscribing")
+
+
+func _on_undone_alcove_trigger_player_entered(source: Area2D) -> void:
+	if StateHelper.gets("evil_snake") < 2:
+		DialogueHelper.play_dialogue("story_undone_1")
+		DialogueHelper.player.hivemind_velocity = Vector2(-1, -1).normalized()
+		source.body_exited.connect(func(_b): DialogueHelper.player.hivemind_velocity = Vector2.ZERO, CONNECT_ONE_SHOT)
+	else:
+		source.queue_free()

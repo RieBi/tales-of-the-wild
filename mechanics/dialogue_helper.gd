@@ -138,6 +138,7 @@ Matheff — Today at 1:52 PM",
 	It doesn't need to be known, for it is for the better that you can travel far away in a brief moment of unconscious sleep.",
 	"story_crystal_orange_1": "You see a bizarre crystal before you.",
 	"story_crystal_orange_2": "Its colors remind you of the shade of your skin. But does it actually matter?",
+	"story_undone_1": "You feel like you aren't done yet with the alcove to the North.",
 	
 	"evil_snake_1": "I can't believe my eyes! It's a Sacred Capybara standing in front of me!",
 	"evil_snake_2": "So... I am a lovely snake. Yeah. I have an apple tree growing here. But noone comes here :(.
