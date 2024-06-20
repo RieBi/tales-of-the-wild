@@ -147,6 +147,9 @@ func _on_pig_1_trigger_action_done(source: ActionTrigger) -> void:
 		5:
 			DialogueHelper.play_dialogue_sequence(["pig_1_truth", "pig_watching"], ["Pig", "Master"])
 			source.hide()
+		6:
+			DialogueHelper.play_dialogue("pig_1_lie", "Pig")
+			source.hide()
 		_:
 			DialogueHelper.play_dialogue_sequence(["pig_1_1", "pig_1_2"], ["Pig", "Pig"])
 			source.hide()
@@ -156,6 +159,8 @@ func _on_pig_2_trigger_action_done(source: ActionTrigger) -> void:
 		5:
 			DialogueHelper.play_dialogue_sequence(["pig_2_truth", "pig_watching"], ["Weird pig", "Master"])
 			source.hide()
+		6:
+			DialogueHelper.play_dialogue("pig_2_lie", "Pig")
 		_:
 			DialogueHelper.play_dialogue_sequence(["pig_2_1", "pig_2_2"], ["Weird pig", "Weird pig"])
 			source.hide()
@@ -175,6 +180,9 @@ func _on_pig_4_trigger_action_done(source: ActionTrigger) -> void:
 		5:
 			DialogueHelper.play_dialogue_sequence(["pig_4_truth", "pig_watching"], ["Pig", "Master"])
 			source.hide()
+		6:
+			DialogueHelper.play_dialogue("pig_4_lie", "Pig")
+			source.hide()
 		_:
 			DialogueHelper.play_dialogue_sequence(["pig_4_1", "pig_4_2"], ["Pig", "Pig"])
 			source.hide()
@@ -191,6 +199,9 @@ func _on_pig_5_trigger_action_done(source: ActionTrigger) -> void:
 		5:
 			DialogueHelper.play_dialogue_sequence(["pig_5_truth", "pig_watching"], ["Pignistry pig", "Master"])
 			source.hide()
+		6:
+			DialogueHelper.play_dialogue("pig_5_lie", "Pig")
+			source.hide()
 
 
 func _on_pig_6_trigger_action_done(source: ActionTrigger) -> void:
@@ -198,14 +209,22 @@ func _on_pig_6_trigger_action_done(source: ActionTrigger) -> void:
 		5:
 			DialogueHelper.play_dialogue_sequence(["pig_6_truth", "pig_watching"], ["Pig", "Master"])
 			source.hide()
+		6:
+			DialogueHelper.play_dialogue("pig_6_lie", "Pig")
+			source.hide()
 		_:
 			DialogueHelper.play_dialogue_sequence(["pig_6_1", "pig_6_2"], ["Pig", "Pig"])
 			source.hide()
 
 
 func _on_pig_7_trigger_action_done(source: ActionTrigger) -> void:
-	DialogueHelper.play_dialogue_sequence(["pig_7_1", "pig_7_2"], ["Guard pig", "Guard pig"])
-	source.hide()
+	match StateHelper.gets("lucas_temple"):
+		6:
+			DialogueHelper.play_dialogue("pig_7_lie", "Pig")
+			source.hide()
+		_:
+			DialogueHelper.play_dialogue_sequence(["pig_7_1", "pig_7_2"], ["Guard pig", "Guard pig"])
+			source.hide()
 
 
 func _on_pig_8_trigger_action_done(source: ActionTrigger) -> void:
@@ -229,6 +248,9 @@ func _on_pig_8_trigger_action_done(source: ActionTrigger) -> void:
 			source.hide()
 		5:  
 			DialogueHelper.play_dialogue("pig_master_watching", "Master")
+		6:
+			DialogueHelper.play_dialogue("pig_8_lie_2", "Pig")
+			source.hide()
 
 
 func _on_pig_big_trigger_action_done(source: ActionTrigger) -> void:
@@ -261,4 +283,31 @@ func pigs_kill_big_pig() -> void:
 	
 
 func pigs_return_to_people() -> void:
-	pass
+	StateHelper.sets("lucas_temple", 6)
+	DialogueHelper.play_dialogue("pig_8_lie", "No longer master")
+	await DialogueHelper.dialogue_box.dialogue_finished
+	var pig1: MovableCharacterBase = $TemplePig/Pigs/Pig1
+	var pig1_trigger = $TemplePig/Pigs/Pig1/Pig1Trigger
+	var pig2: MovableCharacterBase = $TemplePig/Pigs/Pig2
+	var pig2_trigger = $TemplePig/Pigs/Pig2/Pig2Trigger
+	var pig4: MovableCharacterBase = $TemplePig/Pigs/Pig4
+	var pig4_trigger = $TemplePig/Pigs/Pig4/Pig4Trigger
+	var pig5: MovableCharacterBase = $TemplePig/Pigs/Pig5
+	var pig5_trigger = $TemplePig/Pigs/Pig5/Pig5Trigger
+	var pig6: MovableCharacterBase = $TemplePig/Pigs/Pig6
+	var pig6_trigger = $TemplePig/Pigs/Pig6/Pig6Trigger
+	var pig7: MovableCharacterBase = $TemplePig/Pigs/Pig7
+	var pig7_trigger = $TemplePig/Pigs/Pig7/Pig7Trigger
+	var pig8: MovableCharacterBase = $TemplePig/Pigs/Pig8
+	var pig8_trigger = $TemplePig/Pigs/Pig8/Pig8Trigger
+	var pigs: Array[MovableCharacterBase] = [pig1, pig2, pig4, pig5, pig6, pig7, pig8]
+	var triggers: Array[ActionTrigger] = [pig1_trigger, pig2_trigger, pig4_trigger, pig5_trigger, pig6_trigger, pig7_trigger, pig8_trigger]
+	
+	for t in triggers:
+		t.make_inactive()
+	for p in pigs:
+		p.start_moving()
+	
+	await pig8.path_finished
+	for t in triggers:
+		t.make_active()
