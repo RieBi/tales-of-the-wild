@@ -400,3 +400,19 @@ func _on_undone_alcove_trigger_player_entered(source: Area2D) -> void:
 		source.body_exited.connect(func(_b): DialogueHelper.player.hivemind_velocity = Vector2.ZERO, CONNECT_ONE_SHOT)
 	else:
 		source.queue_free()
+
+
+func _on_thomas_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue_sequence(
+		["follower_thomas_1", "follower_thomas_2", "follower_thomas_3"],
+		["Thomas", "Thomas", "Thomas"])
+	await DialogueHelper.dialogue_box.dialogue_finished
+	var fate_box_image = DialogueHelper.fate_box.center_texture
+	fate_box_image.scale = Vector2(5, 5)
+	fate_box_image.position = Vector2(576, 220)
+	DialogueHelper.set_up_fate("Pineapple", "Pizza", preload("res://assets/sprites/level1/pizza_pineapple.png"),
+	func():StateHelper.sets("pineapple_or_pizza", 1),
+	func(): StateHelper.sets("pineapple_or_pizza", -1))
+	await DialogueHelper.fate_box.fate_chosen
+	DialogueHelper.play_dialogue("follower_thomas_fated", "Thomas")
+	source.make_inactive()

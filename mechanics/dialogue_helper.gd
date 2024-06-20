@@ -280,6 +280,7 @@ Matheff — Today at 1:52 PM",
 	# FATE is here
 	"follower_thomas_3": "I always wanted to ask you, and now I'm given the chance, but I'm... ah, it might be the only chance.
 	So, do you prefer pineapples on pizzas or pizzas on pineapples?",
+	"follower_thomas_fated": "Really? Never thought that Sacred Capybara is such a weirdo.",
 	"follower_sergio_1": "I might be old, by I still remember the Capybara style of Bung-Du.
 	I would have given you a nice beating, if it wasn't the aching back.",
 	"follower_sergio_2": "Oh, wait, let my open my eyes.",

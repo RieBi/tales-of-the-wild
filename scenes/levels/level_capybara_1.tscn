@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://d3dumh14dw0qr"]
+[gd_scene load_steps=77 format=3 uid="uid://d3dumh14dw0qr"]
 
 [ext_resource type="PackedScene" uid="uid://5n44p45tlmtr" path="res://scenes/levels/level_base.tscn" id="1_6rlb0"]
 [ext_resource type="PackedScene" uid="uid://dv4t4oejw5u08" path="res://scenes/characters/player/player_capybara.tscn" id="2_5m281"]
@@ -194,6 +194,9 @@ radius = 20.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_fbtdf"]
 radius = 15.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_03oq2"]
+radius = 20.0
+
 [node name="LevelCapybara1" instance=ExtResource("1_6rlb0")]
 script = ExtResource("2_6bxsx")
 
@@ -208,7 +211,7 @@ layer_0/tile_data = PackedInt32Array(-65536, 65536, 2, -65535, 65536, 2, -65534,
 layer_2/tile_data = PackedInt32Array(327689, 131072, 1, 262153, 131072, 0, 327688, 65536, 1, 262152, 65536, 0, 393225, 131072, 2, 393224, 65536, 2, 393223, 0, 2, 327687, 0, 1, 262151, 0, 0)
 
 [node name="PlayerCapybara" parent="." index="2" instance=ExtResource("2_5m281")]
-position = Vector2(527.12, -191.079)
+position = Vector2(2036, 503.035)
 motion_mode = 0
 wall_min_slide_angle = 0.261799
 
@@ -827,6 +830,13 @@ position = Vector2(2050.38, 537.026)
 [node name="FollowerThomas" parent="FollowerCamp" index="0" instance=ExtResource("24_6xcqj")]
 position = Vector2(-58.3796, -1.02625)
 
+[node name="ThomasTrigger" parent="FollowerCamp/FollowerThomas" index="5" instance=ExtResource("6_ll5md")]
+position = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FollowerCamp/FollowerThomas/ThomasTrigger" index="1"]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_03oq2")
+
 [node name="FollowerSergio" parent="FollowerCamp" index="1" instance=ExtResource("25_a7kbe")]
 position = Vector2(245.62, 54.9738)
 
@@ -882,3 +892,4 @@ position = Vector2(125.62, 230.974)
 [connection signal="action_done" from="TemplePig/Props/HeavenSignTrigger" to="." method="_on_heaven_sign_trigger_action_done"]
 [connection signal="action_done" from="TemplePig/Props/DragonFightTrigger" to="." method="_on_dragon_fight_trigger_action_done"]
 [connection signal="action_done" from="TemplePig/Props/MonkeyKingTrigger" to="." method="_on_monkey_king_trigger_action_done"]
+[connection signal="action_done" from="FollowerCamp/FollowerThomas/ThomasTrigger" to="." method="_on_thomas_trigger_action_done"]

@@ -28,6 +28,12 @@ static var states = {
 	
 	# 0 - absent, 1 - in stock
 	"red_key": 0,
+	
+	# The count of followers, 0 - not met anyone, 4 - met all of them
+	"followers_acquainted": 0,
+	
+	# 0 - placeholder, 1 - pineapple, -1 - pizza
+	"pineapple_or_pizza": 0,
 }
 
 static var start_states = states.duplicate()
