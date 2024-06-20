@@ -161,6 +161,7 @@ func _on_pig_2_trigger_action_done(source: ActionTrigger) -> void:
 			source.hide()
 		6:
 			DialogueHelper.play_dialogue("pig_2_lie", "Pig")
+			source.hide()
 		_:
 			DialogueHelper.play_dialogue_sequence(["pig_2_1", "pig_2_2"], ["Weird pig", "Weird pig"])
 			source.hide()
@@ -338,3 +339,55 @@ func pigs_return_to_people() -> void:
 	await pig8.path_finished
 	for t in triggers:
 		t.make_active()
+
+
+func _on_scroll_1_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue("pig_prop_scroll_1")
+
+
+func _on_note_1_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue("pig_prop_note_1")
+
+
+func _on_note_2_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue("pig_prop_note_2")
+
+
+func _on_book_1_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue_sequence(["pig_prop_book_1_1", "pig_prop_book_1_2"])
+
+
+func _on_book_2_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue_sequence(["pig_prop_book_2_1", "pig_prop_book_2_2"])
+
+
+func _on_violet_crystal_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue_sequence(["pig_prop_crystal_violet_1", "pig_prop_crystal_violet_2"])
+
+
+func _on_coins_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue("pig_prop_coins")
+
+
+func _on_buggy_bed_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue_sequence(["pig_prop_bed_1", "pig_prop_bed_2"])
+
+
+func _on_crypt_sign_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue("pig_prop_sign_crypt")
+
+
+func _on_gin_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue("pig_crypt_gin")
+
+
+func _on_heaven_sign_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue_sequence(["pig_crypt_sign_1", "pig_crypt_sign_2"])
+
+
+func _on_dragon_fight_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue("pig_crypt_dragons")
+
+
+func _on_monkey_king_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue("pig_crypt_inscribing")

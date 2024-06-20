@@ -163,7 +163,7 @@ Matheff — Today at 1:52 PM",
 	"getting_dark_1": "It is starting to get dark already.",
 	"getting_dark_2": "But haven't you just woken up?",
 	
-	"village_intro_1_1": "Timmy, go back hom! It's night already.",
+	"village_intro_1_1": "Timmy, go back home! It's night already.",
 	"village_intro_2_1": "Mom! I still want to play, it's fine! Please!",
 	"village_intro_1_2": "Go back home, or Sacred Capybara will come for you and eat you alive!",
 	"village_intro_2_2": "OK, mom.",
@@ -237,7 +237,7 @@ Matheff — Today at 1:52 PM",
 	"pig_8_3": "Long live me!",
 	"pig_8_truth": "I am watching you. I have always watched you. I will always do. You will obey me. You have always obeyed me.
 	You will always do. Here's a red key for obedience.",
-	"pig_8_lie": "So there's no food left? We no longer can live here then. We will have to return to humans now. Tere's no other choice.",
+	"pig_8_lie": "So there's no food left? We no longer can live here then. We will have to return to humans now. There's no other choice.",
 	"pig_8_lie_2": "Oink ;(",
 	"pig_big_1": "Who are you? How did you get here? It's so good just to lie here and eat all the food. Just me. No master.
 	No other pigs. Noone can stop me from eating. It was such a good idea to start screaming after they sent me to get more food.
@@ -246,6 +246,29 @@ Matheff — Today at 1:52 PM",
 	Say that there's blood everywhere around here and god knows what can be lurking here. That way, I can enjoy eating all the food forever ;)",
 	"pig_watching": "Master is watching you.",
 	"pig_master_watching": "I am watching you.",
+	"pig_prop_scroll_1": "Hunger is satiation.
+	Emptiness is fullness.
+	Sadness is happiness.",
+	"pig_prop_note_1": "Ignorance is strength.",
+	"pig_prop_note_2": "Freedom is slavery.",
+	"pig_prop_book_1_1": "You see a bunch of books in the bookcase. One of them says:",
+	"pig_prop_book_1_2": "Ten indomitable virtues of Master",
+	"pig_prop_book_2_1": "The bookcase is filled with copies of one book: 'Three Easy Steps to an All-New You'.",
+	"pig_prop_book_2_2": "On one of the book covers, you see a text written with black marker: 'Secure, Contain, Protect'.",
+	"pig_prop_crystal_violet_1": "You see a strange crystal in front of you.",
+	"pig_prop_crystal_violet_2": "Its colors remind you of the shade of a... sheep. Are sheep actually violet?",
+	"pig_prop_coins": "It's just a bunch of coins. On all of them there is an engraved portrait of a pale man.
+	Underneath the portrait, it says: 'Liber, the King'",
+	"pig_prop_bed_1": "A comfy bed.",
+	"pig_prop_bed_2": "Upon closer inspection, you see a bunch of bugs crawling around it.",
+	"pig_prop_sign_crypt": "Food are there.",
+	"pig_crypt_1": "Walking down the corridor, you hear nothing. No screams, nothing. Yet it's night. That's strange, isn't it?",
+	"pig_crypt_2": "You have a weird feeling in your nose. Is it a peach? A banana? Ananas? No, that's a pineapple. Or is it?",
+	"pig_crypt_gin": "You see many bottles of muddy liquid. On the bottle label, it says: 'Victory gin'.",
+	"pig_crypt_sign_1": "The sign reads: 'Heaven'.",
+	"pig_crypt_sign_2": "That's strange. It points to a blank wall.",
+	"pig_crypt_inscribing": "You see an inscribing on the floor. It says: 'Monkey King was here'.",
+	"pig_crypt_dragons": "Eternal battle of the two dragons."
 }
 
 static var portraits_data = {
