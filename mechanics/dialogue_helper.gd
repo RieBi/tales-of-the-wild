@@ -195,35 +195,31 @@ Matheff — Today at 1:52 PM",
 	"pig_1_1": "Greetings, unpig! We haven't seen unanimalists here since we expelled humans from here.
 	Since then we were living a plusgood life here. It just that recently we've got a problem. But that's not a big trouble!",
 	"pig_1_2": "Long live the master!",
-	"pig_1_truth": "With the food shortage gone, we decided to expand our territories. Soon the whole world would be under our control!
-	Master is watching you.",
+	"pig_1_truth": "With the food shortage gone, we decided to expand our territories. Soon the whole world would be under our control!",
 	"pig_2_1": "Who is you? Go talk with master pig. He needs you help. I enjoy doubleplusgood life here. I is very sane here. No trouble me. I hungerful.
 	You go help. Who is you? Go talk with master pig. He needs you help. I enjoy doubleplusgood life here...",
 	"pig_2_2": "The pig seems to be repeating the same words over and over again.",
-	"pig_2_truth": "I enjoyed doubleplusgood life here before. I enjoy tripleplusgood life now.
-	Master is watching you.",
+	"pig_2_truth": "I enjoyed doubleplusgood life here before. I enjoy tripleplusgood life now.",
 	"pig_3_1": "The pig appears to be sleeping. You hear indistinct mumbles coming from its mouth:",
 	"pig_3_2": "Down with mastr! Dwn with mstr! Down wth mster!",
+	"pig_3_truth": "Hail the Mastr! Hl th Mastr! Hail th Mster!",
 	"pig_4_1": "I was trying to come up with the new version of pigspeak all day long, but the hunger makes it unpossible to do.
 	I guess we will have to stick with the old version for now.",
 	"pig_4_2": "By the way, do you think unold should be the opposite of old, or unyoung be the opposite of young? Ah, nevermind, I'll figure that out once we get food.",
-	"pig_4_truth": "Thanks to brave actions of Master, we now have doubleplusplenty of food. The new pigspeak dictionary is almost done!
-	Master is watching you.",
+	"pig_4_truth": "Thanks to brave actions of Master, we now have doubleplusplenty of food. The new pigspeak dictionary is almost done!",
 	"pig_5_1": "Ahoy, unpig! I'm guarding the door. Since our fellow comrade pig disappeared in the crypt, we close the door.
 	We are plusafraid to go there. We hear plusbad screams during undays coming from the crypt. I'll open it if master says so.",
 	"pig_5_2": "Please, go talk to master! I miss blueberries so much! I haven't eaten one for days now. My stomach hurts.
 	Noone else wanted to eat them, so I was doing it all day long.",
 	"pig_5_3": "Finally! I've opened the door. Go and kill what lurks there, whatever it might cost you!",
 	"pig_5_truth": "Since Master eradicated all evil in the crypt, I've been administered to serve in the Pignistry of food.
-	Now, I deprive the pigs who commit thought crime of food. Everyone is living even goodlier now.
-	Master is watching you.",
+	Now, I deprive the pigs who commit thought crime of food. Everyone is living even goodlier now.",
 	"pig_6_1": "How's you doing, comrade unpig? Did you know that we've grown 718 bananas today, which is 20 times more than we did untomorrow,
 	and twice as much as was planned? We live goodlier and goodlier every day. I'm so happy to serve the master.",
 	"pig_6_2": "I may not be fed, but it's just because all other pig comrades need bananas more than me.
 	I am willing to be hungry so that others can live doubleplusgood life. Long live the master!",
 	"pig_6_truth": "Long live Master, comrade unpig! Did you know that every pig is having 1 banana per day now,
-	which is a hundred times more than untomorrow, and 5 times as much as was planned?
-	Master is watching you.",
+	which is a hundred times more than untomorrow, and 5 times as much as was planned?",
 	"pig_7_1": "I guard the master. I have always guarded the master. He has always been the master.
 	Since the old guard pig refs unperson, I have always guarded the master. Forever. I will do so.
 	I am the only one who ever guarded the master. It's hard to guard when you unfed. I have never been hungry.
@@ -239,7 +235,9 @@ Matheff — Today at 1:52 PM",
 	No other pigs. Noone can stop me from eating. It was such a good idea to start screaming after they sent me to get more food.
 	Those pigs are as stupid as a lumber log. They think that something dangerous haunts these crypts. They've all gone mad with the master.",
 	"pig_big_2": "So it's the master who sent you here? You know what? Go and tell him that you found my dead body and all the food disappeared.
-	Say that there's blood everywhere around here and god knows what can be lurking here. That way, I can enjoy eating all the food forever ;)"
+	Say that there's blood everywhere around here and god knows what can be lurking here. That way, I can enjoy eating all the food forever ;)",
+	"pig_watching": "Master is watching you.",
+	"pig_master_watching": "I am watching you.",
 }
 
 static var portraits_data = {
