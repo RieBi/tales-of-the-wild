@@ -270,7 +270,61 @@ Matheff — Today at 1:52 PM",
 	"pig_crypt_sign_1": "The sign reads: 'Heaven'.",
 	"pig_crypt_sign_2": "That's strange. It points to a blank wall.",
 	"pig_crypt_inscribing": "You see an inscribing on the floor. It says: 'Monkey King was here'.",
-	"pig_crypt_dragons": "Eternal battle of the two dragons."
+	"pig_crypt_dragons": "Eternal battle of the two dragons.",
+	
+	"follower_thomas_1": "Finally, you are here! We've been waiting for you arrival for many years. There's only a few things left to do,
+	and we will be able to begint the ceremony. You can feel like you are home here, Sacred Capybara. When you're ready,
+	talk to our leader, Asedine. She's a mage, so you will quickly identify her.",
+	"follower_thomas_2": "Since I learnt the teachings of Sacred Capybara, ergo your teachings, I never shaved my beard.
+	It's quite big now, since it was a long time ago. And yet, I was faithful to you for the whole time.",
+	# FATE is here
+	"follower_thomas_3": "I always wanted to ask you, and now I'm given the chance, but I'm... ah, it might be the only chance.
+	So, do you prefer pineapples on pizzas or pizzas on pineapples?",
+	"follower_sergio_1": "I might be old, by I still remember the Capybara style of Bung-Du.
+	I would have given you a nice beating, if it wasn't the aching back.",
+	"follower_sergio_2": "Oh, wait, let my open my eyes.",
+	"follower_sergio_3": "Believe me or not, I see Sacred Capybara in front of me. Can you imagine, even my eyes betray me now.
+	Ah, if only I had a way to become young again.",
+	"follower_sergio_4": "Wait, you know what? You would always hear the peasants tell bloody stories of Sacred Capybara, but that are no more than lies.
+	It is well known that Sacred Capybard was once a member of Guardian Order, before it was disbanded. My grandpa told it to me.
+	Or was it grandgrandpa? Ah, I bet he was older at the time than I am now. So, where did I stop?",
+	"follower_sergio_5": "Oh, yeah. Guardian Order was disbanded and the five higher members of it parted their ways.
+	Since then, every human must pray to The Three Guardian at least once a day. Otherwise, a great evil awaits those who try not to.
+	We owe everything to The Three Guardians, if not them, the world wouldn't be a place for a man to live.",
+	"follower_isolde_1": "You see those flowerbeds? I've been learning to grow them since I was a child.
+	The blue ones, on the right, are the most difficult to grow. A legend says these flowers were once pure black, and staring at them for a few seconds would sink your sould into void.
+	But after you, Capybara, fought the Black Mermaid, and launched its hideous tail into oblivion, a curse was lifted,
+	and the flowers turned into charming blue color, as they are now. Is the story true? Did you really fight Black Mermaid?",
+	"follower_isolde_2": "Pardon me if I'm too insistive, it's a great honor for me to meet you. By the way, the blue flowers
+	are called marmaids. Yes, marmaids, and not mermaids, like most people tend to think. They even have magic properties.
+	If you carry these flowers onto the peak of a mountain during full moon at the eighth month of year on second day of week
+	during a rainy day after the mist had fallen and birds went to sleep and a hawk catches a mouse right at the edge of an ocean
+	after a shark eats two teaspoons of salt covered in a weak mold only then to fold its tail and sing a song of seven heirs,
+	and sky turns red after a king dies due to being stabbed by bayonet, and a chalice of blood is drinked by a rat,
+	and a snake bites me after I play clarinet...",
+	"follower_isolde_3": "Oops, did I say snake? I meant to say python. Not Monty Python, but just a regular python. You know, they are very different.
+	So, when all of that happens and you brings marmaids at the peak of a mountain, nothing abnormal happens. Can you imagine that?
+	It's so intruiging! I wish I had a chance to try it one day. Till then, I wouldn't be able to consider myself a gigachad.",
+	# CUTSCENE bullshittery
+	"follower_olaf_1": "Hey ya, pokemon! Oh, you are not a pokemon, you are Sacred Capybara, the one we've been waiting for during all these years?
+	That's for the better. Have you already talked with Sergio? The old man's sight might be gone, but his vision holds true.
+	It's thanks to him that I could learn the art of Khan-Ku. Or was it Kung-Fu? Or Tsan-Mu? I can't ever remember that name.
+	Yet, it doesn't prevent me from practicing eat. I've learnt a lot of stuff already, but there's still much more to learn.
+	Here, I'll show you my technique.",
+	"follower_olaf_2": "Holdin' me back.
+	Gravity's holdin' me back.",
+	"follower_olaf_3": "And now I'm smooth like butter.",
+	"follower_olaf_4": "Like a criminal undercover.",
+	"follower_olaf_5": "Like a real Pablo Escobaro.",
+	"follower_olaf_6": "Well, I'm done for now. See ya later, Alligator!",
+	"follower_asetrone_1": "My crystal ball that I hold in my camp has told me of your arrival. By the name of The Three Guardians,
+	you shall serve your mission.",
+	"follower_asetrone_2": "Now, acquaint yourself with all the other followers, and we will be able to proceed",
+	"follower_asetrone_3": "Great, you are now familiar with who we are. The ceremony is almost about to begin, but we've got a...
+	sticky problem. You see, the ceremony needs a burning campfire. Such are the rules. It was not me who wrote them.
+	WELL, techincally it was me <3. Yet, we will omit that in the current situation. You shall find 5 good sticks that will burn well.
+	We've got a nice looking forest around the camp, I'm pretty sure there are lots of sticks lying on the ground in it.
+	Finding 5 sticks would be a piece of cake for such a candy like you <3",
 }
 
 static var portraits_data = {
