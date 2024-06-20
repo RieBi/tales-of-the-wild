@@ -145,7 +145,7 @@ func _on_temple_puzzle_solved() -> void:
 func _on_pig_1_trigger_action_done(source: ActionTrigger) -> void:
 	match StateHelper.gets("lucas_temple"):
 		5:
-			DialogueHelper.play_dialogue_sequence(["pig_1_truth", "pig_watching"], ["Pig", "Master"])
+			DialogueHelper.play_dialogue_sequence(["pig_1_truth", "pig_watching"], ["Pig", "Pig Brother"])
 			source.hide()
 		6:
 			DialogueHelper.play_dialogue("pig_1_lie", "Pig")
@@ -157,7 +157,7 @@ func _on_pig_1_trigger_action_done(source: ActionTrigger) -> void:
 func _on_pig_2_trigger_action_done(source: ActionTrigger) -> void:
 	match StateHelper.gets("lucas_temple"):
 		5:
-			DialogueHelper.play_dialogue_sequence(["pig_2_truth", "pig_watching"], ["Weird pig", "Master"])
+			DialogueHelper.play_dialogue_sequence(["pig_2_truth", "pig_watching"], ["Weird pig", "Pig Brother"])
 			source.hide()
 		6:
 			DialogueHelper.play_dialogue("pig_2_lie", "Pig")
@@ -179,7 +179,7 @@ func _on_pig_3_trigger_action_done(source: ActionTrigger) -> void:
 func _on_pig_4_trigger_action_done(source: ActionTrigger) -> void:
 	match StateHelper.gets("lucas_temple"):
 		5:
-			DialogueHelper.play_dialogue_sequence(["pig_4_truth", "pig_watching"], ["Pig", "Master"])
+			DialogueHelper.play_dialogue_sequence(["pig_4_truth", "pig_watching"], ["Pig", "Pig Brother"])
 			source.hide()
 		6:
 			DialogueHelper.play_dialogue("pig_4_lie", "Pig")
@@ -199,7 +199,7 @@ func _on_pig_5_trigger_action_done(source: ActionTrigger) -> void:
 			$TileMap.set_cell(3, Vector2(129, -88))
 			source.hide()
 		5:
-			DialogueHelper.play_dialogue_sequence(["pig_5_truth", "pig_watching"], ["Pignistry pig", "Master"])
+			DialogueHelper.play_dialogue_sequence(["pig_5_truth", "pig_watching"], ["Pignistry pig", "Pig Brother"])
 			source.hide()
 		6:
 			DialogueHelper.play_dialogue("pig_5_lie", "Pig")
@@ -209,7 +209,7 @@ func _on_pig_5_trigger_action_done(source: ActionTrigger) -> void:
 func _on_pig_6_trigger_action_done(source: ActionTrigger) -> void:
 	match StateHelper.gets("lucas_temple"):
 		5:
-			DialogueHelper.play_dialogue_sequence(["pig_6_truth", "pig_watching"], ["Pig", "Master"])
+			DialogueHelper.play_dialogue_sequence(["pig_6_truth", "pig_watching"], ["Pig", "Pig Brother"])
 			source.hide()
 		6:
 			DialogueHelper.play_dialogue("pig_6_lie", "Pig")
@@ -233,12 +233,12 @@ func _on_pig_8_trigger_action_done(source: ActionTrigger) -> void:
 	print(StateHelper.gets("lucas_temple"))
 	match StateHelper.gets("lucas_temple"):
 		2:
-			DialogueHelper.play_dialogue_sequence(["pig_8_1", "pig_8_2", "pig_8_3"], ["Master", "Master", "Master"])
+			DialogueHelper.play_dialogue_sequence(["pig_8_1", "pig_8_2", "pig_8_3"], ["Pig Brother", "Pig Brother", "Pig Brother"])
 			source.hide()
 			StateHelper.sets("lucas_temple", 3)
 			$TemplePig/Pigs/Pig5/Pig5Trigger.show()
 		3:
-			DialogueHelper.play_dialogue("pig_8_3", "Master")
+			DialogueHelper.play_dialogue("pig_8_3", "Pig Brother")
 		4:
 			var fate_box_texture = DialogueHelper.fate_box.center_texture 
 			fate_box_texture.scale = Vector2(20, 20)
@@ -250,7 +250,7 @@ func _on_pig_8_trigger_action_done(source: ActionTrigger) -> void:
 			QuestHelper.remove_quest("Capybara Jones")
 			source.hide()
 		5:  
-			DialogueHelper.play_dialogue("pig_master_watching", "Master")
+			DialogueHelper.play_dialogue("pig_master_watching", "Pig Brother")
 		6:
 			DialogueHelper.play_dialogue("pig_8_lie_2", "Pig")
 			source.hide()
@@ -302,17 +302,17 @@ func pigs_kill_big_pig() -> void:
 	$TemplePig/Pigs/Pig5/Pig5Trigger.show()
 	$TemplePig/Pigs/Pig6/Pig6Trigger.show()
 	
-	DialogueHelper.play_dialogue("pig_8_truth", "Master")
+	DialogueHelper.play_dialogue("pig_8_truth", "Pig Brother")
 	await DialogueHelper.dialogue_box.dialogue_finished
 	DialogueHelper.set_up_acquisition("Red key", preload("res://assets/sprites/level1/keys/red_key.png"))
 	await DialogueHelper.acqusition_box.item_taken
 	StateHelper.sets("red_key", 1)
-	DialogueHelper.play_dialogue("pig_8_3", "Master")
+	DialogueHelper.play_dialogue("pig_8_3", "Pig Brother")
 	
 
 func pigs_return_to_people() -> void:
 	StateHelper.sets("lucas_temple", 6)
-	DialogueHelper.play_dialogue("pig_8_lie", "No longer master")
+	DialogueHelper.play_dialogue("pig_8_lie", "No longer Pig Brother")
 	await DialogueHelper.dialogue_box.dialogue_finished
 	var pig1: MovableCharacterBase = $TemplePig/Pigs/Pig1
 	var pig1_trigger = $TemplePig/Pigs/Pig1/Pig1Trigger
