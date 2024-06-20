@@ -10,7 +10,7 @@ func _on_awaken_trigger_player_entered(source: Area2D) -> void:
 		DialogueHelper.play_dialogue("story_2"))
 
 
-func _on_crystal_trigger_action_done(source: Area2D) -> void:
+func _on_crystal_trigger_action_done(_source: Area2D) -> void:
 	DialogueHelper.play_dialogue_sequence(["story_crystal_orange_1", "story_crystal_orange_2"])
 
 
@@ -28,7 +28,7 @@ func _on_evil_snake_trigger_action_done(source: Area2D) -> void:
 			source.hide()
 
 
-func _on_apple_tree_trigger_action_done(source: Area2D) -> void:
+func _on_apple_tree_trigger_action_done(_source: Area2D) -> void:
 	match StateHelper.gets("evil_snake"):
 		1:
 			var red_apple_res = preload("res://assets/sprites/level1/red_apple.tres")
@@ -44,15 +44,15 @@ func _on_apple_tree_trigger_action_done(source: Area2D) -> void:
 
 
 
-func _on_snake_left_trigger_action_done(source: Area2D) -> void:
+func _on_snake_left_trigger_action_done(_source: Area2D) -> void:
 	DialogueHelper.play_dialogue("evil_snake_left")
 
 
-func _on_inscribing_trigger_action_done(source: Area2D) -> void:
+func _on_inscribing_trigger_action_done(_source: Area2D) -> void:
 	DialogueHelper.play_dialogue_sequence(["evil_snake_prophecy_1", "evil_snake_prophecy_1_think"])
 
 
-func _on_cave_trigger_action_done(source: Area2D) -> void:
+func _on_cave_trigger_action_done(_source: Area2D) -> void:
 	DialogueHelper.play_dialogue_sequence(["evil_snake_cave_1", "evil_snake_cave_2"])
 
 
@@ -86,7 +86,7 @@ func _on_first_cutscene_trigger_player_entered(source: Area2D) -> void:
 	$Village/AngeredMom/AngeredMomTrigger.show()
 
 
-func _on_angered_mom_trigger_action_done(source: ActionTrigger) -> void:
+func _on_angered_mom_trigger_action_done(_source: ActionTrigger) -> void:
 	DialogueHelper.play_dialogue_sequence(["village_angered_mom_1", "general_sigh"], ["Angered mom", "Angered mom"])
 	await DialogueHelper.dialogue_box.dialogue_finished
 	$Village/AngeredMom/AngeredMomTrigger.hide()
@@ -341,55 +341,55 @@ func pigs_return_to_people() -> void:
 		t.make_active()
 
 
-func _on_scroll_1_trigger_action_done(source: ActionTrigger) -> void:
+func _on_scroll_1_trigger_action_done(_source: ActionTrigger) -> void:
 	DialogueHelper.play_dialogue("pig_prop_scroll_1")
 
 
-func _on_note_1_trigger_action_done(source: ActionTrigger) -> void:
+func _on_note_1_trigger_action_done(_source: ActionTrigger) -> void:
 	DialogueHelper.play_dialogue("pig_prop_note_1")
 
 
-func _on_note_2_trigger_action_done(source: ActionTrigger) -> void:
+func _on_note_2_trigger_action_done(_source: ActionTrigger) -> void:
 	DialogueHelper.play_dialogue("pig_prop_note_2")
 
 
-func _on_book_1_trigger_action_done(source: ActionTrigger) -> void:
+func _on_book_1_trigger_action_done(_source: ActionTrigger) -> void:
 	DialogueHelper.play_dialogue_sequence(["pig_prop_book_1_1", "pig_prop_book_1_2"])
 
 
-func _on_book_2_trigger_action_done(source: ActionTrigger) -> void:
+func _on_book_2_trigger_action_done(_source: ActionTrigger) -> void:
 	DialogueHelper.play_dialogue_sequence(["pig_prop_book_2_1", "pig_prop_book_2_2"])
 
 
-func _on_violet_crystal_trigger_action_done(source: ActionTrigger) -> void:
+func _on_violet_crystal_trigger_action_done(_source: ActionTrigger) -> void:
 	DialogueHelper.play_dialogue_sequence(["pig_prop_crystal_violet_1", "pig_prop_crystal_violet_2"])
 
 
-func _on_coins_trigger_action_done(source: ActionTrigger) -> void:
+func _on_coins_trigger_action_done(_source: ActionTrigger) -> void:
 	DialogueHelper.play_dialogue("pig_prop_coins")
 
 
-func _on_buggy_bed_trigger_action_done(source: ActionTrigger) -> void:
+func _on_buggy_bed_trigger_action_done(_source: ActionTrigger) -> void:
 	DialogueHelper.play_dialogue_sequence(["pig_prop_bed_1", "pig_prop_bed_2"])
 
 
-func _on_crypt_sign_trigger_action_done(source: ActionTrigger) -> void:
+func _on_crypt_sign_trigger_action_done(_source: ActionTrigger) -> void:
 	DialogueHelper.play_dialogue("pig_prop_sign_crypt")
 
 
-func _on_gin_trigger_action_done(source: ActionTrigger) -> void:
+func _on_gin_trigger_action_done(_source: ActionTrigger) -> void:
 	DialogueHelper.play_dialogue("pig_crypt_gin")
 
 
-func _on_heaven_sign_trigger_action_done(source: ActionTrigger) -> void:
+func _on_heaven_sign_trigger_action_done(_source: ActionTrigger) -> void:
 	DialogueHelper.play_dialogue_sequence(["pig_crypt_sign_1", "pig_crypt_sign_2"])
 
 
-func _on_dragon_fight_trigger_action_done(source: ActionTrigger) -> void:
+func _on_dragon_fight_trigger_action_done(_source: ActionTrigger) -> void:
 	DialogueHelper.play_dialogue("pig_crypt_dragons")
 
 
-func _on_monkey_king_trigger_action_done(source: ActionTrigger) -> void:
+func _on_monkey_king_trigger_action_done(_source: ActionTrigger) -> void:
 	DialogueHelper.play_dialogue("pig_crypt_inscribing")
 
 

@@ -8,7 +8,7 @@ signal item_taken
 @onready var timer: Timer = $Timer
 @onready var triangles: Control = $Triangles
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if timer.is_stopped() and Input.is_action_just_pressed("action"):
 		hide()
 		triangles.process_mode = Node.PROCESS_MODE_DISABLED

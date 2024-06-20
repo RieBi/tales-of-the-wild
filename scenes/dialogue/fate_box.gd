@@ -11,7 +11,7 @@ signal left_chosen
 signal right_chosen
 signal fate_chosen
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if visible and Input.is_action_pressed("click"):
 		if fate_left.visible:
 			left_chosen.emit()
