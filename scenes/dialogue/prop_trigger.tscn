@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bunat7i4dr42p"]
+
+[ext_resource type="Script" path="res://scenes/dialogue/prop_trigger.gd" id="1_yhl5t"]
+[ext_resource type="Texture2D" uid="uid://cy3afmtxpin5x" path="res://assets/sprites/icons/mark_exclamation.png" id="2_45rly"]
+
+[node name="PropTrigger" type="Area2D"]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("1_yhl5t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_45rly")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

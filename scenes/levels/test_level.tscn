@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://blbtwj3c7folu"]
+[gd_scene load_steps=15 format=3 uid="uid://blbtwj3c7folu"]
 
 [ext_resource type="TileSet" uid="uid://2vkflo6ftr3y" path="res://assets/tiles/tileset_roguelike.tres" id="1_70p2h"]
 [ext_resource type="Script" path="res://scenes/levels/test_level.gd" id="1_a0jbc"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://djlsrgut1o132" path="res://scenes/dialogue/action_trigger.tscn" id="5_4jmyt"]
 [ext_resource type="PackedScene" uid="uid://dvv8ejxyviw24" path="res://scenes/characters/movable_character_base.tscn" id="6_574rc"]
 [ext_resource type="PackedScene" uid="uid://dfw8idcll53rp" path="res://scenes/dialogue/enter_trigger.tscn" id="7_3g5m2"]
+[ext_resource type="PackedScene" uid="uid://bunat7i4dr42p" path="res://scenes/dialogue/prop_trigger.tscn" id="8_u3le8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0uwnt"]
 radius = 30.0
@@ -28,6 +29,8 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 128, -32, 0, 0, 0, 0, 128, 64, 0, 0, 0, 0, 96, 80, 0, 0, 0, 0, 72, 80, 0, 0, 0, 0, 64, 72, 0, 0, 0, 0, 48, 72, 0, 0, 0, 0, 16, 72, 0, 0, 0, 0, 8, 72, 0, 0, 0, 0, 8, 120, 0, 0, 0, 0, 40, 120, 0, 0, 0, 0, 40, 56, 0, 0, 0, 0, 16, 16, 0, 0, 0, 0, 16, -32)
 }
 point_count = 13
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_br4xp"]
 
 [node name="TestLevel" type="Node2D" groups=["level"]]
 script = ExtResource("1_a0jbc")
@@ -89,6 +92,15 @@ curve = SubResource("Curve2D_jv8t7")
 position = Vector2(128, -32)
 rotation = 1.5708
 loop = false
+
+[node name="PropTrigger" parent="." instance=ExtResource("8_u3le8")]
+position = Vector2(160, -168)
+dialogues = Array[String](["demo_1", "demo_2"])
+visible_only_in_zone = false
+is_inactive = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PropTrigger"]
+shape = SubResource("CircleShape2D_br4xp")
 
 [connection signal="action_done" from="ActionTrigger" to="." method="_on_demo_dialogues_body_entered"]
 [connection signal="player_entered" from="EnterTrigger" to="." method="_on_enter_trigger_player_entered"]
