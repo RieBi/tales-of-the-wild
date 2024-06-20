@@ -260,6 +260,31 @@ func _on_pig_big_trigger_action_done(source: ActionTrigger) -> void:
 	DialogueHelper.play_dialogue_sequence(["pig_big_1", "pig_big_2"], ["Big pig", "Big pig"])
 	StateHelper.sets("lucas_temple", 4)
 	$TemplePig/Pigs/Pig8/Pig8Trigger.show()
+	await DialogueHelper.dialogue_box.dialogue_finished
+	DialogueHelper.start_cutscene_set_up()
+	var tilemap: TileMap = $TileMap
+	var big_pig = $TemplePig/Pigs/PigBig
+	var tween = create_tween()
+	tween.tween_callback(func(): big_pig.animation_player.play("shake"))
+	tween.tween_property(big_pig, ^"position", big_pig.position + Vector2(16, 0), 1)
+	tween.tween_callback(func(): big_pig.animation_player.stop())
+	tween.tween_callback(
+		func():
+			tilemap.set_cell(3, Vector2(196, -146))
+			tilemap.set_cell(3, Vector2(196, -145))
+	)
+	tween.tween_property(big_pig, ^"scale", Vector2(3.5, 3.5), 2)
+	tween.tween_callback(func(): big_pig.animation_player.play("shake"))
+	tween.tween_property(big_pig, ^"position", big_pig.position + Vector2(32, 0), 1)
+	tween.tween_callback(func(): big_pig.animation_player.stop())
+	tween.tween_callback(
+		func():
+			tilemap.set_cell(3, Vector2(198, -146))
+			tilemap.set_cell(3, Vector2(198, -145))
+	)
+	tween.tween_property(big_pig, ^"scale", Vector2(4, 4), 3)
+	await tween.finished
+	DialogueHelper.stop_cutscene_set_up()
 
 func pigs_kill_big_pig() -> void:
 	StateHelper.sets("lucas_temple", 5)
