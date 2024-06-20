@@ -8,6 +8,7 @@ var quests = {}
 
 func _ready() -> void:
 	root = tree.create_item()
+	root.set_text(0, "Quests List")
 
 func add_quest(quest_name: String) -> TreeItem:
 	var new_quest = tree.create_item(root)

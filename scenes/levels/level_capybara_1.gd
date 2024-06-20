@@ -195,6 +195,7 @@ func _on_pig_5_trigger_action_done(source: ActionTrigger) -> void:
 			source.hide()
 		3:
 			DialogueHelper.play_dialogue("pig_5_3", "Blueberry pig")
+			$TileMap.set_cell(3, Vector2(129, -88))
 			source.hide()
 		5:
 			DialogueHelper.play_dialogue_sequence(["pig_5_truth", "pig_watching"], ["Pignistry pig", "Master"])
@@ -245,6 +246,7 @@ func _on_pig_8_trigger_action_done(source: ActionTrigger) -> void:
 			pigs_kill_big_pig, pigs_return_to_people)
 			await DialogueHelper.fate_box.fate_chosen
 			DialogueHelper.player.restrict_movement()
+			QuestHelper.remove_quest("Capybara Jones")
 			source.hide()
 		5:  
 			DialogueHelper.play_dialogue("pig_master_watching", "Master")
@@ -257,7 +259,7 @@ func _on_pig_big_trigger_action_done(source: ActionTrigger) -> void:
 	source.queue_free()
 	DialogueHelper.play_dialogue_sequence(["pig_big_1", "pig_big_2"], ["Big pig", "Big pig"])
 	StateHelper.sets("lucas_temple", 4)
-	$TempleBig/Pigs/Pig8/Pig8Trigger.show()
+	$TemplePig/Pigs/Pig8/Pig8Trigger.show()
 
 func pigs_kill_big_pig() -> void:
 	StateHelper.sets("lucas_temple", 5)

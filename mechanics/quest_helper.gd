@@ -65,6 +65,10 @@ static func poller_capybara_jones() -> void:
 		texts.append("Explore the inner temple")
 	if temple_state > 2:
 		texts[2] = STR_COMPLETED + texts[2]
+		texts.append("Eradicate the evil in the crypt")
+	if temple_state > 3:
+		texts[3] = STR_COMPLETED + texts[3]
+		texts.append("Talk with Master")
 	
 	quest_texts = texts
 	quest_colors = create_text_colors(texts)
