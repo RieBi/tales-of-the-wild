@@ -27,6 +27,8 @@ static func poll_quests() -> void:
 		if quest_funcs.has(quest):
 			var func_to_call: Callable = quest_funcs[quest]
 			func_to_call.call()
+			if quest_colors.size() != quest_texts.size():
+				quest_colors = create_text_colors(quest_texts)
 			quest_box.set_quest_items(quest, quest_texts, quest_colors)
 
 static func hide_quests() -> void:
@@ -47,6 +49,7 @@ static func create_text_colors(texts: Array[String], due_color: Color = Color(0.
 static var quest_funcs = {
 	"Demo Quest": poller_demo_quest,
 	"Capybara Jones": poller_capybara_jones,
+	"Stranger Sticks": poller_stranger_sticks,
 }
 
 static func poller_demo_quest() -> void:
@@ -71,4 +74,11 @@ static func poller_capybara_jones() -> void:
 		texts.append("Talk with Master")
 	
 	quest_texts = texts
-	quest_colors = create_text_colors(texts)
+	
+static func poller_stranger_sticks() -> void:
+	var stick_count = StateHelper.gets("sticks_collected")
+	var texts: Array[String] = ["Gather sticks (%s / 5)" % stick_count]
+	if stick_count == 5:
+		texts[0] = STR_COMPLETED + texts[0]
+	
+	quest_texts = texts

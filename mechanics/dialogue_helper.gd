@@ -286,12 +286,12 @@ Matheff — Today at 1:52 PM",
 	"follower_sergio_2": "Oh, wait, let my open my eyes.",
 	"follower_sergio_3": "Believe me or not, I see Sacred Capybara in front of me. Can you imagine, even my eyes betray me now.
 	Ah, if only I had a way to become young again.",
-	"follower_sergio_4": "Wait, you know what? You would always hear the peasants tell bloody stories of Sacred Capybara, but that are no more than lies.
+	"follower_sergio_4": "Wait, you know what? You would always hear the peasants tell bloody stories of Sacred Capybara, but those are no more than lies.
 	It is well known that Sacred Capybard was once a member of Guardian Order, before it was disbanded. My grandpa told it to me.
 	Or was it grandgrandpa? Ah, I bet he was older at the time than I am now. So, where did I stop?",
 	"follower_sergio_5": "Oh, yeah. Guardian Order was disbanded and the five higher members of it parted their ways.
-	Since then, every human must pray to The Three Guardian at least once a day. Otherwise, a great evil awaits those who try not to.
-	We owe everything to The Three Guardians, if not them, the world wouldn't be a place for a man to live.",
+	Since then, every human must pray to The Three Guardian at least once a day. Otherwise, a great evil awaits those who dare not to.
+	We owe everything to The Three Guardians. If not them, the world would a place for no men to live.",
 	"follower_isolde_1": "You see those flowerbeds? I've been learning to grow them since I was a child.
 	The blue ones, on the right, are the most difficult to grow. A legend says these flowers were once pure black, and staring at them for a few seconds would sink your sould into void.
 	But after you, Capybara, fought the Black Mermaid, and launched its hideous tail into oblivion, a curse was lifted,
@@ -304,13 +304,13 @@ Matheff — Today at 1:52 PM",
 	and sky turns red after a king dies due to being stabbed by bayonet, and a chalice of blood is drinked by a rat,
 	and a snake bites me after I play clarinet...",
 	"follower_isolde_3": "Oops, did I say snake? I meant to say python. Not Monty Python, but just a regular python. You know, they are very different.
-	So, when all of that happens and you brings marmaids at the peak of a mountain, nothing abnormal happens. Can you imagine that?
+	So, when all of that happens and you bring marmaids to the peak of a mountain, nothing abnormal happens. Can you imagine that?
 	It's so intruiging! I wish I had a chance to try it one day. Till then, I wouldn't be able to consider myself a gigachad.",
 	# CUTSCENE bullshittery
 	"follower_olaf_1": "Hey ya, pokemon! Oh, you are not a pokemon, you are Sacred Capybara, the one we've been waiting for during all these years?
 	That's for the better. Have you already talked with Sergio? The old man's sight might be gone, but his vision holds true.
 	It's thanks to him that I could learn the art of Khan-Ku. Or was it Kung-Fu? Or Tsan-Mu? I can't ever remember that name.
-	Yet, it doesn't prevent me from practicing eat. I've learnt a lot of stuff already, but there's still much more to learn.
+	Yet, it doesn't prevent me from practicing it. I've learnt a lot of stuff already, but there's still much more to learn.
 	Here, I'll show you my technique.",
 	"follower_olaf_2": "Holdin' me back.
 	Gravity's holdin' me back.",
@@ -318,10 +318,26 @@ Matheff — Today at 1:52 PM",
 	"follower_olaf_4": "Like a criminal undercover.",
 	"follower_olaf_5": "Like a real Pablo Escobaro.",
 	"follower_olaf_6": "Well, I'm done for now. See ya later, Alligator!",
-	"follower_asetrone_1": "My crystal ball that I hold in my camp has told me of your arrival. By the name of The Three Guardians,
+	"follower_asedine_1": "My crystal ball that I hold in my camp has told me of your arrival. By the name of The Three Guardians,
 	you shall serve your mission.",
-	"follower_asetrone_2": "Now, acquaint yourself with all the other followers, and we will be able to proceed",
-	"follower_asetrone_3": "Great, you are now familiar with who we are. The ceremony is almost about to begin, but we've got a...
+	"follower_bondurnar_1": "It's a good day for berrying, ain't it?",
+	"follower_bondurnar_2": "Don't you freak out, you crazy! Name's Bondurnar. The last of the dragons.
+	I may not look like like a dragon, but deep down in my soul, I am. I can even breath fire!",
+	# fire particles
+	"follower_bondurnar_3": "If only I had wings, I would travel through the whole world. I would visit all the realms. Nothing would stay out of my sight!
+	But right now, I am here. Growing in front of you, stopping you from moving farther before you meet all of us and talk with Asedine.",
+	"follower_bondurnar_4": "You know what? I don't believe any of the nonsense that Asedine is preaching. If there's anything special in this world, it ain't you.
+	You look like a typical capybara.",
+	"follower_bondurnar_5": "*Sniffs*",
+	"follower_bondurnar_6": "You smell like a typical capybara. And I don't need to touch you to know you're a typical capybara.
+	Oh, may I turn red if there's something special about you.",
+	# turns red
+	"follower_bondurnar_7": "You see? I'm still as green as you are. Nothing special about ya. Not a tad bit.
+	If you wonder why I joined the followers of sacred capybara, it's because Olaf has quite a lot of poop hidden in his camp, believe it or not.
+	Did I say poop? NOPE! It's a golden quality fertilizer. That's what makes by berries taste so sweet. Wanna try one?
+	Anyway, I'm not moving till Asedine tells me to.",
+	"follower_asedine_2": "Now, acquaint yourself with all the other followers, and we will be able to proceed",
+	"follower_asedine_3": "Great, you are now familiar with who we are. The ceremony is almost about to begin, but we've got a...
 	sticky problem. You see, the ceremony needs a burning campfire. Such are the rules. It was not me who wrote them.
 	WELL, techincally it was me <3. Yet, we will omit that in the current situation. You shall find 5 good sticks that will burn well.
 	We've got a nice looking forest around the camp, I'm pretty sure there are lots of sticks lying on the ground in it.

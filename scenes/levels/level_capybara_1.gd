@@ -1,5 +1,9 @@
 extends Node2D
 
+var d: float = 0
+
+func _process(delta: float) -> void:
+	d = delta
 
 func _on_awaken_trigger_player_entered(source: Area2D) -> void:
 	source.queue_free()
@@ -416,3 +420,180 @@ func _on_thomas_trigger_action_done(source: ActionTrigger) -> void:
 	await DialogueHelper.fate_box.fate_chosen
 	DialogueHelper.play_dialogue("follower_thomas_fated", "Thomas")
 	source.make_inactive()
+	on_talked_with_follower()
+
+
+func _on_sergio_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue_sequence(
+		["follower_sergio_1", "follower_sergio_2", "follower_sergio_3", "follower_sergio_4", "follower_sergio_5"],
+		["Sergio", "Sergio", "Sergio", "Sergio", "Sergio"]
+	)
+	source.make_inactive()
+	on_talked_with_follower()
+
+
+func _on_isolde_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue_sequence(
+		["follower_isolde_1", "follower_isolde_2", "follower_isolde_3"],
+		["Isolde", "Isolde", "Isolde"]
+	)
+	source.make_inactive()
+	on_talked_with_follower()
+
+
+func _on_olaf_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.start_cutscene_set_up()
+	var olaf: MovableCharacterBase = $FollowerCamp/FollowerOlaf
+	var olaf_trigger: ActionTrigger = olaf.get_node(^"OlafTrigger")
+	var player_camera = DialogueHelper.player.get_node(^"Camera2D")
+	source.make_inactive()
+	var message_bubble: AnimatedSprite2D = olaf.message_bubble
+	
+	await create_tween().tween_property(player_camera, ^"offset", Vector2(0, 32), 0.5).finished
+	
+	message_bubble.show()
+	DialogueHelper.play_dialogue("follower_olaf_1", "Olaf")
+	await DialogueHelper.dialogue_box.dialogue_finished
+	message_bubble.hide()
+	var olaf_start_pos = olaf.position
+	var olaf_start_collision = olaf.collision_mask
+	var player_start_collision = DialogueHelper.player.collision_mask
+	olaf.collision_mask = 1
+	DialogueHelper.player.collision_mask = 0
+	var tween = create_tween()
+	tween.tween_method(
+		func(v):
+			olaf.velocity = v
+			olaf.move_and_collide(v * d),
+		Vector2.ZERO,
+		Vector2(0, 200),
+		0.5
+	)
+	await tween.finished
+	await perform_jump(olaf).finished
+	
+	message_bubble.show()
+	DialogueHelper.play_dialogue("follower_olaf_2", "Olaf")
+	await DialogueHelper.dialogue_box.dialogue_finished
+	message_bubble.hide()
+	await perform_jump(olaf).finished
+	olaf.rotation = PI
+	tween = create_tween()
+	tween.tween_property(olaf, ^"position", Vector2(85.62, -33), 0.5)
+	tween.tween_callback(func(): olaf.rotation = PI / 2)
+	tween.tween_property(olaf, ^"position", Vector2(-42.38, -33), 0.5)
+	await tween.finished
+	
+	message_bubble.show()
+	DialogueHelper.play_dialogue("follower_olaf_3", "Olaf")
+	await DialogueHelper.dialogue_box.dialogue_finished
+	message_bubble.hide()
+	create_tween().tween_property(olaf, ^"rotation", TAU, 2)
+	await create_tween().tween_property(olaf, ^"position", Vector2(-42.38, 127), 2).finished
+	
+	message_bubble.show()
+	DialogueHelper.play_dialogue("follower_olaf_4", "Olaf")
+	olaf.get_node("Glasses").show()
+	await DialogueHelper.dialogue_box.dialogue_finished
+	message_bubble.hide()
+	await create_tween().tween_property(olaf, ^"position", Vector2(5.62, 47), 1).finished
+	
+	message_bubble.show()
+	DialogueHelper.play_dialogue("follower_olaf_5", "Olaf")
+	await DialogueHelper.dialogue_box.dialogue_finished
+	message_bubble.hide()
+	olaf.get_node("Glasses").queue_free()
+	var sprite = olaf.get_node("Sprite2D")
+	var pablo = olaf.get_node("Pablo")
+	create_tween().tween_property(sprite, ^"modulate", Color.TRANSPARENT, 2)
+	await create_tween().tween_property(pablo, ^"modulate", Color.WHITE, 2).finished
+	
+	DialogueHelper.play_dialogue("follower_olaf_6", "Pablo?")
+	await DialogueHelper.dialogue_box.dialogue_finished
+	await create_tween().tween_property(pablo, ^"modulate", Color.TRANSPARENT, 2).finished
+	pablo.queue_free()
+	olaf.position = olaf_start_pos
+	await create_tween().tween_property(sprite, ^"modulate", Color.WHITE, 2).finished
+	
+	olaf.collision_mask = olaf_start_collision
+	DialogueHelper.player.collision_mask = player_start_collision
+	DialogueHelper.stop_cutscene_set_up()
+	on_talked_with_follower()
+
+func perform_jump(olaf: MovableCharacterBase) -> Tween:
+	var tween = create_tween()
+	var jump_vec = Vector2(0, -300)
+	tween.tween_method(
+		func(v):
+			olaf.velocity = v
+			olaf.move_and_collide(v * d),
+		jump_vec,
+		Vector2(0, 200),
+		1
+	)
+	tween.tween_method(
+		func(v):
+			olaf.velocity = v
+			olaf.move_and_collide(v * d),
+		Vector2(0, 200),
+		Vector2(0, 200),
+		0.5
+	)
+	return tween
+	
+func on_talked_with_follower() -> void:
+	StateHelper.sets("followers_acquainted", StateHelper.gets("followers_acquainted") + 1)
+	if StateHelper.gets("followers_acquainted") == 5:
+		$FollowerCamp/FollowerAsedine/AsedineTrigger.show()
+
+func _on_asedine_trigger_action_done(source: ActionTrigger) -> void:
+	if StateHelper.gets("asedine_talked") == 0:
+		DialogueHelper.play_dialogue("follower_asedine_1", "Asedine")
+		StateHelper.sets("asedine_talked", 1)
+		await DialogueHelper.dialogue_box.dialogue_finished
+	
+	match StateHelper.gets("followers_acquainted"):
+		5:
+			DialogueHelper.play_dialogue("follower_asedine_3", "Asedine")
+			source.hide()
+			await DialogueHelper.dialogue_box.dialogue_finished
+			QuestHelper.add_quest("Stranger Sticks")
+			$FollowerCamp/FollowerBondurnar.position += Vector2(0, 16)
+			
+		_:
+			DialogueHelper.play_dialogue("follower_asedine_2", "Asedine")
+			source.hide()
+
+
+func _on_bondurnar_trigger_action_done(source: ActionTrigger) -> void:
+	source.make_inactive()
+	var bondurnar: MovableCharacterBase = $FollowerCamp/FollowerBondurnar
+	var message_bubble = bondurnar.message_bubble
+	message_bubble.show()
+	DialogueHelper.start_cutscene_set_up()
+	DialogueHelper.play_dialogue("follower_bondurnar_1", "Bondurnar")
+	await DialogueHelper.dialogue_box.dialogue_finished
+	var player = DialogueHelper.player
+	var tween = create_tween()
+	var top_position = player.position + Vector2(0, -16)
+	var bottom_position = player.position
+	tween.tween_property(player, ^"position", top_position, 0.25).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
+	tween.tween_property(player, ^"position", bottom_position, 0.25).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_QUAD)
+	await tween.finished
+	DialogueHelper.play_dialogue("follower_bondurnar_2", "Bondurnar")
+	await DialogueHelper.dialogue_box.dialogue_finished
+	var particles: CPUParticles2D = bondurnar.get_node(^"CPUParticles2D")
+	particles.emitting = true
+	await create_tween().tween_interval(2).finished
+	particles.emitting = false
+	DialogueHelper.play_dialogue_sequence(
+		["follower_bondurnar_3", "follower_bondurnar_4", "follower_bondurnar_5", "follower_bondurnar_6"],
+		["Bondurnar", "Bondurnar", "Bondurnar", "Bondurnar"])
+	await DialogueHelper.dialogue_box.dialogue_finished
+	await create_tween().tween_property(bondurnar.get_node(^"Sprite2D"), ^"modulate", Color.RED, 1)
+	DialogueHelper.play_dialogue("follower_bondurnar_7", "Bondurnar")
+	await DialogueHelper.dialogue_box.dialogue_finished
+	message_bubble.hide()
+	DialogueHelper.stop_cutscene_set_up()
+	on_talked_with_follower()
+	particles.queue_free()

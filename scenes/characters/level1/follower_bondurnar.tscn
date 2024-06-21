@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyyvoim5q2mtj"]
+
+[ext_resource type="PackedScene" uid="uid://dvv8ejxyviw24" path="res://scenes/characters/movable_character_base.tscn" id="1_dkkxd"]
+[ext_resource type="Texture2D" uid="uid://cbclhglm3c4qm" path="res://assets/tiles/tilemap_roguelike.png" id="2_dkmts"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6wf1"]
+atlas = ExtResource("2_dkmts")
+region = Rect2(408, 190, 16, 13)
+
+[node name="FollowerBondurnar" instance=ExtResource("1_dkkxd")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="4"]
+texture = SubResource("AtlasTexture_o6wf1")
