@@ -240,6 +240,7 @@ Matheff — Today at 1:52 PM",
 	"pig_8_truth": "I am watching you. I have always watched you. I will always do. You will obey me. You have always obeyed me.
 	You will always do. Here's a red key for obedience.",
 	"pig_8_lie": "So there's no food left? We no longer can live here then. We will have to return to humans now. There's no other choice.",
+	"pig_8_lie_key": "If that's so, we no longer need the key that we were keeping. You can take it.",
 	"pig_8_lie_2": "Oink ;(",
 	"pig_big_1": "Who are you? How did you get here? It's so good just to lie here and eat all the food. Just me. No Pig Brother.
 	No other pigs. Noone can stop me from eating. It was such a good idea to start screaming after they sent me to get more food.

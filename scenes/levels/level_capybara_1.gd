@@ -291,6 +291,10 @@ func _on_pig_big_trigger_action_done(source: ActionTrigger) -> void:
 	await tween.finished
 	DialogueHelper.stop_cutscene_set_up()
 
+func obtain_red_key() -> void:
+	DialogueHelper.set_up_acquisition("Red key", preload("res://assets/sprites/level1/keys/red_key.png"))
+	StateHelper.sets("red_key", 1)
+
 func pigs_kill_big_pig() -> void:
 	StateHelper.sets("lucas_temple", 5)
 	var tilemap: TileMap = $TileMap
@@ -308,16 +312,17 @@ func pigs_kill_big_pig() -> void:
 	
 	DialogueHelper.play_dialogue("pig_8_truth", "Pig Brother")
 	await DialogueHelper.dialogue_box.dialogue_finished
-	DialogueHelper.set_up_acquisition("Red key", preload("res://assets/sprites/level1/keys/red_key.png"))
+	obtain_red_key()
 	await DialogueHelper.acqusition_box.item_taken
-	StateHelper.sets("red_key", 1)
 	DialogueHelper.play_dialogue("pig_8_3", "Pig Brother")
 	
 
 func pigs_return_to_people() -> void:
 	StateHelper.sets("lucas_temple", 6)
-	DialogueHelper.play_dialogue("pig_8_lie", "No longer Pig Brother")
+	DialogueHelper.play_dialogue_sequence(["pig_8_lie", "pig_8_lie_key"], ["No longer Pig Brother", "No longer Pig Brother"])
 	await DialogueHelper.dialogue_box.dialogue_finished
+	obtain_red_key()
+	await DialogueHelper.acqusition_box.item_taken
 	var pig1: MovableCharacterBase = $TemplePig/Pigs/Pig1
 	var pig1_trigger = $TemplePig/Pigs/Pig1/Pig1Trigger
 	var pig2: MovableCharacterBase = $TemplePig/Pigs/Pig2

@@ -32,6 +32,8 @@ func add_quest_notified(quest_name: String, time_to_notify: int = 10) -> void:
 	)
 
 func remove_quest_notified(quest_name: String, time_to_notify: int = 10) -> void:
+	if not quests.has(quest_name):
+		return
 	var quest_to_remove: TreeItem = quests[quest_name]
 	var old_text = quest_to_remove.get_text(0)
 	quest_to_remove.set_text(0, "[COMPLETED] " + old_text)
