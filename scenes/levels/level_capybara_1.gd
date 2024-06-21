@@ -640,3 +640,39 @@ func _on_stick_5_trigger_action_done(source: ActionTrigger) -> void:
 	await DialogueHelper.dialogue_box.dialogue_finished
 	$StickyForest/Stick5.queue_free()
 	on_stick_pocketed()
+
+
+func _on_teleport_1_trigger_player_entered(source: Area2D) -> void:
+	var tp_zone = Vector2(4008, 504)
+	DialogueHelper.player.global_position = tp_zone
+
+
+func _on_teleport_2_trigger_player_entered(source: Area2D) -> void:
+	var tp_zone = Vector2(4112, 1136)
+	DialogueHelper.player.global_position = tp_zone
+
+
+func _on_nothingness_trigger_action_done(source: ActionTrigger) -> void:
+	source.queue_free()
+	DialogueHelper.start_cutscene_set_up()
+	DialogueHelper.play_dialogue("follower_wrong_passage_1")
+	await DialogueHelper.dialogue_box.dialogue_finished
+	var mesmerizing_void: Sprite2D = $StickyForest/Void
+	await create_tween().tween_property(mesmerizing_void, ^"modulate", Color.WHITE, 2)
+	DialogueHelper.play_dialogue("follower_wrong_passage_2")
+	await DialogueHelper.dialogue_box.dialogue_finished
+	mesmerizing_void.texture = preload("res://assets/sprites/level1/mesmerizing_void2.png")
+	DialogueHelper.play_dialogue("follower_wrong_passage_3")
+	await DialogueHelper.dialogue_box.dialogue_finished
+	DialogueHelper.stop_cutscene_set_up()
+
+
+func _on_help_trigger_player_entered(source: Area2D) -> void:
+	source.queue_free()
+	DialogueHelper.start_cutscene_set_up()
+	DialogueHelper.play_dialogue("follower_help_1")
+	await DialogueHelper.dialogue_box.dialogue_finished
+	await create_tween().tween_interval(3).finished
+	DialogueHelper.play_dialogue("follower_help_2")
+	await DialogueHelper.dialogue_box.dialogue_finished
+	DialogueHelper.stop_cutscene_set_up()

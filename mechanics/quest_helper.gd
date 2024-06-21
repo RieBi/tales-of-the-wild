@@ -71,7 +71,7 @@ static func poller_capybara_jones() -> void:
 		texts.append("Eradicate the evil in the crypt")
 	if temple_state > 3:
 		texts[3] = STR_COMPLETED + texts[3]
-		texts.append("Talk with Master")
+		texts.append("Talk with Pig Brother")
 	
 	quest_texts = texts
 	
@@ -80,5 +80,6 @@ static func poller_stranger_sticks() -> void:
 	var texts: Array[String] = ["Gather sticks (%s / 5)" % stick_count]
 	if stick_count == 5:
 		texts[0] = STR_COMPLETED + texts[0]
+		texts.append("Talk with Asedine")
 	
 	quest_texts = texts

@@ -350,7 +350,7 @@ Matheff — Today at 1:52 PM",
 	And so you do.",
 	"follower_stick_4": "You see a sacrifice plate, ready to be filled with blood of a heretic. You feel like it could burn really well in a campfire.",
 	"follower_stick_5": "You see a string of Unicode-16 symbols. Mostly escape sequences. Not much usage. Yet it could burn well. You pick it up.",
-	"follower_help_1": "Looking up, you see a call for HELP. You think who could have built it.",
+	"follower_help_1": "Looking up, you see a call for HELP. You think about who could have built it.",
 	"follower_help_2": "You thought well. And yet you have no idea who's behind this.",
 	"follower_wrong_passage_1": "There's nothing in here. Absolutely nothing. A pure void. Or is there?",
 	# A void appears
