@@ -602,3 +602,41 @@ func _on_bondurnar_trigger_action_done(source: ActionTrigger) -> void:
 	DialogueHelper.stop_cutscene_set_up()
 	on_talked_with_follower()
 	particles.queue_free()
+
+func on_stick_pocketed() -> void:
+	StateHelper.sets("sticks_collected", StateHelper.gets("sticks_collected") + 1)
+	QuestHelper.poll_quests()
+
+func _on_stick_1_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue("follower_stick_1")
+	await DialogueHelper.dialogue_box.dialogue_finished
+	$StickyForest/Stick1.queue_free()
+	on_stick_pocketed()
+
+
+func _on_stick_2_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue("follower_stick_2")
+	await DialogueHelper.dialogue_box.dialogue_finished
+	$StickyForest/Stick2.queue_free()
+	on_stick_pocketed()
+
+
+func _on_stick_3_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue("follower_stick_3")
+	await DialogueHelper.dialogue_box.dialogue_finished
+	$StickyForest/Stick3.queue_free()
+	on_stick_pocketed()
+
+
+func _on_stick_4_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue("follower_stick_4")
+	await DialogueHelper.dialogue_box.dialogue_finished
+	$StickyForest/Stick4.queue_free()
+	on_stick_pocketed()
+
+
+func _on_stick_5_trigger_action_done(source: ActionTrigger) -> void:
+	DialogueHelper.play_dialogue("follower_stick_5")
+	await DialogueHelper.dialogue_box.dialogue_finished
+	$StickyForest/Stick5.queue_free()
+	on_stick_pocketed()

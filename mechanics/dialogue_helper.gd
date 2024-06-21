@@ -343,6 +343,20 @@ Matheff — Today at 1:52 PM",
 	WELL, techincally it was me <3. Yet, we will omit that in the current situation. You shall find 5 good sticks that will burn well.
 	We've got a nice looking forest around the camp, I'm pretty sure there are lots of sticks lying on the ground in it.
 	Finding 5 sticks would be a piece of cake for such a candy like you <3",
+	
+	"follower_stick_1": "You see a stick. You put it in your capypocket.",
+	"follower_stick_2": "You see a stick. It's covered in ketchup. Yummy!. You lick all the ketchup off of it and pick up the stick.",
+	"follower_stick_3": "A boomerang-shaped stick. Or a stick-shaped boomerang. You better pick it up, or it will haunt you in your dreams.
+	And so you do.",
+	"follower_stick_4": "You see a sacrifice plate, ready to be filled with blood of a heretic. You feel like it could burn really well in a campfire.",
+	"follower_stick_5": "You see a string of Unicode-16 symbols. Mostly escape sequences. Not much usage. Yet it could burn well. You pick it up.",
+	"follower_help_1": "Looking up, you see a call for HELP. You think who could have built it.",
+	"follower_help_2": "You thought well. And yet you have no idea who's behind this.",
+	"follower_wrong_passage_1": "There's nothing in here. Absolutely nothing. A pure void. Or is there?",
+	# A void appears
+	"follower_wrong_passage_2": "A void of mesmerizing beauty appears. You can't restrain yourself from looking at it.",
+	# Void starts staring back (eyes appear)
+	"follower_wrong_passage_3": "The void lookes back at you. Could it be love?"
 }
 
 static var portraits_data = {
