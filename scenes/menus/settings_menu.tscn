@@ -1,0 +1,103 @@
+[gd_scene load_steps=2 format=3 uid="uid://gs3owdsdndut"]
+
+[ext_resource type="Script" path="res://scenes/menus/settings_menu.gd" id="1_hpm4v"]
+
+[node name="SettingsMenu" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_hpm4v")
+
+[node name="Settings" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.2
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.8
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.344076, 0.344076, 0.344076, 1)
+
+[node name="Options" type="Control" parent="Settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FlickeringOptions" type="OptionButton" parent="Settings/Options"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 16.0
+offset_right = 383.0
+offset_bottom = 47.0
+item_count = 2
+selected = 0
+popup/item_0/text = "Enabled"
+popup/item_0/id = 0
+popup/item_1/text = "Disabled"
+popup/item_1/id = 1
+
+[node name="FlickeringLabel" type="Label" parent="Settings/Options"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 64.0
+offset_bottom = 47.0
+text = "Flickering images"
+
+[node name="DeafLabel" type="Label" parent="Settings/Options"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 64.0
+offset_right = 109.0
+offset_bottom = 87.0
+text = "Deaf mode"
+
+[node name="DeafButton" type="CheckBox" parent="Settings/Options"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 64.0
+offset_right = 280.0
+offset_bottom = 88.0
+disabled = true
+button_pressed = true
+
+[node name="FullscreenLabel" type="Label" parent="Settings/Options"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 104.0
+offset_right = 103.0
+offset_bottom = 127.0
+text = "Fullscreen"
+
+[node name="FullscreenButton" type="CheckBox" parent="Settings/Options"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 104.0
+offset_right = 280.0
+offset_bottom = 128.0
+
+[node name="ExitButton" type="Button" parent="Settings"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 256.0
+offset_top = -72.0
+offset_right = -272.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Apply and exit"
+
+[connection signal="pressed" from="Settings/ExitButton" to="." method="_on_exit_button_pressed"]
