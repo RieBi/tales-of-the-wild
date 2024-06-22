@@ -406,7 +406,7 @@ Matheff — Today at 1:52 PM",
 	"ceo_3": "Nope, I don't think so. Need even more. The line must go up. I need to rethink the work conditions of my workers.",
 	"ceo_4": "They would need to work at least 25 hours a day, and if they don't want to get a paycut, then at least 48 hours a day.
 	Of course, they must also work at least 8 days a week. That would be a bare minimum. Their annual leave should be at most -20 days.
-	That is, 20 days per year they work even harder, working 2 days a day every day.",
+	That is, 20 days per year they work even harder, working 2 days a day every day. They would handle it. We're a family, after all.",
 	"ceo_5": "That is the only way.",
 	
 	"finalle_sleepy_1": "You feel sleepy. Maybe it's the time to go to bed?",
