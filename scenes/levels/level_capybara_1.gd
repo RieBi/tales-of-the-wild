@@ -5,6 +5,9 @@ var d: float = 0
 func _process(delta: float) -> void:
 	d = delta
 
+func _ready() -> void:
+	hide()
+
 func _on_awaken_trigger_player_entered(source: Area2D) -> void:
 	source.queue_free()
 	hide()

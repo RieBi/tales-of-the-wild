@@ -1,11 +1,14 @@
 extends CanvasLayer
 class_name SettingsMenu
 
-static func Settings(parent_node: Node) -> void:
+signal exited
+
+static func Settings(parent_node: Node) -> SettingsMenu:
 	print("RUN")
 	var scene = load("res://scenes/menus/settings_menu.tscn").instantiate()
 	parent_node.add_child(scene)
 	scene.load_settings()
+	return scene
 
 @onready var flickering_options: OptionButton = $Settings/Options/FlickeringOptions
 @onready var fullscreen_button: CheckBox = $Settings/Options/FullscreenButton
@@ -26,3 +29,4 @@ func _on_exit_button_pressed() -> void:
 	save_settings()
 	SettingsHelper.apply_settings()
 	queue_free()
+	exited.emit()

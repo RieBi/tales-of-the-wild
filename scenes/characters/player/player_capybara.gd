@@ -5,7 +5,6 @@ var idling: bool = true
 
 func _physics_process(delta: float) -> void:
 	super(delta)
-	print(velocity)
 	if velocity.x > 0:
 		animated_sprite.flip_h = true
 		animated_sprite.play("walk")

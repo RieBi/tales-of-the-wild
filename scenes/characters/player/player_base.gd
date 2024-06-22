@@ -8,6 +8,16 @@ var hivemind_velocity: Vector2 = Vector2.ZERO
 func _ready() -> void:
 	DialogueHelper.set_player(self)
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("settings") and not get_tree().paused:
+		get_tree().paused = true
+		var settings_menu = SettingsMenu.Settings(self)
+		settings_menu.exited.connect(
+			func():
+				get_tree().paused = false,
+			CONNECT_ONE_SHOT
+		)
+
 func _physics_process(_delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

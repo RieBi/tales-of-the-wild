@@ -407,7 +407,7 @@ layer_0/tile_data = PackedInt32Array(-65536, 65536, 2, -65535, 65536, 2, -65534,
 layer_2/tile_data = PackedInt32Array(327689, 131072, 1, 262153, 131072, 0, 327688, 65536, 1, 262152, 65536, 0, 393225, 131072, 2, 393224, 65536, 2, 393223, 0, 2, 327687, 0, 1, 262151, 0, 0)
 
 [node name="PlayerCapybara" parent="." index="2" instance=ExtResource("2_5m281")]
-position = Vector2(4775.99, 808.108)
+position = Vector2(16, 16)
 motion_mode = 0
 wall_min_slide_angle = 0.261799
 
@@ -511,6 +511,13 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartArea/UndoneAlcoveTrigger/StaticBody2D" index="0"]
 position = Vector2(0.673523, -6.18111)
 shape = SubResource("RectangleShape2D_6f6qw")
+
+[node name="SettingsTip" type="Label" parent="StartArea" index="5"]
+offset_left = 544.0
+offset_top = -264.0
+offset_right = 730.0
+offset_bottom = -241.0
+text = "ESCAPE to open settings"
 
 [node name="Village" type="Node2D" parent="." index="5"]
 position = Vector2(1832, 192)

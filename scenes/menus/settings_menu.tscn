@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scenes/menus/settings_menu.gd" id="1_hpm4v"]
 
 [node name="SettingsMenu" type="CanvasLayer"]
+process_mode = 3
 layer = 2
 script = ExtResource("1_hpm4v")
 
