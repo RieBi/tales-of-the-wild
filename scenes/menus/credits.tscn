@@ -1,0 +1,110 @@
+[gd_scene load_steps=13 format=3 uid="uid://drtpxfqmcfddw"]
+
+[ext_resource type="Script" path="res://scenes/menus/credits.gd" id="1_wyfep"]
+[ext_resource type="Texture2D" uid="uid://cbsp6emph8yqr" path="res://assets/sprites/anpizza/anpizza1.png" id="2_hacsf"]
+[ext_resource type="Texture2D" uid="uid://dv5s2mtrp0iem" path="res://assets/sprites/anpizza/lipvoid.png" id="3_l3umt"]
+[ext_resource type="Texture2D" uid="uid://cwy7u5y38jw0s" path="res://assets/sprites/capybara/charlie1.png" id="4_avmhv"]
+[ext_resource type="Texture2D" uid="uid://dspj5mnlaf43r" path="res://assets/sprites/capybara/charlie2.png" id="5_w2v2q"]
+[ext_resource type="Texture2D" uid="uid://vd4h7512dbtn" path="res://assets/sprites/capybara/charlie3.png" id="6_fmlbu"]
+[ext_resource type="Texture2D" uid="uid://dyf4xj16mwnfy" path="res://assets/sprites/capybara/charlie4.png" id="7_alk3e"]
+[ext_resource type="Texture2D" uid="uid://caqcljiljw8l4" path="res://assets/sprites/capybara/charlie5.png" id="8_3pfpn"]
+[ext_resource type="Texture2D" uid="uid://dfi8yaaah3yph" path="res://assets/sprites/capybara/charlie6.png" id="9_md7pw"]
+[ext_resource type="Texture2D" uid="uid://bsuk0ra5sn7yw" path="res://assets/sprites/capybara/charlie7.png" id="10_i2w1p"]
+[ext_resource type="Texture2D" uid="uid://11gxdss52v6v" path="res://assets/sprites/capybara/charlie8.png" id="11_l1bbb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ku40g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_avmhv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_w2v2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fmlbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_alk3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3pfpn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_md7pw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_i2w1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_l1bbb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Credits" type="CanvasLayer"]
+script = ExtResource("1_wyfep")
+
+[node name="Melon" type="Node2D" parent="."]
+position = Vector2(0, 750)
+
+[node name="Label1" type="RichTextLabel" parent="Melon"]
+offset_left = 20.0
+offset_right = 1300.0
+offset_bottom = 2000.0
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+bbcode_enabled = true
+text = "[b][color=green]DEVELOPMENT TEAM[/color][/b]
+
+Lead (and the only) developer: RieBi
+
+
+
+
+[b][color=green]ASSETS[/color][/b]
+
+Capybara sprites: [url]https://rainloaf.itch.io/capybara-sprite-sheet[/url]
+Character sprites: [url]https://the-pixel-nook.itch.io/retro-rpg-character-pack[/url]
+A lot of Kenney [url]stuff: https://kenney.nl/assets[/url]
+Snake: [url]https://marwansabihgmxde.itch.io/angry-snake-sprite[/url]
+Fruits: [url]https://ninjikin.itch.io/fruit[/url]
+Pigs: [url]https://deepdivegamestudio.itch.io/animalassetpack[/url]
+Pizza: [url]https://empresskitawa.itch.io/imperial-boutique-icons[/url]
+Meat: [url]https://spiderbr0.itch.io/32x-pixel-raw-meat[/url]
+Skulls: [url]https://skalding.itch.io/skull-pack[/url]
+Keys: [url]https://karsiori.itch.io/pixel-art-key-pack-animated[/url]
+Charlie: [url]https://niffirggames.itch.io/charliethecapybara[/url]
+
+
+
+
+[b][color=green]OTHER[/color][/b]
+
+SCP: [url]https://scp-wiki.wikidot.com/scp-782[/url]
+1984: [url]https://gutenberg.net.au/ebooks01/0100021.txt[/url]
+Animal Farm: [url]https://gutenberg.net.au/ebooks01/0100011h.html[/url]
+
+
+
+
+[center][b][color=violet][font_size=80]Thanks for playing![/font_size][/color][/b][/center]"
+
+[node name="Anpizza" type="Sprite2D" parent="Melon"]
+position = Vector2(916, 158)
+scale = Vector2(10, 10)
+texture = ExtResource("2_hacsf")
+
+[node name="Void" type="Sprite2D" parent="Melon"]
+position = Vector2(1095, 918)
+scale = Vector2(5, 5)
+texture = ExtResource("3_l3umt")
+
+[node name="Charlie" type="AnimatedSprite2D" parent="Melon"]
+position = Vector2(642, 1601)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_ku40g")
+autoplay = "default"
+frame_progress = 0.909175
