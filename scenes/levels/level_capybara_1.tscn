@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=3 uid="uid://d3dumh14dw0qr"]
+[gd_scene load_steps=133 format=3 uid="uid://d3dumh14dw0qr"]
 
 [ext_resource type="PackedScene" uid="uid://5n44p45tlmtr" path="res://scenes/levels/level_base.tscn" id="1_6rlb0"]
 [ext_resource type="PackedScene" uid="uid://dv4t4oejw5u08" path="res://scenes/characters/player/player_capybara.tscn" id="2_5m281"]
@@ -383,6 +383,15 @@ radius = 15.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2yw61"]
 radius = 15.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxrdb"]
+size = Vector2(15.9998, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x30qe"]
+size = Vector2(16, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bn532"]
+size = Vector2(32, 144)
 
 [node name="LevelCapybara1" instance=ExtResource("1_6rlb0")]
 script = ExtResource("2_6bxsx")
@@ -1443,6 +1452,27 @@ position = Vector2(0, -16)
 position = Vector2(0, 32)
 shape = SubResource("CircleShape2D_2yw61")
 
+[node name="Sleepy1Trigger" parent="Finalle" index="5" instance=ExtResource("5_mqa8t")]
+position = Vector2(1128.88, -153.618)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finalle/Sleepy1Trigger" index="0"]
+position = Vector2(-0.0170898, 0.118652)
+shape = SubResource("RectangleShape2D_sxrdb")
+
+[node name="Sleepy2Trigger" parent="Finalle" index="6" instance=ExtResource("5_mqa8t")]
+position = Vector2(1560.86, -153.499)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finalle/Sleepy2Trigger" index="0"]
+position = Vector2(-0.248047, -0.0380859)
+shape = SubResource("RectangleShape2D_x30qe")
+
+[node name="EndTrigger" parent="Finalle" index="7" instance=ExtResource("5_mqa8t")]
+position = Vector2(1760.86, -144.999)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finalle/EndTrigger" index="0"]
+position = Vector2(16, -8.5)
+shape = SubResource("RectangleShape2D_bn532")
+
 [connection signal="action_done" from="Alcove/EvilSnake/EvilSnakeTrigger" to="." method="_on_evil_snake_trigger_action_done"]
 [connection signal="action_done" from="Alcove/AppleTree/AppleTreeTrigger" to="." method="_on_apple_tree_trigger_action_done"]
 [connection signal="action_done" from="Alcove/SnakeLeftTrigger" to="." method="_on_snake_left_trigger_action_done"]
@@ -1504,3 +1534,6 @@ shape = SubResource("CircleShape2D_2yw61")
 [connection signal="action_done" from="Finalle/BigDoor/BigDoorTrigger" to="." method="_on_big_door_trigger_action_done"]
 [connection signal="player_entered" from="Finalle/BrotherPigTrigger" to="." method="_on_brother_pig_trigger_player_entered"]
 [connection signal="action_done" from="Finalle/CEO/CEOTrigger" to="." method="_on_ceo_trigger_action_done"]
+[connection signal="player_entered" from="Finalle/Sleepy1Trigger" to="." method="_on_sleepy_1_trigger_player_entered"]
+[connection signal="player_entered" from="Finalle/Sleepy2Trigger" to="." method="_on_sleepy_2_trigger_player_entered"]
+[connection signal="player_entered" from="Finalle/EndTrigger" to="." method="_on_end_trigger_player_entered"]

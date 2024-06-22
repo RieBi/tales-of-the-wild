@@ -869,3 +869,26 @@ func _on_ceo_trigger_action_done(source: ActionTrigger) -> void:
 		source.hide()
 	else:
 		DialogueHelper.play_dialogue("ceo_5", "CEO")
+
+
+func _on_sleepy_1_trigger_player_entered(source: Area2D) -> void:
+	source.queue_free()
+	DialogueHelper.play_dialogue("finalle_sleepy_1")
+	create_tween().tween_property(self, ^"modulate", Color(0.4, 0.4, 0.4), 1)
+
+
+func _on_sleepy_2_trigger_player_entered(source: Area2D) -> void:
+	source.queue_free()
+	DialogueHelper.play_dialogue("finalle_sleepy_2")
+	create_tween().tween_property(self, ^"modulate", Color(0.2, 0.2, 0.2), 1)
+	DialogueHelper.player.speed /= 2
+
+
+func _on_end_trigger_player_entered(source: Area2D) -> void:
+	DialogueHelper.player.restrict_movement()
+	await create_tween().tween_interval(0.5).finished
+	DialogueHelper.player.idling = false
+	DialogueHelper.player.animated_sprite.play("sleep")
+	await create_tween().tween_interval(2.5).finished
+	await create_tween().tween_property(self, ^"modulate", Color.BLACK, 2)
+	# TODO credits?

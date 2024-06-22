@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dv4t4oejw5u08"]
+[gd_scene load_steps=31 format=3 uid="uid://dv4t4oejw5u08"]
 
 [ext_resource type="PackedScene" uid="uid://5iaw2tucntq" path="res://scenes/characters/player/player_base.tscn" id="1_wmca1"]
 [ext_resource type="Script" path="res://scenes/characters/player/player_capybara.gd" id="2_lqewj"]
@@ -46,6 +46,26 @@ region = Rect2(128, 192, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_e6ljr"]
 atlas = ExtResource("3_16qbq")
 region = Rect2(160, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_absn2"]
+atlas = ExtResource("3_16qbq")
+region = Rect2(160, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25obt"]
+atlas = ExtResource("3_16qbq")
+region = Rect2(128, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qh2ur"]
+atlas = ExtResource("3_16qbq")
+region = Rect2(96, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6nad"]
+atlas = ExtResource("3_16qbq")
+region = Rect2(64, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afifp"]
+atlas = ExtResource("3_16qbq")
+region = Rect2(32, 288, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i1p13"]
 atlas = ExtResource("3_16qbq")
@@ -131,6 +151,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_absn2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25obt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qh2ur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6nad")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afifp")
+}],
+"loop": false,
+"name": &"sleep",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_i1p13")
 }, {
 "duration": 1.0,
@@ -185,4 +225,4 @@ shape = SubResource("RectangleShape2D_vlxeg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="4"]
 position = Vector2(8, 0)
 sprite_frames = SubResource("SpriteFrames_pa01c")
-animation = &"down"
+animation = &"sleep"
