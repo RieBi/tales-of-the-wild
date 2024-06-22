@@ -8,7 +8,7 @@ var hivemind_velocity: Vector2 = Vector2.ZERO
 func _ready() -> void:
 	DialogueHelper.set_player(self)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("settings") and not get_tree().paused:
 		get_tree().paused = true
 		var settings_menu = SettingsMenu.Settings(self)

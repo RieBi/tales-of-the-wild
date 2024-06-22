@@ -472,7 +472,6 @@ func _on_olaf_trigger_action_done(source: ActionTrigger) -> void:
 	
 	DialogueHelper.start_cutscene_set_up()
 	var olaf: MovableCharacterBase = $FollowerCamp/FollowerOlaf
-	var olaf_trigger: ActionTrigger = olaf.get_node(^"OlafTrigger")
 	var player_camera = DialogueHelper.player.get_node(^"Camera2D")
 	source.make_inactive()
 	var message_bubble: AnimatedSprite2D = olaf.message_bubble
@@ -632,7 +631,7 @@ func _on_bondurnar_trigger_action_done(source: ActionTrigger) -> void:
 		["follower_bondurnar_3", "follower_bondurnar_4", "follower_bondurnar_5", "follower_bondurnar_6"],
 		["Bondurnar", "Bondurnar", "Bondurnar", "Bondurnar"])
 	await DialogueHelper.dialogue_box.dialogue_finished
-	await create_tween().tween_property(bondurnar.get_node(^"Sprite2D"), ^"modulate", Color.RED, 1)
+	await create_tween().tween_property(bondurnar.get_node(^"Sprite2D"), ^"modulate", Color.RED, 1).finished
 	DialogueHelper.play_dialogue("follower_bondurnar_7", "Bondurnar")
 	await DialogueHelper.dialogue_box.dialogue_finished
 	message_bubble.hide()
@@ -644,47 +643,47 @@ func on_stick_pocketed() -> void:
 	StateHelper.sets("sticks_collected", StateHelper.gets("sticks_collected") + 1)
 	QuestHelper.poll_quests()
 
-func _on_stick_1_trigger_action_done(source: ActionTrigger) -> void:
+func _on_stick_1_trigger_action_done(_source: ActionTrigger) -> void:
 	DialogueHelper.play_dialogue("follower_stick_1")
 	await DialogueHelper.dialogue_box.dialogue_finished
 	$StickyForest/Stick1.queue_free()
 	on_stick_pocketed()
 
 
-func _on_stick_2_trigger_action_done(source: ActionTrigger) -> void:
+func _on_stick_2_trigger_action_done(_source: ActionTrigger) -> void:
 	DialogueHelper.play_dialogue("follower_stick_2")
 	await DialogueHelper.dialogue_box.dialogue_finished
 	$StickyForest/Stick2.queue_free()
 	on_stick_pocketed()
 
 
-func _on_stick_3_trigger_action_done(source: ActionTrigger) -> void:
+func _on_stick_3_trigger_action_done(_source: ActionTrigger) -> void:
 	DialogueHelper.play_dialogue("follower_stick_3")
 	await DialogueHelper.dialogue_box.dialogue_finished
 	$StickyForest/Stick3.queue_free()
 	on_stick_pocketed()
 
 
-func _on_stick_4_trigger_action_done(source: ActionTrigger) -> void:
+func _on_stick_4_trigger_action_done(_source: ActionTrigger) -> void:
 	DialogueHelper.play_dialogue("follower_stick_4")
 	await DialogueHelper.dialogue_box.dialogue_finished
 	$StickyForest/Stick4.queue_free()
 	on_stick_pocketed()
 
 
-func _on_stick_5_trigger_action_done(source: ActionTrigger) -> void:
+func _on_stick_5_trigger_action_done(_source: ActionTrigger) -> void:
 	DialogueHelper.play_dialogue("follower_stick_5")
 	await DialogueHelper.dialogue_box.dialogue_finished
 	$StickyForest/Stick5.queue_free()
 	on_stick_pocketed()
 
 
-func _on_teleport_1_trigger_player_entered(source: Area2D) -> void:
+func _on_teleport_1_trigger_player_entered(_source: Area2D) -> void:
 	var tp_zone = Vector2(4008, 504)
 	DialogueHelper.player.global_position = tp_zone
 
 
-func _on_teleport_2_trigger_player_entered(source: Area2D) -> void:
+func _on_teleport_2_trigger_player_entered(_source: Area2D) -> void:
 	var tp_zone = Vector2(4112, 1136)
 	DialogueHelper.player.global_position = tp_zone
 
@@ -695,7 +694,7 @@ func _on_nothingness_trigger_action_done(source: ActionTrigger) -> void:
 	DialogueHelper.play_dialogue("follower_wrong_passage_1")
 	await DialogueHelper.dialogue_box.dialogue_finished
 	var mesmerizing_void: Sprite2D = $StickyForest/Void
-	await create_tween().tween_property(mesmerizing_void, ^"modulate", Color.WHITE, 2)
+	await create_tween().tween_property(mesmerizing_void, ^"modulate", Color.WHITE, 2).finished
 	DialogueHelper.play_dialogue("follower_wrong_passage_2")
 	await DialogueHelper.dialogue_box.dialogue_finished
 	mesmerizing_void.texture = preload("res://assets/sprites/level1/mesmerizing_void2.png")
@@ -887,11 +886,11 @@ func _on_sleepy_2_trigger_player_entered(source: Area2D) -> void:
 	DialogueHelper.player.speed /= 2
 
 
-func _on_end_trigger_player_entered(source: Area2D) -> void:
+func _on_end_trigger_player_entered(_source: Area2D) -> void:
 	DialogueHelper.player.restrict_movement()
 	await create_tween().tween_interval(0.5).finished
 	DialogueHelper.player.idling = false
 	DialogueHelper.player.animated_sprite.play("sleep")
 	await create_tween().tween_interval(2.5).finished
-	await create_tween().tween_property(self, ^"modulate", Color.BLACK, 2)
+	await create_tween().tween_property(self, ^"modulate", Color.BLACK, 2).finished
 	# TODO credits?
