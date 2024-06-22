@@ -829,3 +829,33 @@ func followers_cutscene() -> void:
 	$FollowerCamp/FollowerBondurnar/BondurnarTrigger.make_active()
 	await DialogueHelper.acqusition_box.item_taken
 	DialogueHelper.stop_cutscene_set_up()
+
+
+func _on_big_door_trigger_action_done(source: ActionTrigger) -> void:
+	var key_r: int = StateHelper.gets("red_key")
+	var key_g: int = StateHelper.gets("green_key")
+
+	if key_r == 0 and key_g == 0:
+		DialogueHelper.play_dialogue("rg_door_no_rg")
+		return
+	elif key_r == 0:
+		DialogueHelper.play_dialogue("rg_door_no_r")
+		return
+	elif key_g == 0:
+		DialogueHelper.play_dialogue("rg_door_no_g")
+		return
+	else:
+		DialogueHelper.play_dialogue("rg_door_open")
+		source.make_inactive()
+		$Finalle/BigDoor.collision_layer = 0
+		$Finalle/BigDoor/Sprite2D.texture = preload("res://assets/sprites/level1/rg_door2.png")
+
+
+func _on_brother_pig_trigger_player_entered(source: Area2D) -> void:
+	source.queue_free()
+	if StateHelper.gets("lucas_temple") != 5:
+		$Finalle/BrotherPig.queue_free()
+		return
+	
+	$Finalle/BrotherPig.show()
+	DialogueHelper.play_dialogue("pig_watching", "???")

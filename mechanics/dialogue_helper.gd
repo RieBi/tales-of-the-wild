@@ -393,6 +393,11 @@ Matheff — Today at 1:52 PM",
 	"follower_isolde_end": "I'll put up a new flowerbox in memory of you!",
 	"follower_olaf_end": "My Shao Bin skills will continue to rise, and one day I might as well be just like you.",
 	"follower_bondurnar_end": "Mhm? I'm just bushing out here, no need to stare at me like that.",
+	
+	"rg_door_no_rg": "The door needs red and green key to open. You don't have any of those.",
+	"rg_door_no_r": "You have the green key, but this door also needs the red key to open the door.",
+	"rg_door_no_g": "You've got the red key, but you lack the green one to open the door.",
+	"rg_door_open": "You put both of the keys into the door. The door opens.",
 }
 
 static var portraits_data = {

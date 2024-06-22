@@ -24,11 +24,11 @@ static var states = {
 	
 	# 0 - didn't see, 1 - made it to the entrance, 2 - solved the puzzle
 	# 3 - talked with master, 4 - talked with big pig, 5 - told truth, 6 - told lies
-	"lucas_temple": 4,
+	"lucas_temple": 5,
 	
 	# 0 - absent, 1 - in stock
-	"red_key": 0,
-	"green_key": 0,
+	"red_key": 1,
+	"green_key": 1,
 	
 	# The count of followers, 0 - not met anyone, 5 - met all of them
 	"followers_acquainted": 0,
