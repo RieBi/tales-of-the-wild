@@ -412,6 +412,11 @@ func _on_undone_alcove_trigger_player_entered(source: Area2D) -> void:
 
 
 func _on_thomas_trigger_action_done(source: ActionTrigger) -> void:
+	if StateHelper.gets("green_key") == 1:
+		DialogueHelper.play_dialogue("follower_thomas_end")
+		source.hide()
+		return
+	
 	DialogueHelper.play_dialogue_sequence(
 		["follower_thomas_1", "follower_thomas_2", "follower_thomas_3"],
 		["Thomas", "Thomas", "Thomas"])
@@ -429,6 +434,11 @@ func _on_thomas_trigger_action_done(source: ActionTrigger) -> void:
 
 
 func _on_sergio_trigger_action_done(source: ActionTrigger) -> void:
+	if StateHelper.gets("green_key") == 1:
+		DialogueHelper.play_dialogue("follower_sergio_end")
+		source.hide()
+		return
+	
 	DialogueHelper.play_dialogue_sequence(
 		["follower_sergio_1", "follower_sergio_2", "follower_sergio_3", "follower_sergio_4", "follower_sergio_5"],
 		["Sergio", "Sergio", "Sergio", "Sergio", "Sergio"]
@@ -438,6 +448,11 @@ func _on_sergio_trigger_action_done(source: ActionTrigger) -> void:
 
 
 func _on_isolde_trigger_action_done(source: ActionTrigger) -> void:
+	if StateHelper.gets("green_key") == 1:
+		DialogueHelper.play_dialogue("follower_isolde_end")
+		source.hide()
+		return
+	
 	DialogueHelper.play_dialogue_sequence(
 		["follower_isolde_1", "follower_isolde_2", "follower_isolde_3"],
 		["Isolde", "Isolde", "Isolde"]
@@ -447,6 +462,11 @@ func _on_isolde_trigger_action_done(source: ActionTrigger) -> void:
 
 
 func _on_olaf_trigger_action_done(source: ActionTrigger) -> void:
+	if StateHelper.gets("green_key") == 1:
+		DialogueHelper.play_dialogue("follower_olaf_end")
+		source.hide()
+		return
+	
 	DialogueHelper.start_cutscene_set_up()
 	var olaf: MovableCharacterBase = $FollowerCamp/FollowerOlaf
 	var olaf_trigger: ActionTrigger = olaf.get_node(^"OlafTrigger")
@@ -552,6 +572,11 @@ func on_talked_with_follower() -> void:
 		$FollowerCamp/FollowerAsedine/AsedineTrigger.show()
 
 func _on_asedine_trigger_action_done(source: ActionTrigger) -> void:
+	if StateHelper.gets("green_key") == 1:
+		DialogueHelper.play_dialogue("follower_asedine_end")
+		source.hide()
+		return
+	
 	if StateHelper.gets("asedine_talked") == 0:
 		DialogueHelper.play_dialogue("follower_asedine_1", "Asedine")
 		StateHelper.sets("asedine_talked", 1)
@@ -575,6 +600,11 @@ func _on_asedine_trigger_action_done(source: ActionTrigger) -> void:
 
 
 func _on_bondurnar_trigger_action_done(source: ActionTrigger) -> void:
+	if StateHelper.gets("green_key") == 1:
+		DialogueHelper.play_dialogue("follower_bondurnar_end")
+		source.hide()
+		return
+	
 	source.make_inactive()
 	var bondurnar: MovableCharacterBase = $FollowerCamp/FollowerBondurnar
 	var message_bubble = bondurnar.message_bubble
@@ -794,5 +824,8 @@ func followers_cutscene() -> void:
 	StateHelper.sets("green_key", 1)
 	DialogueHelper.acqusition_box.center_texture.position = Vector2(528, 208)
 	DialogueHelper.set_up_acquisition("Green key", preload("res://assets/sprites/level1/keys/green_key.png"))
+	for t in triggers:
+		t.make_active()
+	$FollowerCamp/FollowerBondurnar/BondurnarTrigger.make_active()
 	await DialogueHelper.acqusition_box.item_taken
 	DialogueHelper.stop_cutscene_set_up()
