@@ -557,6 +557,10 @@ func _on_asedine_trigger_action_done(source: ActionTrigger) -> void:
 		StateHelper.sets("asedine_talked", 1)
 		await DialogueHelper.dialogue_box.dialogue_finished
 	
+	if StateHelper.gets("sticks_collected") == 5:
+		followers_cutscene()
+		return
+	
 	match StateHelper.gets("followers_acquainted"):
 		5:
 			DialogueHelper.play_dialogue("follower_asedine_3", "Asedine")
@@ -675,4 +679,120 @@ func _on_help_trigger_player_entered(source: Area2D) -> void:
 	await create_tween().tween_interval(3).finished
 	DialogueHelper.play_dialogue("follower_help_2")
 	await DialogueHelper.dialogue_box.dialogue_finished
+	DialogueHelper.stop_cutscene_set_up()
+
+func followers_cutscene() -> void:
+	QuestHelper.remove_quest("Stranger Sticks")
+	DialogueHelper.play_dialogue("follower_asedine_4", "Asedine")
+	await DialogueHelper.dialogue_box.dialogue_finished
+	DialogueHelper.start_cutscene_set_up()
+	
+	var tilemap: TileMap = $TileMap
+	tilemap.set_cell(0, Vector2(128, 36), 0, Vector2(14, 8))
+	await create_tween().tween_property(self, ^"modulate", Color.BLACK, 2).finished
+	
+	var capybara_marker = $FollowerCamp/Ceremony/CapybaraMarker
+	var asedine_marker = $FollowerCamp/Ceremony/AsedineMarker
+	var asedine = $FollowerCamp/FollowerAsedine
+	asedine.global_position = asedine_marker.global_position
+	DialogueHelper.player.global_position = capybara_marker.global_position
+	$FollowerCamp/Ceremony/FireParticles.emitting = true
+	var followers: Array[MovableCharacterBase]
+	followers = [$FollowerCamp/FollowerThomas, $FollowerCamp/FollowerSergio, $FollowerCamp/FollowerIsolde,
+	$FollowerCamp/FollowerOlaf]
+	var triggers: Array[ActionTrigger]
+	triggers = [$FollowerCamp/FollowerThomas/ThomasTrigger, $FollowerCamp/FollowerSergio/SergioTrigger,
+	$FollowerCamp/FollowerIsolde/IsoldeTrigger, $FollowerCamp/FollowerOlaf/OlafTrigger, $FollowerCamp/FollowerAsedine/AsedineTrigger]
+	for t in triggers:
+		t.make_inactive()
+	
+	await create_tween().tween_interval(1).finished
+	await create_tween().tween_property(self, ^"modulate", Color(0.508, 0.508, 0.508), 2).finished
+	asedine.show_message_bubble()
+	DialogueHelper.play_dialogue("ceremony_1_asedine", "Asedine")
+	await DialogueHelper.dialogue_box.dialogue_finished
+	asedine.hide_message_bubble()
+	for f in followers:
+		f.start_moving()
+	await followers[1].path_finished
+	asedine.show_message_bubble()
+	DialogueHelper.play_dialogue("ceremony_2_asedine", "Asedine")
+	await DialogueHelper.dialogue_box.dialogue_finished
+	
+	DialogueHelper.play_dialogue("ceremony_3_asedine", "Asedine")
+	create_tween().tween_property(asedine.get_node(^"Magick"), ^"modulate", Color.WHITE, 3)
+	await DialogueHelper.dialogue_box.dialogue_finished
+	asedine.hide_message_bubble()
+	
+	var thomas = followers[0]
+	thomas.show_message_bubble()
+	DialogueHelper.play_dialogue("ceremony_4_thomas", "Thomas")
+	create_tween().tween_property(thomas.get_node(^"Magick"), ^"modulate", Color.WHITE, 3)
+	await DialogueHelper.dialogue_box.dialogue_finished
+	thomas.hide_message_bubble()
+	
+	var sergio = followers[1]
+	sergio.show_message_bubble()
+	DialogueHelper.play_dialogue("ceremony_5_sergio", "Sergio")
+	create_tween().tween_property(sergio.get_node(^"Magick"), ^"modulate", Color.WHITE, 3)
+	await DialogueHelper.dialogue_box.dialogue_finished
+	sergio.hide_message_bubble()
+	
+	var isolde = followers[2]
+	isolde.show_message_bubble()
+	DialogueHelper.play_dialogue("ceremony_6_isolde", "Isolde")
+	create_tween().tween_property(isolde.get_node(^"Magick"), ^"modulate", Color.WHITE, 3)
+	await DialogueHelper.dialogue_box.dialogue_finished
+	isolde.hide_message_bubble()
+	
+	var olaf = followers[3]
+	olaf.show_message_bubble()
+	DialogueHelper.play_dialogue("ceremony_7_olaf", "Olaf")
+	create_tween().tween_property(olaf.get_node(^"Magick"), ^"modulate", Color.WHITE, 3)
+	await DialogueHelper.dialogue_box.dialogue_finished
+	olaf.hide_message_bubble()
+	
+	var pathsCounterClockwise: Array[PathFollow2D]
+	pathsCounterClockwise = [
+		$FollowerCamp/Ceremony/ThomasCeremonyPath/PathFollow2D,
+		$FollowerCamp/Ceremony/SergioCeremonyPath/PathFollow2D,
+		$FollowerCamp/Ceremony/IsoldeCeremonyPath/PathFollow2D,
+		$FollowerCamp/Ceremony/OlafCeremonyPath/PathFollow2D,
+		$FollowerCamp/Ceremony/AsedineCeremonyPath/PathFollow2D
+	]
+	thomas.set_path(pathsCounterClockwise[0])
+	sergio.set_path(pathsCounterClockwise[1])
+	isolde.set_path(pathsCounterClockwise[2])
+	olaf.set_path(pathsCounterClockwise[3])
+	asedine.set_path(pathsCounterClockwise[4])
+	await asedine.path_finished
+	
+	var pathsClockwise: Array[PathFollow2D]
+	pathsClockwise = [
+		$FollowerCamp/Ceremony/ThomasCeremonyPath2/PathFollow2D,
+		$FollowerCamp/Ceremony/SergioCeremonyPath2/PathFollow2D,
+		$FollowerCamp/Ceremony/IsoldeCeremonyPath2/PathFollow2D,
+		$FollowerCamp/Ceremony/OlafCeremonyPath2/PathFollow2D,
+		$FollowerCamp/Ceremony/AsedineCeremonyPath2/PathFollow2D
+	]
+	thomas.set_path(pathsClockwise[0])
+	sergio.set_path(pathsClockwise[1])
+	isolde.set_path(pathsClockwise[2])
+	olaf.set_path(pathsClockwise[3])
+	asedine.set_path(pathsClockwise[4])
+	await asedine.path_finished
+	
+	var bondurnar = $FollowerCamp/FollowerBondurnar
+	$FollowerCamp/FollowerBondurnar/BondurnarTrigger.make_inactive()
+	bondurnar.set_path($FollowerCamp/Ceremony/BondurnarCeremonyPath/PathFollow2D)
+	await bondurnar.path_finished
+	bondurnar.show_message_bubble()
+	DialogueHelper.play_dialogue("ceremony_8_bondurnar", "Bondurnar")
+	await DialogueHelper.dialogue_box.dialogue_finished
+	bondurnar.hide_message_bubble()
+	
+	StateHelper.sets("green_key", 1)
+	DialogueHelper.acqusition_box.center_texture.position = Vector2(528, 208)
+	DialogueHelper.set_up_acquisition("Green key", preload("res://assets/sprites/level1/keys/green_key.png"))
+	await DialogueHelper.acqusition_box.item_taken
 	DialogueHelper.stop_cutscene_set_up()

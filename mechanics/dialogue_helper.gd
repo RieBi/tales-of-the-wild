@@ -341,14 +341,15 @@ Matheff — Today at 1:52 PM",
 	"follower_asedine_3": "Great, you are now familiar with who we are. The ceremony is almost about to begin, but we've got a...
 	sticky problem. You see, the ceremony needs a burning campfire. Such are the rules. It was not me who wrote them.
 	WELL, techincally it was me <3. Yet, we will omit that in the current situation. You shall find 5 good sticks that will burn well.
-	We've got a nice looking forest around the camp, I'm pretty sure there are lots of sticks lying on the ground in it.
-	Finding 5 sticks would be a piece of cake for such a candy like you <3",
+	We've got a nice looking forest to the right of the camp, I'm pretty sure there are lots of sticks lying on the ground in it.
+	Finding 5 sticks would be a piece of cake for such a honey like you <3",
+	"follower_asedine_4": "You have brought all the sticks? THE CEREMONY SHALL BEGIN.",
 	
 	"follower_stick_1": "You see a stick. You put it in your capypocket.",
 	"follower_stick_2": "You see a stick. It's covered in ketchup. Yummy!. You lick all the ketchup off of it and pick up the stick.",
 	"follower_stick_3": "A boomerang-shaped stick. Or a stick-shaped boomerang. You better pick it up, or it will haunt you in your dreams.
 	And so you do.",
-	"follower_stick_4": "You see a sacrifice plate, ready to be filled with blood of a heretic. You feel like it could burn really well in a campfire.",
+	"follower_stick_4": "You see a sacrifice plate, ready to be filled with blood of heretics. You feel like it could burn really well in the campfire.",
 	"follower_stick_5": "You see a string of Unicode-16 symbols. Mostly escape sequences. Not much usage. Yet it could burn well. You pick it up.",
 	"follower_help_1": "Looking up, you see a call for HELP. You think about who could have built it.",
 	"follower_help_2": "You thought well. And yet you have no idea who's behind this.",
@@ -356,7 +357,42 @@ Matheff — Today at 1:52 PM",
 	# A void appears
 	"follower_wrong_passage_2": "A void of mesmerizing beauty appears. You can't restrain yourself from looking at it.",
 	# Void starts staring back (eyes appear)
-	"follower_wrong_passage_3": "The void lookes back at you. Could it be love?"
+	"follower_wrong_passage_3": "The void lookes back at you. Could it be love?",
+	
+	"ceremony_1_asedine": "EVERYONE TO THEIR PLACES! THE CEREMONY BEGINS NOW!",
+	# Everyone gets to their places
+	"ceremony_2_asedine": "Dear Brothers and Sisters. Thank you for coming. It has been an age since last we were at the ceremony.
+	I am sorry to pull you from your affairs, but this is a matter that cannot wait. Sacred Capybara has arrived.
+	And thus shall we say:",
+	"ceremony_3_asedine": "
+	We've prayed for ages to the gods
+	Our acts were all yet met undone
+	We were giving sober nods
+	And nothing came out of this satire",
+	"ceremony_4_thomas": "From dawn till dusk we smiled to heavens
+	This was the only thing to do
+	We never looked at evil caverns
+	Though evil snake wanted us to",
+	"ceremony_5_sergio": "The day we met was blooming yellow
+	The shade of pale skin and demise
+	Our old plans were only shallow
+	For we could not yet recognize",
+	"ceremony_6_isolde": "A day will come to battle evil
+	Which lurks in everyone of us
+	The Capybara's mind will shiver
+	All of the knowledge it did amass",
+	"ceremony_7_olaf": "We shall give key to open gates
+	Whether they lead to sun or dust
+	We can't abandon our fates
+	And Capybara must go fast",
+	"ceremony_8_bondurnar": "Here, take your key.",
+	
+	"follower_asedine_end": "Farewell, Capybara, may The Three Guardians be with you!",
+	"follower_thomas_end": "May pineapples be with you!",
+	"follower_sergio_end": "I still haven't quite understood, are you the real Sacred Capybara, or was it just a preparation ceremony?",
+	"follower_isolde_end": "I'll put up a new flowerbox in memory of you!",
+	"follower_olaf_end": "My Shao Bin skills will continue to rise, and one day I might as well be just like you.",
+	"follower_bondurnar_end": "Mhm? I'm just bushing out here, no need to stare at me like that.",
 }
 
 static var portraits_data = {
