@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cy2ihjif1msr7"]
+
+[ext_resource type="PackedScene" uid="uid://dvv8ejxyviw24" path="res://scenes/characters/movable_character_base.tscn" id="1_6k0xl"]
+[ext_resource type="Texture2D" uid="uid://gm18hiv33l2s" path="res://assets/sprites/characters/characters.png" id="2_7mu54"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlk35"]
+atlas = ExtResource("2_7mu54")
+region = Rect2(0, 240, 16, 16)
+
+[node name="CEO" instance=ExtResource("1_6k0xl")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="4"]
+texture = SubResource("AtlasTexture_mlk35")

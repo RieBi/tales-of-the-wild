@@ -859,3 +859,13 @@ func _on_brother_pig_trigger_player_entered(source: Area2D) -> void:
 	
 	$Finalle/BrotherPig.show()
 	DialogueHelper.play_dialogue("pig_watching", "???")
+
+
+func _on_ceo_trigger_action_done(source: ActionTrigger) -> void:
+	if StateHelper.gets("ceo_met") == 0:
+		DialogueHelper.play_dialogue_sequence(["ceo_1", "ceo_2", "ceo_3", "ceo_4", "ceo_5"], ["CEO", "CEO", "CEO", "CEO", "CEO"])
+		StateHelper.sets("ceo_met", 1)
+		await DialogueHelper.dialogue_box.dialogue_finished
+		source.hide()
+	else:
+		DialogueHelper.play_dialogue("ceo_5", "CEO")

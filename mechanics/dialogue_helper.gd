@@ -398,6 +398,16 @@ Matheff — Today at 1:52 PM",
 	"rg_door_no_r": "You have the green key, but this door also needs the red key to open the door.",
 	"rg_door_no_g": "You've got the red key, but you lack the green one to open the door.",
 	"rg_door_open": "You put both of the keys into the door. The door opens.",
+	
+	"shut_door": "The door is locked shut. It has three keyholes in it.",
+	"ceo_1": "Greetings! I am the CEO of MoneyCorp.",
+	"ceo_2": "I've got a little bit of gold, but it's not enough. Way too little. My plan is to make an infinite amount of
+	money per year for an infinite amount of years, while also increasing my profits by ∞% every quarter. Would I have enough money after that?",
+	"ceo_3": "Nope, I don't think so. Need even more. The line must go up. I need to rethink the work conditions of my workers.",
+	"ceo_4": "They would need to work at least 25 hours a day, and if they don't want to get a paycut, then at least 48 hours a day.
+	Of course, they must also work at least 8 days a week. That would be a bare minimum. Their annual leave should be at most -20 days.
+	That is, 20 days per year they work even harder, working 2 days a day every day.",
+	"ceo_5": "That is the only way."
 }
 
 static var portraits_data = {

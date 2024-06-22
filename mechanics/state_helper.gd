@@ -38,6 +38,9 @@ static var states = {
 	
 	# 0 - placeholder, 1 - pineapple, -1 - pizza
 	"pineapple_or_pizza": 0,
+	
+	# 0 - not met, 1 - met
+	"ceo_met": 0,
 }
 
 static var start_states = states.duplicate()
