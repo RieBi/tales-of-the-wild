@@ -107,4 +107,4 @@ position = Vector2(642, 1601)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_ku40g")
 autoplay = "default"
-frame_progress = 0.909175
+frame_progress = 0.642286

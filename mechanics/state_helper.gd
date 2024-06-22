@@ -43,7 +43,7 @@ static var states = {
 	"ceo_met": 0,
 	
 	# 0 - game not finished, 1 - game finished
-	"finished": 1,
+	"finished": 0,
 }
 
 static var start_states = states.duplicate()
