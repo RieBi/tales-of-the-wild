@@ -15,6 +15,7 @@ func _on_containment_trigger_action_done(source: ActionTrigger) -> void:
 
 
 func _on_enter_trigger_player_entered(source: Area2D) -> void:
+	source.queue_free()
 	DialogueHelper.play_dialogue("eater_intro_1")
 	await DialogueHelper.dialogue_box.dialogue_finished
 	show()
