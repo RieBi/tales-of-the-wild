@@ -431,12 +431,12 @@ Matheff — Today at 1:52 PM",
 	of higher members of Guardian Order, the chains are unbreakable. Not even the convolutions of space itself can rip it apart.
 	They will slowly deprive Liber of power until, as the prophecies say, 1000 years in the future from now, Liber would be banished into the void and never come back, for out of the void there's no combing back.",
 	"eater_sign_seals": "Here lies the hall of seals. Upon discretion of The Three Guardians, the higher members of Guardian Order
-	have sealed the prophecy to come true. Each seal reinforces all other ones, and in tandem they'll banish Liber out of past and out of future, his existence in all times will be gone.",
+	have sealed the prophecy to come true. Each seal reinforces all other ones, and in tandem they'll banish Liber out of past and out of future, his existence in all times will he be gone.",
 	"eater_seal_1": "The seal of Bear.",
 	"eater_seal_2": "The seal of Capybara. Strange, isn't it? Was it actually you who sealed it?",
 	"eater_seal_3": "The seal of Snake.
 	
-	Upon closer inspection, you can barely see that its magic is ever slightly so different from the other seals. How could it happen?",
+	Upon closer inspection, you can barely see that its magic is ever so slightly different from the other seals. How could it happen?",
 	"eater_seal_4": "The seal of Ferret.",
 	"eater_seal_5": "The seal of Werewolf.",
 	"eater_liber_1": "The chains are broken in multiple places. Their shimmering glow is fading away. On the floor, you see a rough inscription carved into it:",
