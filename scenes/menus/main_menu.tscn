@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://xq4uapw3ycki"]
+[gd_scene load_steps=23 format=3 uid="uid://xq4uapw3ycki"]
 
 [ext_resource type="Script" path="res://scenes/menus/main_menu.gd" id="1_au0hr"]
 [ext_resource type="Texture2D" uid="uid://fcbc5qhgpb8d" path="res://assets/logo.png" id="2_8k4c4"]
 [ext_resource type="Texture2D" uid="uid://gm18hiv33l2s" path="res://assets/sprites/characters/characters.png" id="3_3jmvq"]
 [ext_resource type="Texture2D" uid="uid://okf5ncvbf164" path="res://assets/sprites/capybara/mini capy1.png" id="4_r0an7"]
 [ext_resource type="Texture2D" uid="uid://bu3gl17uubrnh" path="res://assets/sprites/level1/evil_snake.png" id="5_x7qhc"]
+[ext_resource type="Texture2D" uid="uid://btrf104qi83ae" path="res://assets/wildcard.png" id="6_g0paf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_puyqs"]
 atlas = ExtResource("3_3jmvq")
@@ -233,6 +234,25 @@ offset_left = -24.0
 offset_top = 208.0
 offset_right = 1280.0
 offset_bottom = 248.0
+
+[node name="Jam" type="Node2D" parent="Panel"]
+
+[node name="Wildcard" type="TextureRect" parent="Panel/Jam"]
+offset_left = 62.0
+offset_top = 287.0
+offset_right = 962.0
+offset_bottom = 1491.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_g0paf")
+
+[node name="JamInfo" type="Label" parent="Panel/Jam"]
+offset_left = 348.0
+offset_top = 471.0
+offset_right = 948.0
+offset_bottom = 520.0
+theme_override_colors/font_color = Color(0, 0.670588, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "Game made for Godot Wild Jam #70"
 
 [connection signal="pressed" from="Panel/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Panel/SettingsButton" to="." method="_on_settings_button_pressed"]
