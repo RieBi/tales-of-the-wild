@@ -899,4 +899,7 @@ func _on_end_trigger_player_entered(_source: Area2D) -> void:
 	DialogueHelper.player.animated_sprite.play("sleep")
 	await create_tween().tween_interval(2.5).finished
 	await create_tween().tween_property(self, ^"modulate", Color.BLACK, 2).finished
-	# TODO credits?
+	if StateHelper.gets("evil_snake") == 2:
+		get_tree().change_scene_to_file("res://scenes/levels/level_end_eater.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/levels/level_end_abner.tscn")
