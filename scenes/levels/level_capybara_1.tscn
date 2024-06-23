@@ -407,7 +407,7 @@ layer_0/tile_data = PackedInt32Array(-65536, 65536, 2, -65535, 65536, 2, -65534,
 layer_2/tile_data = PackedInt32Array(327689, 131072, 1, 262153, 131072, 0, 327688, 65536, 1, 262152, 65536, 0, 393225, 131072, 2, 393224, 65536, 2, 393223, 0, 2, 327687, 0, 1, 262151, 0, 0)
 
 [node name="PlayerCapybara" parent="." index="2" instance=ExtResource("2_5m281")]
-position = Vector2(16, 16)
+position = Vector2(14.0842, 19.6913)
 motion_mode = 0
 wall_min_slide_angle = 0.261799
 

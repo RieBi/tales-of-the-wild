@@ -1,12 +1,15 @@
 extends Node2D
 
 var d: float = 0
+var DEBUG: bool = false
 
 func _process(delta: float) -> void:
 	d = delta
 
 func _ready() -> void:
 	hide()
+	if DEBUG:
+		show() #DEBUG
 
 func _on_awaken_trigger_player_entered(source: Area2D) -> void:
 	source.queue_free()
@@ -248,10 +251,10 @@ func _on_pig_8_trigger_action_done(source: ActionTrigger) -> void:
 			DialogueHelper.play_dialogue("pig_8_3", "Pig Brother")
 		4:
 			var fate_box_texture = DialogueHelper.fate_box.center_texture 
-			fate_box_texture.scale = Vector2(20, 20)
-			fate_box_texture.position = Vector2(464, 184)
 			DialogueHelper.set_up_fate("Tell truth", "Tell lies", preload("res://scenes/characters/level1/pig_big_texture.tres"),
 			pigs_kill_big_pig, pigs_return_to_people)
+			fate_box_texture.scale = Vector2(20, 20)
+			fate_box_texture.position = Vector2(464, 184)
 			await DialogueHelper.fate_box.fate_chosen
 			DialogueHelper.player.restrict_movement()
 			QuestHelper.remove_quest("Capybara Jones")
@@ -296,6 +299,7 @@ func _on_pig_big_trigger_action_done(source: ActionTrigger) -> void:
 
 func obtain_red_key() -> void:
 	DialogueHelper.set_up_acquisition("Red key", preload("res://assets/sprites/level1/keys/red_key.png"))
+	DialogueHelper.acqusition_box.center_texture.position = Vector2(576, 208)
 	StateHelper.sets("red_key", 1)
 
 func pigs_kill_big_pig() -> void:
@@ -425,11 +429,11 @@ func _on_thomas_trigger_action_done(source: ActionTrigger) -> void:
 		["Thomas", "Thomas", "Thomas"])
 	await DialogueHelper.dialogue_box.dialogue_finished
 	var fate_box_image = DialogueHelper.fate_box.center_texture
-	fate_box_image.scale = Vector2(5, 5)
-	fate_box_image.position = Vector2(576, 220)
 	DialogueHelper.set_up_fate("Pineapple", "Pizza", preload("res://assets/sprites/level1/pizza_pineapple.png"),
 	func():StateHelper.sets("pineapple_or_pizza", 1),
 	func(): StateHelper.sets("pineapple_or_pizza", -1))
+	fate_box_image.scale = Vector2(5, 5)
+	fate_box_image.position = Vector2(576, 220)
 	await DialogueHelper.fate_box.fate_chosen
 	DialogueHelper.play_dialogue("follower_thomas_fated", "Thomas")
 	source.make_inactive()
@@ -591,10 +595,10 @@ func _on_asedine_trigger_action_done(source: ActionTrigger) -> void:
 	match StateHelper.gets("followers_acquainted"):
 		5:
 			DialogueHelper.play_dialogue("follower_asedine_3", "Asedine")
-			source.hide()
 			await DialogueHelper.dialogue_box.dialogue_finished
+			source.make_inactive()
 			QuestHelper.add_quest("Stranger Sticks")
-			$FollowerCamp/FollowerBondurnar.position += Vector2(0, 16)
+			$FollowerCamp/FollowerBondurnar.position += Vector2(-16, 32)
 			
 		_:
 			DialogueHelper.play_dialogue("follower_asedine_2", "Asedine")
@@ -642,6 +646,8 @@ func _on_bondurnar_trigger_action_done(source: ActionTrigger) -> void:
 func on_stick_pocketed() -> void:
 	StateHelper.sets("sticks_collected", StateHelper.gets("sticks_collected") + 1)
 	QuestHelper.poll_quests()
+	if StateHelper.gets("sticks_collected") == 5:
+		$FollowerCamp/FollowerAsedine/AsedineTrigger.make_active()
 
 func _on_stick_1_trigger_action_done(_source: ActionTrigger) -> void:
 	DialogueHelper.play_dialogue("follower_stick_1")
@@ -824,8 +830,8 @@ func followers_cutscene() -> void:
 	bondurnar.hide_message_bubble()
 	
 	StateHelper.sets("green_key", 1)
-	DialogueHelper.acqusition_box.center_texture.position = Vector2(528, 208)
 	DialogueHelper.set_up_acquisition("Green key", preload("res://assets/sprites/level1/keys/green_key.png"))
+	DialogueHelper.acqusition_box.center_texture.position = Vector2(528, 208)
 	for t in triggers:
 		t.make_active()
 	$FollowerCamp/FollowerBondurnar/BondurnarTrigger.make_active()
