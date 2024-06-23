@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cqmi7ffgpuyet"]
+[gd_scene load_steps=18 format=3 uid="uid://cqmi7ffgpuyet"]
 
 [ext_resource type="PackedScene" uid="uid://5n44p45tlmtr" path="res://scenes/levels/level_base.tscn" id="1_u5ql2"]
 [ext_resource type="PackedScene" uid="uid://dv4t4oejw5u08" path="res://scenes/characters/player/player_capybara.tscn" id="2_5dw2t"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://gm18hiv33l2s" path="res://assets/sprites/characters/characters.png" id="4_hlc4j"]
 [ext_resource type="PackedScene" uid="uid://djlsrgut1o132" path="res://scenes/dialogue/action_trigger.tscn" id="5_vevy2"]
 [ext_resource type="PackedScene" uid="uid://dfw8idcll53rp" path="res://scenes/dialogue/enter_trigger.tscn" id="7_8qou7"]
+[ext_resource type="PackedScene" uid="uid://bunat7i4dr42p" path="res://scenes/dialogue/prop_trigger.tscn" id="8_f8gcp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4wai3"]
 atlas = ExtResource("4_hlc4j")
@@ -24,6 +25,18 @@ radius = 15.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_86g8m"]
 radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2k1y5"]
+radius = 15.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dwgeh"]
+radius = 15.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xfe2k"]
+radius = 15.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2qlay"]
+radius = 15.0
 
 [node name="LevelEndAbner" instance=ExtResource("1_u5ql2")]
 script = ExtResource("2_vvs4r")
@@ -73,6 +86,44 @@ position = Vector2(-64, -32)
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_86g8m")
 
+[node name="Graves" type="Node2D" parent="." index="5"]
+z_index = 6
+position = Vector2(499.67, -215.181)
+
+[node name="Grave1Trigger" parent="Graves" index="0" instance=ExtResource("8_f8gcp")]
+position = Vector2(-43.6703, 31.181)
+dialogues = Array[String](["grave_1"])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Graves/Grave1Trigger" index="1"]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_2k1y5")
+
+[node name="Grave2Trigger" parent="Graves" index="1" instance=ExtResource("8_f8gcp")]
+position = Vector2(20.3297, 31.181)
+dialogues = Array[String](["grave_2"])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Graves/Grave2Trigger" index="1"]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_dwgeh")
+
+[node name="Grave3Trigger" parent="Graves" index="2" instance=ExtResource("8_f8gcp")]
+position = Vector2(-27.6703, -16.819)
+dialogues = Array[String](["grave_3"])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Graves/Grave3Trigger" index="1"]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_xfe2k")
+
+[node name="GraveEndTrigger" parent="Graves" index="3" instance=ExtResource("5_vevy2")]
+position = Vector2(-11.6703, -96.819)
+animation_to_play = "exclamation"
+visible_only_in_zone = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Graves/GraveEndTrigger" index="1"]
+position = Vector2(0, 24)
+shape = SubResource("CircleShape2D_2qlay")
+
 [connection signal="action_done" from="People/Jon/JonTrigger" to="." method="_on_jon_trigger_action_done"]
 [connection signal="action_done" from="People/Jelly/ActionTrigger" to="." method="_on_action_trigger_action_done"]
 [connection signal="player_entered" from="EnterTrigger" to="." method="_on_enter_trigger_player_entered"]
+[connection signal="action_done" from="Graves/GraveEndTrigger" to="." method="_on_grave_end_trigger_action_done"]
