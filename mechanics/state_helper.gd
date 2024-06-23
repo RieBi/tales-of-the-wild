@@ -41,6 +41,8 @@ static var states = {
 	
 	# 0 - not met, 1 - met
 	"ceo_met": 0,
+	"jon_met": 0,
+	"jelly_met": 0,
 	
 	# 0 - game not finished, 1 - game finished
 	"finished": 0,

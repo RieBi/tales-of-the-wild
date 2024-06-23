@@ -3,7 +3,7 @@ extends Node2D
 func _ready() -> void:
 	hide()
 
-func _on_containment_trigger_action_done(source: ActionTrigger) -> void:
+func _on_containment_trigger_action_done(_source: ActionTrigger) -> void:
 	DialogueHelper.start_cutscene_set_up()
 	DialogueHelper.play_dialogue_sequence(["eater_liber_1", "eater_liber_2"])
 	await DialogueHelper.dialogue_box.dialogue_finished

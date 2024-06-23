@@ -458,6 +458,57 @@ Matheff — Today at 1:52 PM",
 	They'll fear my like they never feared
 	And nothing would ever stop my plans",
 	#END
+	
+	"abner_1": "Waking up, you feel a pleasant smell of rosy bloom in the air.",
+	"abner_2": "Opening your eyes, you see a blooming garden of flowers surrounding you. The world shines bright.",
+	"abner_jon_1": "Hello, Sacred Capybara! It's great to meet you! We all had a dream of you coming today. And here you are.
+	Enjoy yourself in this place, you might as well call it heaven.",
+	"abner_jon_2": "I've heard many stories of you, but I could never think I would meet you. And yet, here I am, talking with you.",
+	"abner_jon_3": "Enjoy yourself :D",
+	"abner_jelly_1": "No way, no way! The dream came true. Though these days were quite hectic, it's nice to have some rest today.",
+	"abner_jelly_2": "We were celebrating the blossom of The Three Guardians, and then my grandpa, Julia, died.
+	She was very old, and it is a great omen to die on the blossom day. I'm sure she's happy now in the afterlife.
+	We were having a funeral yesterday, and then we've all got this dream of you coming. That's very interesting, isn't it?",
+	"abner_jelly_3": "You can feel here like home.",
+	"grave_1": "Austine, the onion warrior",
+	"grave_2": "Mike, a good man and a great alcoholic",
+	"grave_3": "Catherine, the sentinel of all animalists",
+	"grave_4": "Julia, a great wife, woman, grandma, and caretaker of the myths",
+	"grave_end_1": "On the other side of the grave slab, you see a text written all over it.
+	Though the slab isn't that big by itself, when you look at it, it seems like it is expanding to fit all the tales of all the times that humanity has ever seen.
+	There are tales of love, of hate, of war, of peace. There's a tale of Sacred Capybara, and its fight with Black Mermaid.
+	Some of the tales are contradictory. For example, in one tale Sacred Capybara fights Black Mermaid and wins, setting the peace to the kingdom.
+	In the other tale, Sacred Capybara befriends Black Mermaid to fight the evil together. Yet, neither of the story is worse due to this fact.
+	In fact, all the stories just complements one another, and together they form this big, vivid ocean of thoughts and ideas that each one bears.",
+	"grave_end_2": "When a person dies, its body becomes lifeless, but stories and memories that they made throughout their life lives past.
+	It matters not if they are good or bad, they just persist. And one could argue that as long as the stories are not forgotten, the person is still alive.",
+	"grave_end_3": "Looking closer at the top of the slab, almost fading into the surroinding air, one story captivates your mind:",
+	"grave_end_4": "
+	Once born a human, he didn't mean to die
+	Caught in a whirlpool of all the truths and lies
+	He marched past everything to ultimately meet the sky
+	He met his divine powers like sun meets butterflies
+	Liber's his name, of all the legends told
+	The people of all casts met him with vivid joy
+	He meant to end the slavery of very evil god
+	But god's plans didn't quite align with Liber's ploy
+	And once the rumor made its way of Liber's plans
+	The god accused Liber that he betrayed the skies
+	So all the servants rushed to gather all the clans
+	And god took one of each to have on their sides
+	Despite big Liber's power, god's influence took place
+	A prison built in hours to cage the king was made
+	Dark terror could be barely seen on empty Liber's face
+	He knew that in few hours all of his life would fade
+	Yet in stampede of rivals, there was elusive friend
+	Not showing a tad bit of emotion, Snake had its sapient way
+	Deceit is virtue of the Snake, and hence a rule be bent
+	In the blind awe of other members, Snake used its fang
+	And in a pristine way of doing, the prophecy could be undone
+	Though unbeknown to god's endeavour, all seals were made futile
+	In thousand years all Capybara's memories were meant to burn
+	And Liber's chains would once come just to be a dark satire
+	",
 }
 
 static var portraits_data = {
