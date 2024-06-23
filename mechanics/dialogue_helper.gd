@@ -411,6 +411,53 @@ Matheff — Today at 1:52 PM",
 	
 	"finalle_sleepy_1": "You feel sleepy. Maybe it's the time to go to bed?",
 	"finalle_sleepy_2": "You feel REALLY sleepy. You can barely walk now.",
+	
+	"eater_intro_1": "You wake up feeling a strong rancid stench in your lungs.",
+	# wake up
+	"eater_intro_2": "Opening your eyes, you see a fog of miasmas covering this destroyed village. What the hell had happened here?",
+	"eater_body_1": "The boy is dead. Though the corpse is still fresh, it already started to rot pretty badly.",
+	"eater_body_2": "A girl. Or rather it was a girl. The body parts are decimated so violently it is now difficult to recognize a human in it.",
+	"eater_body_3": "It seems like this one was killed right as he stepped out the door of his house.",
+	"eater_body_4": "He tried to hide behind the house. And yet it was futile. Whatever ravaged the village, it aimed to leave no life in it.",
+	"eater_body_5": "One more body. Though you know that the thing that happened here is bad, you don't feel anything else but rancid stench permeating the air.",
+	"eater_inscription_preamble": "You see a fresh text carved onto stone. The dust of it has still not settled out:
+		'From the heavens the three guardians see war. But on earth, there is only carnage'",
+	"eater_sign_1": "Here lies the prison to contain the damned king, Liber. Sentenced to eternity of containment for betraying The Three Guardians and all of humanity, he will face decay.
+	Upon completion of this structure, it must be said that with wise actions of The Three Guardians, peace is restored in the world.
+	And so it will be forever, for their power is immense, and evil is gone. This is the truth.",
+	"eater_sign_2": "Carved out of twilight stone, the walls would stop any force that tries to break it.
+	The prison will remain intact, no matter what is going outside of it.
+	Forged out of adamantium in sunfire heat, infused with magic of The Three Guardians, and sealed with prophecies
+	of higher members of Guardian Order, the chains are unbreakable. Not even the convolutions of space itself can rip it apart.
+	They will slowly deprive Liber of power until, as the prophecies say, 1000 years in the future from now, Liber would be banished into the void and never come back, for out of the void there's no combing back.",
+	"eater_sign_seals": "Here lies the hall of seals. Upon discretion of The Three Guardians, the higher members of Guardian Order
+	have sealed the prophecy to come true. Each seal reinforces all other ones, and in tandem they'll banish Liber out of past and out of future, his existence in all times will be gone.",
+	"eater_seal_1": "The seal of Bear.",
+	"eater_seal_2": "The seal of Capybara. Strange, isn't it? Was it actually you who sealed it?",
+	"eater_seal_3": "The seal of Snake.
+	
+	Upon closer inspection, you can barely see that its magic is ever slightly so different from the other seals. How could it happen?",
+	"eater_seal_4": "The seal of Ferret.",
+	"eater_seal_5": "The seal of Werewolf.",
+	"eater_liber_1": "The chains are broken in multiple places. Their shimmering glow is fading away. On the floor, you see a rough inscription carved into it:",
+	"eater_liber_2": "
+	In the black mayhem of disease
+	I'm chained and covered in blood and dirt
+	In agony I hold my furious tears
+	And yet I know what was foretold
+	My mind and will is safe, no fears
+	Thousands of years pass in a moment
+	For a mere human the aging kills
+	And yet I am still only stolid
+	In a mere happenstance of chance
+	This knowledge I had always had
+	A day will come for me to dance
+	I will avenge them like a savage bat
+	And then my destiny will be fulfilled
+	I'll pour the carnage onto lands
+	They'll fear my like they never feared
+	And nothing would ever stop my plans",
+	#END
 }
 
 static var portraits_data = {
