@@ -205,7 +205,7 @@ Matheff — Today at 1:52 PM",
 	"pig_2_truth": "I enjoyed doubleplusgood life here before. I enjoy tripleplusgood life now.",
 	"pig_2_lie": "Oink! Doubleoink! Oink oink.",
 	"pig_3_1": "The pig appears to be sleeping. You hear indistinct mumbles coming from its mouth:",
-	"pig_3_2": "Down with mastr! Dwn with mstr! Down wth mster!",
+	"pig_3_2": "Down with brothr! Dwn with brthr! Down wth brther!",
 	"pig_3_truth": "Hail the Mastr! Hl th Mastr! Hail th Mster!",
 	"pig_4_1": "I was trying to come up with the new version of pigspeak all day long, but the hunger makes it unpossible to do.
 	I guess we will have to stick with the old version for now.",
