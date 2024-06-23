@@ -103,7 +103,7 @@ scale = Vector2(5, 5)
 texture = ExtResource("3_l3umt")
 
 [node name="Charlie" type="AnimatedSprite2D" parent="Melon"]
-position = Vector2(642, 1601)
+position = Vector2(642, 1650)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_ku40g")
 autoplay = "default"
