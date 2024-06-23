@@ -132,7 +132,7 @@ Matheff — Today at 1:52 PM",
 	
 	"general_sigh": "*Sighs*",
 	
-	"story_1": "Arising from a deep slumber, the Sacred Capybara, of whom many legends have been told, opens their eyes.",
+	"story_1": "Arising from a deep slumber, the Sacred Capybara, of whom many legends have been told, opens their eyes. [Press SPACE to continue dialogues]",
 	"story_2": "You find yourself stranded in an unknown land. Every time you wake up, you find yourself in a different place.
 	Maybe it is the space-time itself that transports you to a different location each time, or maybe you unknowingly wander during your sleep by your feet.
 	It doesn't need to be known, for it is for the better that you can travel far away in a brief moment of unconscious sleep.",
